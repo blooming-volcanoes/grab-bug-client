@@ -97,9 +97,9 @@ function Header() {
 
                         <ul
                             className={`
-                               absolute
+                               fixed
                                  shadow-2xl transition-all lg:hidden ${
-                                     menuOpen ? "right-0" : "-right-[999px]"
+                                     menuOpen ? "right-0" : "-right-full"
                                  } top-0 z-20 flex h-full w-full  flex-col items-center  justify-center space-y-16 bg-white px-4   text-2xl font-semibold  md:w-[450px] md:text-4xl`}
                         >
                             {menus.map((menu, i) => (
