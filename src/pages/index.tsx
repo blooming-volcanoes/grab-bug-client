@@ -1,4 +1,5 @@
-import Overview from "components/Home/overview";
+/* eslint-disable import/no-unresolved */
+import Home from "components/Home/Home/Home";
 import PageLayout from "components/PageLayout";
 import React from "react";
 
@@ -6,8 +7,7 @@ function index() {
     return (
         <div>
             <PageLayout title="Home">
-                <h1>Hello</h1>
-                <Overview />
+                <Home />
             </PageLayout>
         </div>
     );
