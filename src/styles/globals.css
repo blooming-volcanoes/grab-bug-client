@@ -4,6 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .primary-btn {
+        @apply rounded bg-[#7b68ee] py-2 px-6 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[#5941df];
+    }
+    .btn-white {
+        @apply rounded bg-gray-100 py-2 px-6 text-sm font-semibold text-gray-400 shadow-lg transition-all hover:text-gray-500;
+    }
+}
+
 body {
     font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
 }
