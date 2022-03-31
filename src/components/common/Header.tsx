@@ -44,7 +44,7 @@ function Header() {
         <>
             <header>
                 <div className="bg-white shadow">
-                    <nav className="flex items-center justify-between px-4  py-4 md:max-w-3xl lg:mx-auto lg:max-w-6xl">
+                    <nav className="flex items-center justify-between px-4  py-4 md:mx-auto md:max-w-3xl lg:mx-auto lg:max-w-6xl">
                         {/* logo */}
                         <div className="w-36 flex-shrink-0">
                             <Link href="/">
