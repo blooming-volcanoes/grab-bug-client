@@ -27,8 +27,8 @@ function Overview() {
         }
     }
     return (
-        <div className="container mx-4 my-5 rounded-3xl bg-violet-100 md:mx-auto">
-            <div className="flex justify-center py-9">
+        <div className="mx-6 my-5 rounded-3xl bg-violet-100  md:max-w-3xl lg:mx-auto lg:max-w-7xl">
+            <div className="flex flex-wrap justify-center space-y-4 py-9 md:space-y-0 lg:space-y-0">
                 <button
                     onClick={() => showItems("docs")}
                     type="button"
@@ -58,8 +58,8 @@ function Overview() {
                 <div className="mx-auto md:w-2/5">
                     <h1 className="text-center text-4xl font-bold">{heading}</h1>
                 </div>
-                <div className="flex justify-center py-7">
-                    <img className="rounded-lg md:w-2/3" src={imageUrl} alt="" />
+                <div className="flex justify-center py-7 px-4 md:px-0 lg:px-0">
+                    <img className="w-full rounded-lg md:w-2/3 lg:w-2/3" src={imageUrl} alt="" />
                 </div>
             </div>
             <div className="flex w-full justify-center rounded-b-3xl bg-violet-300 py-3">
