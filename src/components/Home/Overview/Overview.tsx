@@ -27,7 +27,7 @@ function Overview() {
         }
     }
     return (
-        <div className="container mx-auto my-5 rounded-3xl bg-violet-100">
+        <div className="container mx-4 my-5 rounded-3xl bg-violet-100 md:mx-auto">
             <div className="flex justify-center py-9">
                 <button
                     onClick={() => showItems("docs")}
