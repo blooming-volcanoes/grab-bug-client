@@ -1,13 +1,13 @@
 /* eslint-disable import/no-unresolved */
-import Home from "components/Home/Home/Home";
 import PageLayout from "components/PageLayout";
 import React from "react";
+import TaskView from "../components/TaskView/TaskView";
 
 function index() {
     return (
         <div>
             <PageLayout title="Home">
-                <Home />
+                <TaskView />
             </PageLayout>
         </div>
     );
