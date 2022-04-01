@@ -5,25 +5,25 @@ import { FaEllipsisH, FaEye, FaPaperclip, FaRegEye, FaUser, FaUserAlt } from "re
 
 function TaskView() {
     return (
-        <section className="mx-auto w-5/6 rounded bg-sky-50 p-8">
-            <div className="flex  flex-col justify-center text-center  align-middle">
+        <section className="mx-auto rounded bg-sky-50 p-8 sm:w-5/6">
+            <div className="flex  flex-col items-center justify-center text-center">
                 <p className="my-2 text-base font-bold uppercase text-blue-300">
                     Built for everyone
                 </p>
-                <h1 className="my-2 text-5xl font-bold text-black">
+                <h1 className="my-2 text-2xl font-bold text-black sm:text-5xl">
                     Built for teams from 1 to 500+
                 </h1>
             </div>
-            <div className="mt-8 grid grid-cols-12 gap-4">
-                <div className="col-span-4 ">
+            <div className="mt-8 lg:grid lg:grid-cols-12 lg:gap-4">
+                <div className="sm:col-span-4">
                     {/* First Task Card */}
-                    <div className="grid grid-cols-12 gap-4">
-                        <div className="col-span-3">
-                            <div className="flex justify-center rounded bg-white p-4">
+                    <div className="my-2 grid grid-cols-12 gap-4">
+                        <div className="col-span-2 sm:col-span-3">
+                            <div className="flex justify-center rounded bg-white sm:p-4">
                                 <FaEye />
                             </div>
                         </div>
-                        <div className="col-span-9">
+                        <div className="col-span-10 sm:col-span-9">
                             <div className="flex flex-col">
                                 <Link href="/">
                                     <a className="text-base font-bold hover:underline">
@@ -31,7 +31,7 @@ function TaskView() {
                                         Visualize and Plan{" "}
                                     </a>
                                 </Link>
-                                <p className="text-justify text-sm leading-6 text-gray-800">
+                                <p className="text-justify text-xs leading-6 text-gray-800 sm:text-sm">
                                     Manage any project from start to finish with highly customizable
                                     views that make project planning a breeze
                                 </p>
@@ -39,20 +39,21 @@ function TaskView() {
                         </div>
                     </div>
                     {/* Second Task Card */}
-                    <div className="my-7 grid grid-cols-12 gap-4">
-                        <div className="col-span-3">
-                            <div className="flex justify-center rounded bg-white p-4">
+                    <div className="my-2 grid grid-cols-12 gap-4">
+                        <div className="col-span-2 sm:col-span-3">
+                            <div className="flex justify-center rounded bg-white sm:p-4">
                                 <FaEye />
                             </div>
                         </div>
-                        <div className="col-span-9">
+                        <div className="col-span-10 sm:col-span-9">
                             <div className="flex flex-col">
                                 <Link href="/">
                                     <a className="text-base font-bold hover:underline">
-                                        Collaborate
+                                        {" "}
+                                        Visualize and Plan{" "}
                                     </a>
                                 </Link>
-                                <p className="text-justify text-sm leading-6 text-gray-800">
+                                <p className="text-justify text-xs leading-6 text-gray-800 sm:text-sm">
                                     Manage any project from start to finish with highly customizable
                                     views that make project planning a breeze
                                 </p>
@@ -60,20 +61,21 @@ function TaskView() {
                         </div>
                     </div>
                     {/* Third Task Card */}
-                    <div className="my-7 grid grid-cols-12 gap-4">
-                        <div className="col-span-3">
-                            <div className="flex justify-center rounded bg-white p-4">
+                    <div className="my-2 grid grid-cols-12 gap-4">
+                        <div className="col-span-2 sm:col-span-3">
+                            <div className="flex justify-center rounded bg-white sm:p-4">
                                 <FaEye />
                             </div>
                         </div>
-                        <div className="col-span-9">
+                        <div className="col-span-10 sm:col-span-9">
                             <div className="flex flex-col">
                                 <Link href="/">
                                     <a className="text-base font-bold hover:underline">
-                                        Track Progress
+                                        {" "}
+                                        Visualize and Plan{" "}
                                     </a>
                                 </Link>
-                                <p className="text-justify text-sm leading-6 text-gray-800">
+                                <p className="text-justify text-xs leading-6 text-gray-800 sm:text-sm">
                                     Manage any project from start to finish with highly customizable
                                     views that make project planning a breeze
                                 </p>
@@ -81,33 +83,33 @@ function TaskView() {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-8 rounded-lg border bg-white shadow-lg shadow-blue-200/50 ">
-                    <div className="grid grid-cols-12">
+
+                <div className="rounded-lg border bg-white shadow-lg shadow-blue-200/50 sm:col-span-8 ">
+                    <div className="sm:grid sm:grid-cols-12">
                         {/* First Column */}
                         <div className="col-span-5 flex flex-col border-r pl-2">
-                            <div className="flex justify-between border-b py-2">
-                                <div className="flex w-3/5">
+                            <div className="flex justify-around border-b py-2">
+                                <div className="flex w-4/5 sm:w-3/5">
                                     <button
-                                        className="mr-2 rounded bg-amber-400/100 py-1 px-3 text-xs text-white"
+                                        className="mr-2 rounded bg-amber-400/100 py-1 px-1 text-xs text-white lg:px-3"
                                         type="button"
                                     >
                                         <Link href="/">
-                                            <a className="hover:underline">Get Started</a>
+                                            <a className="text-xs hover:underline">Get Started</a>
                                         </Link>
                                     </button>
                                     <img
-                                        className="inline-block h-6 w-6 rounded-full ring-2 ring-white"
+                                        className="mr-2 inline-block h-6 w-6 rounded-full ring-2 ring-white"
                                         src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                         alt=""
                                     />
-                                    <FaUserAlt className="w-100 text-xl" />
+                                    <FaUserAlt className="sm:w-100 text-xl" />
                                 </div>
 
                                 <div>
                                     <FaEllipsisH className="text-xl" />
                                 </div>
                             </div>
-
                             {/* Button Groups */}
                             <div className="my-5 flex">
                                 <button
@@ -135,9 +137,8 @@ function TaskView() {
                                     </Link>
                                 </button>
                             </div>
-
                             {/* Task View */}
-                            <h3 className="text-4xl font-bold"> Task View </h3>
+                            <h3 className=" text-2xl font-bold sm:text-4xl"> Task View </h3>
                             <p className="my-2 text-xs text-black">
                                 {" "}
                                 Overview and development of our original product serves{" "}
@@ -152,11 +153,11 @@ function TaskView() {
                                     {" "}
                                     Volcanoes
                                 </div>
-                                <div className="my-1 flex border-y py-1 text-xs">
+                                <div className="my-1 flex border-y border-slate-100 py-1 text-xs">
                                     {" "}
                                     <FaUser className="mr-2" /> Industry{" "}
                                 </div>
-                                <div className="my-1 border-y py-1 text-sm font-medium">
+                                <div className="my-1 border-y border-slate-100 py-1 text-sm font-medium">
                                     {" "}
                                     Volcanoes
                                 </div>
@@ -164,7 +165,7 @@ function TaskView() {
                                     {" "}
                                     <FaUser className="mr-2" /> Budget{" "}
                                 </div>
-                                <div className="my-1 border-y py-1 text-sm font-medium">
+                                <div className="my-1 border-y border-slate-100 py-1 text-sm font-medium">
                                     {" "}
                                     Volcanoes
                                 </div>
@@ -173,7 +174,7 @@ function TaskView() {
                             <div className="my-3">
                                 <h4 className="text-sm font-bold text-black"> To Do </h4>
                                 {/* First ToDo */}
-                                <div className="my-2 flex justify-between">
+                                <div className="justify-even my-2 flex">
                                     <div className="flex">
                                         <input type="checkbox" />
                                         <FaUser className="ml-2 text-sm" />
@@ -181,7 +182,7 @@ function TaskView() {
                                     <p className="text-xs text-gray-900"> Name of the Podcast</p>
                                 </div>
                                 {/* Second Todo */}
-                                <div className="my-2 flex justify-between">
+                                <div className="justify-even my-2 flex">
                                     <div className="flex">
                                         <input type="checkbox" />
                                         <FaUser className="ml-2 text-sm" />
@@ -296,17 +297,23 @@ function TaskView() {
                                         </div>
                                     </div>
                                 </div>
-                                <p className="my-4 text-xs text-black"> Brian Chanaged Status </p>
+                                <p className="my-4 text-xs text-black"> Ivan Chanaged Status </p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <button className="rounded bg-sky-500/100 py-3 px-5 text-white" type="button">
-                <Link href="/">
-                    <a className="hover:underline">Get Started</a>
-                </Link>
-            </button>
+            {/* Button */}
+            <div className="flex justify-start">
+                <button
+                    className="rounded bg-sky-500/100 py-1 px-3 text-xs text-white sm:py-3 sm:px-5 sm:text-base"
+                    type="button"
+                >
+                    <Link href="/">
+                        <a className="hover:underline">Get Started</a>
+                    </Link>
+                </button>
+            </div>
         </section>
     );
 }
