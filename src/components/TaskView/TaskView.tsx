@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Link from "next/link";
 import React from "react";
-import { FaEllipsisH, FaEye, FaRegEye, FaUser, FaUserAlt } from "react-icons/fa";
+import { FaEllipsisH, FaEye, FaPaperclip, FaRegEye, FaUser, FaUserAlt } from "react-icons/fa";
 
 function TaskView() {
     return (
@@ -215,14 +215,15 @@ function TaskView() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="bg-slate-100 p-4">
+                            {/* First Card */}
+                            <div className="bg-slate-100 py-4 px-2">
                                 <div className="flex justify-between">
                                     <img
-                                        className="inline-block h-8 w-9 rounded-full"
+                                        className="mr-2 inline-block h-8 w-9 rounded-full"
                                         src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                         alt=""
                                     />
-                                    <div className="w-100 rounded bg-white">
+                                    <div className="w-100 rounded bg-white p-2">
                                         <p className="text-black">
                                             {" "}
                                             <span className="text-sm  font-bold"> Ivan </span>{" "}
@@ -231,12 +232,71 @@ function TaskView() {
                                                 on Nov 5 2020 at 2.50 PM{" "}
                                             </span>
                                         </p>
-                                        <p className="text-black">
+                                        <p className="text-justify text-xs text-black">
                                             Lorem ipsum dolor sit, amet consectetur adipisicing
                                             elit. Tempore, sequi?
                                         </p>
                                     </div>
                                 </div>
+                            </div>
+                            {/* Second Card */}
+                            <div className="bg-slate-100 py-4 px-2">
+                                <div className="flex justify-between">
+                                    <img
+                                        className="mr-2 inline-block h-8 w-9 rounded-full"
+                                        src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                        alt=""
+                                    />
+                                    <div className="w-100 rounded bg-white p-2">
+                                        <p className="text-black">
+                                            {" "}
+                                            <span className="text-sm  font-bold"> Maria </span>{" "}
+                                            <span className="text-xs">
+                                                {" "}
+                                                on Nov 5 2020 at 2.50 PM{" "}
+                                            </span>
+                                        </p>
+                                        <div className="flex justify-between text-justify text-xs text-black">
+                                            <div className="mr-2 flex h-10 w-10 items-center justify-center rounded bg-blue-400 p-4 text-white">
+                                                <FaPaperclip />
+                                            </div>
+                                            <p>
+                                                {" "}
+                                                Lorem ipsum dolor sit, amet consectetur adipisicing
+                                                elit. Tempore, sequi?{" "}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* Third Card */}
+                            <div className="bg-slate-100 py-4 px-2">
+                                <div className="flex justify-between">
+                                    <img
+                                        className="mr-2 inline-block h-8 w-9 rounded-full"
+                                        src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                        alt=""
+                                    />
+                                    <div className="w-100 rounded bg-white p-2">
+                                        <p className="text-black">
+                                            {" "}
+                                            <span className="text-sm  font-bold"> Ivan </span>{" "}
+                                            <span className="text-xs">
+                                                {" "}
+                                                on Nov 5 2020 at 2.50 PM{" "}
+                                            </span>
+                                        </p>
+                                        <p className="text-justify text-xs text-black">
+                                            Lorem ipsum dolor sit, amet consectetur adipisicing
+                                            elit. Tempore, sequi?
+                                        </p>
+                                        <div className="flex justify-end text-xs text-black">
+                                            <input type="checkbox" />{" "}
+                                            <span className="ml-2"> Assigned </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p className="my-4 text-xs text-black"> Brian Chanaged Status </p>
                             </div>
                         </div>
                     </div>
