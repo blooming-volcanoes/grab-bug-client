@@ -7,7 +7,7 @@ import React from "react";
 function Banner() {
     return (
         <section>
-            <div className="mx-4 flex flex-col items-center justify-between py-10 md:max-w-3xl  lg:mx-auto lg:max-w-6xl lg:flex-row">
+            <div className="mx-4 my-12 flex flex-col items-center justify-between py-10 md:max-w-3xl  lg:mx-auto lg:max-w-6xl lg:flex-row">
                 {/* left side */}
                 <div className="order-2 mx-auto w-[90%] space-y-8 text-center lg:order-1 lg:w-[40%] lg:text-left">
                     <h1 className="text-4xl font-bold leading-[50px] text-gray-800">

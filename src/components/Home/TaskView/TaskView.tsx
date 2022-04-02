@@ -5,7 +5,7 @@ import { FaEllipsisH, FaEye, FaPaperclip, FaRegEye, FaUser, FaUserAlt } from "re
 
 function TaskView() {
     return (
-        <section className="mx-auto rounded bg-sky-50 p-8 sm:w-5/6">
+        <section className="mx-6 my-12 rounded-[55px] bg-sky-50 p-8 md:mx-auto lg:mx-auto lg:max-w-7xl">
             <div className="flex  flex-col items-center justify-center text-center">
                 <p className="my-2 text-base font-bold uppercase text-blue-300">
                     Built for everyone
@@ -304,9 +304,9 @@ function TaskView() {
                 </div>
             </div>
             {/* Button */}
-            <div className="flex justify-start">
+            <div className="my-4 flex justify-start">
                 <button
-                    className="rounded bg-sky-500/100 py-1 px-3 text-xs text-white sm:py-3 sm:px-5 sm:text-base"
+                    className="rounded bg-sky-500/100 py-4 px-6 text-sm text-white shadow-lg sm:py-3 sm:px-5 sm:text-base"
                     type="button"
                 >
                     <Link href="/">

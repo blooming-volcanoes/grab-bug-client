@@ -27,7 +27,7 @@ function Overview() {
         }
     }
     return (
-        <div className="mx-6 my-5 rounded-3xl bg-violet-100  md:max-w-3xl lg:mx-auto lg:max-w-7xl">
+        <div className="mx-6 my-12 rounded-3xl bg-violet-100  md:max-w-3xl lg:mx-auto lg:max-w-7xl">
             <div className="flex flex-wrap justify-center space-y-4 py-9 md:space-y-0 lg:space-y-0">
                 <button
                     onClick={() => showItems("docs")}

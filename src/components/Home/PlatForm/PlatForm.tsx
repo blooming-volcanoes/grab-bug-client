@@ -2,9 +2,9 @@ import Image from "next/image";
 import React from "react";
 import sectionImage from "../../../assets/images/automations.png";
 
-function SectionFour() {
+function PlatForm() {
     return (
-        <div style={{ borderRadius: "55px" }} className=" mx-6 min-h-min bg-green-100  pt-6">
+        <div className="mx-6 my-8 min-h-min rounded-[55px] bg-green-100  pt-6">
             <div className="grid gap-10 px-4  py-4 md:mx-auto md:max-w-3xl lg:mx-auto lg:max-w-6xl lg:grid-cols-2">
                 {/* context  */}
                 <div className="max-w-3xl ">
@@ -32,12 +32,15 @@ function SectionFour() {
                 style={{ borderRadius: "0 0 60px 60px" }}
                 className="mx-auto mt-16 w-full bg-green-200  py-4   text-center"
             >
-                <button className="text p-2 hover:bg-slate-200" type="button">
-                    GET STARTED
+                <button
+                    type="button"
+                    className="rounded-lg px-5 py-2 font-bold transition-all ease-in hover:bg-slate-100 hover:shadow-lg"
+                >
+                    Get Started
                 </button>
             </div>
         </div>
     );
 }
 
-export default SectionFour;
+export default PlatForm;
