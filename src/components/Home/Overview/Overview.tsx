@@ -27,8 +27,8 @@ function Overview() {
         }
     }
     return (
-        <div className="mx-6 my-12 rounded-3xl bg-violet-100  md:max-w-3xl lg:mx-auto lg:max-w-7xl">
-            <div className="flex flex-wrap justify-center space-y-4 py-9 md:space-y-0 lg:space-y-0">
+        <div className="mx-6 my-12 rounded-[55px] bg-violet-100  md:max-w-3xl lg:mx-auto lg:max-w-7xl">
+            <div className="flex flex-wrap justify-evenly py-5 md:justify-center">
                 <button
                     onClick={() => showItems("docs")}
                     type="button"
@@ -62,7 +62,7 @@ function Overview() {
                     <img className="w-full rounded-lg md:w-2/3 lg:w-2/3" src={imageUrl} alt="" />
                 </div>
             </div>
-            <div className="flex w-full justify-center rounded-b-3xl bg-violet-300 py-3">
+            <div className="flex w-full justify-center rounded-b-[55px] bg-violet-300 py-3">
                 <button
                     type="button"
                     className="rounded-lg px-5 py-2 font-bold transition-all ease-in hover:bg-slate-100 hover:shadow-lg"
