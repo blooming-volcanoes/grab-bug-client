@@ -6,7 +6,7 @@ import { Ri24HoursFill } from "react-icons/ri";
 function Support() {
     return (
         <section>
-            <div className="mx-6 flex flex-col items-center justify-between space-y-6 py-10 md:max-w-3xl md:space-y-0 lg:mx-auto lg:max-w-6xl lg:flex-row lg:space-y-0">
+            <div className="mx-6 my-12 flex flex-col items-center justify-between space-y-6 py-10 md:max-w-3xl md:space-y-0 lg:mx-auto lg:max-w-6xl lg:flex-row lg:space-y-0">
                 {/* left side */}
                 <div className="space-y-8">
                     {/* 24/7 logo */}
