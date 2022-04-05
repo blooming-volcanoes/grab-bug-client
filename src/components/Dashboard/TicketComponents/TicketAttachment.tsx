@@ -1,3 +1,10 @@
+/*
+ *** Title : Ticket view Dashboard
+ *** Date : 4/5/2022
+ *** Des : User can view there tickets details here
+ *** Author : Raiyan
+ */
+
 import React, { useRef } from "react";
 import { RiUploadCloud2Fill } from "react-icons/ri";
 
