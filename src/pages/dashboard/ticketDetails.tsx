@@ -5,10 +5,10 @@
  *** Author : Raiyan
  */
 
-import TicketAttachment from "components/Dashboard/TicketComponents/TicketAttachment";
-import TicketComments from "components/Dashboard/TicketComponents/TicketComments";
-import TicketHistory from "components/Dashboard/TicketComponents/TicketHistory";
-import TicketSingleDetails from "components/Dashboard/TicketComponents/TicketSingleDetails";
+import TicketAttachment from "components/Dashboard/TicketComponents/TicketDetails/TicketAttachment";
+import TicketComments from "components/Dashboard/TicketComponents/TicketDetails/TicketComments";
+import TicketHistory from "components/Dashboard/TicketComponents/TicketDetails/TicketHistory";
+import TicketSingleDetails from "components/Dashboard/TicketComponents/TicketDetails/TicketSingleDetails";
 import React from "react";
 
 function TaskDetails() {
