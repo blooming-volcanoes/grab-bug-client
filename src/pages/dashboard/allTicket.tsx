@@ -9,7 +9,7 @@
 import TicketDetailsList from "components/Dashboard/TicketComponents/TicketList/TicketDetailsList";
 import React from "react";
 
-function ticketList() {
+function allTicket() {
     return (
         <div>
             <TicketDetailsList />
@@ -17,4 +17,4 @@ function ticketList() {
     );
 }
 
-export default ticketList;
+export default allTicket;
