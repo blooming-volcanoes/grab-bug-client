@@ -156,6 +156,18 @@ function TicketEdit() {
                             ))}
                     </div>
                 </ul>
+                {/* update button */}
+                <div className="flex items-center justify-between pt-8">
+                    <button
+                        className="text-sm font-semibold text-indigo-500 underline"
+                        type="button"
+                    >
+                        Back to list
+                    </button>
+                    <button className="primary-btn py-3 px-5 uppercase" type="button">
+                        update ticket
+                    </button>
+                </div>
             </div>
         </div>
     );
