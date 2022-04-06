@@ -4,7 +4,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import Link from "next/link";
 import React, { useMemo } from "react";
-import { useGlobalFilter, useSortBy, useTable } from "react-table";
+import { useGlobalFilter, usePagination, useSortBy, useTable } from "react-table";
 import COLUMNS from "./column";
 import GlobalFilter from "./GlobalFilter";
 import MOCK_DATA from "./MOCK_DATA.json";
@@ -18,23 +18,38 @@ function ProjectDescriptionTable() {
         getTableBodyProps,
         headerGroups,
         footerGroups,
-        rows,
+
+        page,
+        nextPage,
+        previousPage,
         prepareRow,
         state, // From useGlobalFilter
-        setGlobalFilter, // From useGlobalFilter
+        setGlobalFilter, // From useGlobalFilter,
+        canNextPage,
+        canPreviousPage,
+        pageOptions,
+        setPageSize,
     } = useTable(
         {
             columns,
             data,
         },
         useGlobalFilter,
-        useSortBy
+        useSortBy,
+        usePagination
     );
-    const { globalFilter } = state;
+    const { globalFilter, pageIndex, pageSizes } = state;
+    console.log(pageIndex + 1, pageOptions.length);
     return (
         <>
             <div className="mx-auto flex w-5/6 justify-between">
-                <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
+                <select value={pageSizes} onChange={(e) => setPageSize(Number(e.target.value))}>
+                    {[5, 10, 25, 50].map((pageSize) => (
+                        <option key={pageSize} value={pageSize}>
+                            Show {pageSize}
+                        </option>
+                    ))}
+                </select>
                 <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
             </div>
 
@@ -44,7 +59,7 @@ function ProjectDescriptionTable() {
                         <tr {...headerGroup.getHeaderGroupProps()}>
                             {headerGroup.headers.map((column) => (
                                 <th
-                                    className="border-b-2 border-l border-solid border-black text-left"
+                                    className="border-b-2  border-solid border-black text-left"
                                     {...column.getHeaderProps(
                                         //
                                         column.getSortByToggleProps({
@@ -69,7 +84,7 @@ function ProjectDescriptionTable() {
                     ))}
                 </thead>
                 <tbody {...getTableBodyProps()}>
-                    {rows.map((row) => {
+                    {page.map((row) => {
                         prepareRow(row);
                         return (
                             <tr {...row.getRowProps()}>
@@ -113,6 +128,33 @@ function ProjectDescriptionTable() {
                     ))}
                 </tfoot>
             </table>
+            <div className="flex justify-end">
+                <span className="text-black">
+                    Showing {pageIndex + 1} of {pageOptions.length} entries
+                </span>
+                <button
+                    className={`${
+                        !canPreviousPage ? "bg-amber-200/100" : ""
+                    }  mr-2  rounded   bg-amber-400/100 py-1 px-1 text-xs text-white lg:px-3`}
+                    type="button"
+                    onClick={() => previousPage()}
+                    disabled={!canPreviousPage}
+                >
+                    {" "}
+                    Previous{" "}
+                </button>
+                <button
+                    className={`${
+                        !canNextPage ? "bg-amber-200/100" : ""
+                    }  mr-2  rounded   bg-amber-400/100 py-1 px-1 text-xs text-white lg:px-3`}
+                    type="button"
+                    onClick={() => nextPage()}
+                    disabled={!canNextPage}
+                >
+                    {" "}
+                    Next
+                </button>
+            </div>
         </>
     );
 }
