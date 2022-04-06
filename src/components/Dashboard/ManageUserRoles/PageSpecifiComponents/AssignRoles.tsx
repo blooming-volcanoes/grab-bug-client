@@ -10,7 +10,7 @@ function AssignRoles({ roles }) {
     };
     return (
         <div className="mb-5">
-            <Text>Select the role to assign</Text>
+            <Text className="">Select the role to assign</Text>
             <select value={selected} onChange={handleChange}>
                 <SelectOption roles={roles} />
             </select>
