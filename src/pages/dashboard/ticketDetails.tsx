@@ -1,3 +1,10 @@
+/*
+ *** Title : Ticket view Dashboard
+ *** Date : 4/5/2022
+ *** Des : User can view there tickets details here
+ *** Author : Raiyan
+ */
+
 import TicketAttachment from "components/Dashboard/TicketComponents/TicketAttachment";
 import TicketComments from "components/Dashboard/TicketComponents/TicketComments";
 import TicketHistory from "components/Dashboard/TicketComponents/TicketHistory";
