@@ -8,9 +8,13 @@ function GlobalFilter({ filter, setFilter }) {
         setFilter(e.target.value);
     };
     return (
-        <div>
+        <div className="flex flex-col md:flex-row">
             Search :
-            <input className="border" value={filter || ""} onChange={(e) => handleChange(e)} />
+            <input
+                className="rounded border"
+                value={filter || ""}
+                onChange={(e) => handleChange(e)}
+            />
         </div>
     );
 }

@@ -18,7 +18,6 @@ function ProjectDescriptionTable() {
         getTableBodyProps,
         headerGroups,
         footerGroups,
-
         page,
         nextPage,
         previousPage,
@@ -39,11 +38,15 @@ function ProjectDescriptionTable() {
         usePagination
     );
     const { globalFilter, pageIndex, pageSizes } = state;
-    console.log(pageIndex + 1, pageOptions.length);
+
     return (
         <>
-            <div className="mx-auto flex w-5/6 justify-between">
-                <select value={pageSizes} onChange={(e) => setPageSize(Number(e.target.value))}>
+            <div className="flex w-full flex-col pt-28 md:flex-row md:justify-between md:px-6">
+                <select
+                    className="border-0 text-sm"
+                    value={pageSizes}
+                    onChange={(e) => setPageSize(Number(e.target.value))}
+                >
                     {[5, 10, 25, 50].map((pageSize) => (
                         <option key={pageSize} value={pageSize}>
                             Show {pageSize}
@@ -53,7 +56,7 @@ function ProjectDescriptionTable() {
                 <GlobalFilter filter={globalFilter} setFilter={setGlobalFilter} />
             </div>
 
-            <table className="mx-auto" {...getTableProps()}>
+            <table className="md:mx-auto" {...getTableProps()}>
                 <thead>
                     {headerGroups.map((headerGroup) => (
                         <tr {...headerGroup.getHeaderGroupProps()}>

@@ -9,16 +9,16 @@ const columns = [
     {
         Header: "Project Name",
         accessor: "project_name",
-        maxWidth: 600,
-        minWidth: 300,
-        width: 300,
+        maxWidth: 400,
+        minWidth: 200,
+        width: 200,
     },
     {
         Header: "Project Description",
         accessor: "project_description",
-        maxWidth: 800,
-        minWidth: 600,
-        width: 700,
+        maxWidth: 400,
+        minWidth: 400,
+        width: 400,
     },
     {
         filterable: false,
