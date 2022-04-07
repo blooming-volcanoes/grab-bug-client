@@ -6,8 +6,8 @@ import React from "react";
 
 function projectDetails() {
     return (
-        <div>
-            <div className="container mx-auto mt-9 rounded-sm bg-gray-200 px-4 pb-5">
+        <div className="h-screen bg-gray-100 py-10">
+            <div className="container mx-auto rounded-lg bg-white  px-4 pb-5 shadow">
                 <div className="border-b-2 border-gray-400 pb-3">
                     {/* Project heading  */}
                     <div className="relative top-[-20px] rounded-lg bg-indigo-600 py-7 px-4 shadow-2xl">
