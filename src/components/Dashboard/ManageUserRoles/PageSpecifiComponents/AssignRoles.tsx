@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import SelectOption from "./SelectOption";
 import Text from "./Text";
 
-function AssignRoles({ roles }) {
+function AssignRoles({ roles }: any) {
     const [selected, setSelected] = useState("");
-    const handleChange = (e) => {
+    const handleChange = (e: any) => {
         setSelected(e.target.value);
     };
     return (

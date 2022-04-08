@@ -11,7 +11,7 @@ import TableHeading from "./PageSpecifiComponents/TableHeading";
 import TableTopText from "./PageSpecifiComponents/TableTopText";
 import UserList from "./PageSpecifiComponents/UserList";
 
-const ManageUserRoles = ({ users, roles }) => (
+const ManageUserRoles = ({ users, roles }: any) => (
     <div className="flex flex-col justify-between space-x-20 lg:flex-row">
         <div className="w-1/3">
             <HeadingText />

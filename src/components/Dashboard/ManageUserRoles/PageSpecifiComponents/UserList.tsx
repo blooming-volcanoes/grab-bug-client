@@ -2,10 +2,10 @@
 import React from "react";
 import UserSingle from "./UserSingle";
 
-function UserList({ users }) {
+function UserList({ users }: any) {
     return (
         <div className="space-y-2">
-            {users.map((user) => (
+            {users.map((user: any) => (
                 <UserSingle key={user.id} user={user} />
             ))}
         </div>

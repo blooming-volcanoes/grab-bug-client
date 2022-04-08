@@ -1,7 +1,8 @@
 import ManageUserRoles from "components/Dashboard/ManageUserRoles/ManageUserRoles";
+import { GetServerSideProps } from "next";
 import React from "react";
 
-const manageUserRoles = ({ users, roles }) => (
+const manageUserRoles = ({ users, roles }: any) => (
     <div className="container mx-auto mt-10 flex h-screen items-center justify-center">
         <ManageUserRoles users={users} roles={roles} />
     </div>
@@ -9,7 +10,7 @@ const manageUserRoles = ({ users, roles }) => (
 
 export default manageUserRoles;
 
-export function getServerSideProps() {
+export const getServerSideProps: GetServerSideProps = async () => {
     const users = [
         { id: 1, name: "A.S.M. Habibullah Sadique", email: "abc@firemail.com" },
         { id: 2, name: "Awal Hossain", email: "abc@firemail.com" },
@@ -25,4 +26,4 @@ export function getServerSideProps() {
             roles,
         },
     };
-}
+};
