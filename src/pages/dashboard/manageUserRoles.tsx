@@ -1,7 +1,7 @@
 import ManageUserRoles from "components/Dashboard/ManageUserRoles/ManageUserRoles";
 import React from "react";
 
-const manageUserRoles = ({ users, roles }) => (
+const manageUserRoles = ({ users, roles }: any) => (
     <div className="container mx-auto mt-10 flex h-screen items-center justify-center">
         <ManageUserRoles users={users} roles={roles} />
     </div>

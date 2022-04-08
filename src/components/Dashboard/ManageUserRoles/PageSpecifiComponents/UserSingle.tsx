@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 import Text from "./Text";
 
-function UserSingle({ user }) {
+function UserSingle({ user }: any) {
     return (
         <>
             <div className="flex items-center justify-between">
