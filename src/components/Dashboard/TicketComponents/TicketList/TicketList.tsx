@@ -1,15 +1,7 @@
 import Link from "next/link";
-import React, { useState } from "react";
-import PaginationBox from "./PaginationBox";
+import React from "react";
 
 function TicketList() {
-    const [currentPage, setCurrentPage] = useState(1);
-    // const [info, setInfo] = useState([])
-
-    const setCurrentPageNo = (e: any) => {
-        setCurrentPage(e);
-    };
-
     return (
         <div>
             <div className="flex flex-col">
@@ -123,9 +115,6 @@ function TicketList() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div>
-                <PaginationBox currentPage={currentPage} setCurrentPageNo={setCurrentPageNo} />
             </div>
         </div>
     );
