@@ -2,10 +2,10 @@
 import React from "react";
 import Text from "./Text";
 
-function Users({ users }) {
+function Users({ users }: any) {
     return (
         <div>
-            {users.map((user) => (
+            {users.map((user: any) => (
                 <Text key={user.id} className="cursor-pointer">
                     {user.name}
                 </Text>

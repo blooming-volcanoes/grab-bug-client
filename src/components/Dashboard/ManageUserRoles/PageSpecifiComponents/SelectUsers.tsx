@@ -3,7 +3,7 @@
 import Text from "./Text";
 import Users from "./Users";
 
-function SelectUsers({ users }) {
+function SelectUsers({ users }: any) {
     return (
         <div>
             <Text className="mb-2 text-xl">Select 1 or more users</Text>
