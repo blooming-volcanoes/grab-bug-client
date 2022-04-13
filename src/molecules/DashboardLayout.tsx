@@ -1,6 +1,6 @@
 import React from "react";
-import SideBar from "./Dashboard/DashboardComponents/SideBar";
-import TopBar from "./Dashboard/DashboardComponents/TopBar";
+import SideBar from "../components/Dashboard/SideBar";
+import TopBar from "../components/Dashboard/TopBar";
 
 function DashboardLayout({ children }: { children: React.ReactNode }) {
     return (

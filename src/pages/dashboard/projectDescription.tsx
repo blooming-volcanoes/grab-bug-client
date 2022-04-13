@@ -1,4 +1,4 @@
-import ProjectDescriptionTable from "components/Dashboard/ProjectDescription/ProjectDescriptionTable";
+import ProjectDescriptionTable from "DashboardPages/ProjectDescription/ProjectDescriptionTable";
 import React from "react";
 
 // eslint-disable-next-line arrow-body-style
