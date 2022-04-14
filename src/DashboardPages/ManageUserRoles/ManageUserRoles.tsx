@@ -2,14 +2,14 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/function-component-definition */
 import React from "react";
-import AssignRoles from "./PageSpecifiComponents/AssignRoles";
-import HeadingText from "./PageSpecifiComponents/HeadingText";
-import NumberOfEntries from "./PageSpecifiComponents/NumberOfEntries";
-import SearchUser from "./PageSpecifiComponents/SearchUser";
-import SelectUsers from "./PageSpecifiComponents/SelectUsers";
-import TableHeading from "./PageSpecifiComponents/TableHeading";
-import TableTopText from "./PageSpecifiComponents/TableTopText";
-import UserList from "./PageSpecifiComponents/UserList";
+import AssignRoles from "./ManageUserRolesComponents/AssignRoles";
+import HeadingText from "./ManageUserRolesComponents/HeadingText";
+import NumberOfEntries from "./ManageUserRolesComponents/NumberOfEntries";
+import SearchUser from "./ManageUserRolesComponents/SearchUser";
+import SelectUsers from "./ManageUserRolesComponents/SelectUsers";
+import TableHeading from "./ManageUserRolesComponents/TableHeading";
+import TableTopText from "./ManageUserRolesComponents/TableTopText";
+import UserList from "./ManageUserRolesComponents/UserList";
 
 const ManageUserRoles = ({ users, roles }: any) => (
     <div className="flex flex-col justify-between space-x-20 lg:flex-row">

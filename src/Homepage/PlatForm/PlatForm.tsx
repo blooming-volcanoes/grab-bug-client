@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import sectionImage from "../../../assets/images/automations.png";
+import sectionImage from "../../assets/images/automations.png";
 
 function PlatForm() {
     return (
