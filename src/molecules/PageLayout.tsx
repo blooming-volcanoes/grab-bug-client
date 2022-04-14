@@ -1,8 +1,8 @@
 import Head from "next/head";
 import React from "react";
 import { IpageInterface } from "types/PageLayout";
-import Footer from "./common/Footer";
-import Header from "./common/Header";
+import Footer from "../components/common/Footer";
+import Header from "../components/common/Header";
 
 function Layout({ children, title }: IpageInterface) {
     return (

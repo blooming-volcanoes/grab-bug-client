@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
+import SideBar from "components/Dashboard/SideBar";
 import React, { useState } from "react";
-import SideBar from "./Dashboard/DashboardComponents/SideBar";
 
 function DashboardLayout({ children }: { children: React.ReactNode }) {
     const [toggle, setToggle] = useState(false);

@@ -1,4 +1,4 @@
-import ManageUserRoles from "components/Dashboard/ManageUserRoles/ManageUserRoles";
+import ManageUserRoles from "DashboardPages/ManageUserRoles/ManageUserRoles";
 import { GetServerSideProps } from "next";
 import React from "react";
 
