@@ -10,7 +10,7 @@ import Search from "./ProjectDescriptionComponents/Search";
 import TableBody from "./ProjectDescriptionComponents/TableBody";
 import TableHeader from "./ProjectDescriptionComponents/TableHeader";
 
-function ProjectDescriptionTable({ projects }) {
+function ProjectDescriptionTable({ projects }: any) {
     return (
         <div className="bg-gray-100 py-6">
             <div className="container mx-auto rounded-lg bg-white  px-4 pb-5 shadow">

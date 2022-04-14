@@ -2,7 +2,7 @@
 import React from "react";
 import styles from "../../../styles/projectDescriptionTable.module.css";
 
-function TableRowSingle({ project }) {
+function TableRowSingle({ project }: any) {
     return (
         <tr className="border-b border-gray-400">
             <td className={styles.td}>{project.name}</td>

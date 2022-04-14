@@ -2,10 +2,10 @@
 import React from "react";
 import TableRowSingle from "./TableRowSingle";
 
-function TableBody({ projects }) {
+function TableBody({ projects }: any) {
     return (
         <tbody>
-            {projects.map((project) => (
+            {projects.map((project: any) => (
                 <TableRowSingle project={project} key={project.id} />
             ))}
         </tbody>

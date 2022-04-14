@@ -2,7 +2,7 @@ import ProjectDescriptionTable from "DashboardPages/ProjectDescription/ProjectDe
 import React from "react";
 
 // eslint-disable-next-line arrow-body-style
-const projectDescription = ({ projects }) => {
+const projectDescription = ({ projects }: any) => {
     return (
         <div className="relative h-24 w-full sm:mx-auto sm:w-full md:w-5/6">
             <div className="z-50 w-full overflow-scroll rounded border bg-slate-100">
