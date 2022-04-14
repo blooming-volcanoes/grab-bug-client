@@ -9,7 +9,7 @@ import React from "react";
 
 function TicketHistory() {
     return (
-        <div className="rounded-lg   bg-white p-4 shadow">
+        <div className="rounded-lg border  bg-white p-4 shadow">
             <div className="space-y-2  rounded-lg bg-indigo-500 p-4 capitalize text-white shadow-2xl">
                 {/* ticket details header */}
                 <h4 className="text-lg">Ticket History</h4>
