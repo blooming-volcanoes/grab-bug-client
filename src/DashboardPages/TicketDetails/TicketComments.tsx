@@ -20,7 +20,7 @@ function TicketComments() {
             </div>
 
             {/* ticket comments */}
-            <div className="rounded-lg bg-white p-4 shadow lg:border-r">
+            <div className="rounded-lg border bg-white p-4 shadow lg:border-r">
                 <div className="space-y-2  rounded-lg bg-indigo-500 p-4 capitalize text-white shadow-2xl">
                     {/* ticket header */}
                     <h1 className="text-lg">Ticket comments</h1>
