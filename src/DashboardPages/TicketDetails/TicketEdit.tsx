@@ -1,7 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import Input from "components/molecules/Input/Input";
-import SelectInputs from "components/molecules/SelectInputs/SelectInputs";
+import Input from "molecules/Input/Input";
+import SelectInputs from "molecules/SelectInputs/SelectInputs";
 import React from "react";
 
 interface ITextnputs {

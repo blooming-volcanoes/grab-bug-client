@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
-import Home from "components/Home/Home/Home";
-import PageLayout from "components/PageLayout";
+import Home from "Homepage/Home/Home";
+import PageLayout from "molecules/PageLayout";
 import React from "react";
 
 function index() {

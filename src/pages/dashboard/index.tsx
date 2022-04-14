@@ -1,4 +1,4 @@
-import DashboardLayout from "components/DashboardLayout";
+import DashboardLayout from "molecules/DashboardLayout";
 import React from "react";
 
 function Dashboard() {

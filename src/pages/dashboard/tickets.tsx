@@ -1,4 +1,4 @@
-import TicketDetailsList from "components/Dashboard/TicketComponents/TicketList/TicketDetailsList";
+import TicketDetailsList from "DashboardPages/Tickets/TicketDetailsList";
 import React from "react";
 
 function tickets() {
