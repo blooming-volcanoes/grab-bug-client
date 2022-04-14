@@ -3,7 +3,7 @@ import { GetServerSideProps } from "next";
 import React from "react";
 
 const manageUserRoles = ({ users, roles }: any) => (
-    <div className="container mx-auto mt-10 flex h-screen items-center justify-center">
+    <div>
         <ManageUserRoles users={users} roles={roles} />
     </div>
 );

@@ -1,8 +1,12 @@
 import React from "react";
-import Text from "./Text";
 
 function HeadingText() {
-    return <Text className="mb-10 text-4xl font-normal">Manage User Roles</Text>;
+    return (
+        <div className="rounded-[20px] bg-sky-700 p-4">
+            <h1 className="text-2xl font-bold uppercase text-[#FAFFAF]">Manage user roles</h1>
+            <p className="text-[#95D1CC]">Assign multiple user role in one go</p>
+        </div>
+    );
 }
 
 export default HeadingText;
