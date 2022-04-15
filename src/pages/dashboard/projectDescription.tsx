@@ -1,5 +1,5 @@
 import ProjectDescriptionTable from "DashboardPages/ProjectDescription/ProjectDescriptionTable";
-import DashboardLayout from "molecules/DashboardLayout";
+import DashboardLayout from "Layouts/DashboardLayout";
 import React from "react";
 
 // eslint-disable-next-line arrow-body-style

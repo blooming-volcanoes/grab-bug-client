@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable consistent-return */
 /* eslint-disable no-console */
 /* eslint-disable react/jsx-props-no-spreading */
@@ -6,6 +7,7 @@
 import logo from "assets/images/logo.svg";
 import cogoToast from "cogo-toast";
 import useAuth from "hooks/useAuth";
+import UnAuthenticatedLayout from "Layouts/UnAuthenticatedLayout";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -24,11 +26,11 @@ function Login() {
     };
 
     return (
-        <section>
-            <div className="flex h-screen items-center justify-center bg-gray-100">
+        <UnAuthenticatedLayout title="Welcome - Grab bug">
+            <div className="flex items-center justify-center bg-gray-100 py-10">
                 <form
                     onSubmit={handleSubmit(handelLogin)}
-                    className="flex flex-col space-y-6 rounded-lg border bg-white px-7 py-10 shadow-lg lg:w-2/5"
+                    className="mx-6 flex w-full flex-col space-y-6 rounded-lg border bg-white px-7 py-10 shadow-lg lg:w-2/5"
                 >
                     {/* logo */}
                     <div className="mx-auto w-44">
@@ -58,14 +60,14 @@ function Login() {
 
                     {/* already registered */}
                     <p className="text-center text-sm font-semibold">
-                        Already have an account ?{" "}
-                        <Link href="/login">
-                            <a className="text-indigo-500">Login</a>
+                        Don't have an account ?{" "}
+                        <Link href="/register">
+                            <a className="text-indigo-500">Register</a>
                         </Link>
                     </p>
                 </form>
             </div>
-        </section>
+        </UnAuthenticatedLayout>
     );
 }
 

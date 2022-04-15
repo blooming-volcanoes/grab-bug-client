@@ -1,5 +1,5 @@
 import ManageUserRoles from "DashboardPages/ManageUserRoles/ManageUserRoles";
-import DashboardLayout from "molecules/DashboardLayout";
+import DashboardLayout from "Layouts/DashboardLayout";
 import { GetServerSideProps } from "next";
 import React from "react";
 

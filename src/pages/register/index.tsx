@@ -3,6 +3,7 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import logo from "assets/images/logo.svg";
+import UnAuthenticatedLayout from "Layouts/UnAuthenticatedLayout";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -17,11 +18,11 @@ function Register() {
     };
 
     return (
-        <section>
-            <div className="flex h-screen items-center justify-center bg-gray-100">
+        <UnAuthenticatedLayout title="Let's sign up - Grab bug">
+            <div className="flex items-center justify-center bg-gray-100 py-10">
                 <form
                     onSubmit={handleSubmit(handelRegister)}
-                    className="flex flex-col space-y-6 rounded-lg border bg-white px-7 py-10 shadow-lg lg:w-2/5"
+                    className="mx-6 flex w-full flex-col space-y-6 rounded-lg border bg-white px-7 py-10 shadow-lg lg:w-2/5"
                 >
                     {/* logo */}
                     <div className="mx-auto w-44">
@@ -65,7 +66,7 @@ function Register() {
                     </p>
                 </form>
             </div>
-        </section>
+        </UnAuthenticatedLayout>
     );
 }
 

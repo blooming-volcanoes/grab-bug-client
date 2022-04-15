@@ -10,6 +10,7 @@
 import logo from "assets/images/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 // our menus
@@ -39,6 +40,7 @@ const menus: IMenu[] = [
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
+    const router = useRouter();
     console.log(menuOpen);
     return (
         <>
@@ -65,8 +67,12 @@ function Header() {
 
                         {/* login and sign up button */}
                         <div className="hidden space-x-4 lg:inline-flex">
-                            <button className=" primary-btn">Login</button>
-                            <button className="btn-white">Register</button>
+                            <Link href="/login">
+                                <button className=" primary-btn">Login</button>
+                            </Link>
+                            <Link href="/register">
+                                <button className="btn-white">Register</button>
+                            </Link>
                         </div>
 
                         {/* hamburger menu for mobile */}
@@ -113,8 +119,12 @@ function Header() {
                                 </Link>
                             ))}
                             <li className="mx-auto flex w-2/6 flex-col space-y-3">
-                                <button className="primary-btn w-full">Login</button>
-                                <button className="btn-white w-full">Register</button>
+                                <Link href="/login">
+                                    <button className=" primary-btn">Login</button>
+                                </Link>
+                                <Link href="/register">
+                                    <button className="btn-white">Register</button>
+                                </Link>
                             </li>
                         </ul>
                     </nav>
