@@ -1,12 +1,13 @@
 import ProjectDescriptionTable from "DashboardPages/ProjectDescription/ProjectDescriptionTable";
+import DashboardLayout from "molecules/DashboardLayout";
 import React from "react";
 
 // eslint-disable-next-line arrow-body-style
 const projectDescription = ({ projects }: any) => {
     return (
-        <div>
+        <DashboardLayout>
             <ProjectDescriptionTable projects={projects} />
-        </div>
+        </DashboardLayout>
     );
 };
 

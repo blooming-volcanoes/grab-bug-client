@@ -12,7 +12,7 @@ import TableTopText from "./ManageUserRolesComponents/TableTopText";
 import UserList from "./ManageUserRolesComponents/UserList";
 
 const ManageUserRoles = ({ users, roles }: any) => (
-    <div className="my-3">
+    <div className="my-3 mx-2">
         <div className="container mx-auto rounded-[20px] border border-sky-700 md:p-4">
             <div className="flex flex-col justify-between space-x-3 md:flex-row">
                 <div className="md:w-[40%]">

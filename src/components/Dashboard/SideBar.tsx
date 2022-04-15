@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-array-index-key */
-import logo from "assets/images/logo.svg";
+import logo from "assets/images/grabbug-logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -44,7 +44,7 @@ function SideBar() {
     return (
         <div className="h-screen w-full border-r border-r-gray-200 bg-[#f6f7fb] shadow-xl">
             <div className="flex justify-center py-4">
-                <div className="w-2/3">
+                <div className="w-full p-3">
                     <Image src={logo} alt="logo" />
                 </div>
                 {/* <p className="font-semibold uppercase text-[#b3b8d4]">Issue Tracker</p> */}

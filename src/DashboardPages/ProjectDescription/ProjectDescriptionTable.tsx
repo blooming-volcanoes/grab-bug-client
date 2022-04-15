@@ -12,7 +12,7 @@ import TableHeader from "./ProjectDescriptionComponents/TableHeader";
 
 function ProjectDescriptionTable({ projects }: any) {
     return (
-        <div className="my-3">
+        <div className="my-3 mx-2">
             <div className="container mx-auto rounded-[20px] border border-sky-700 md:p-4">
                 <div className="">
                     <ProjectPageHeading />
