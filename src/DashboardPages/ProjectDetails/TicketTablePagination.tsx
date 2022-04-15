@@ -1,11 +1,11 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 
-function ProjectPagination() {
+function TicketTablePagination() {
     return (
         <div className="mt-3 flex flex-col px-4 md:flex-row md:justify-between md:align-middle">
             <div>
-                <p>Show 1 to 5 entries of 5 entries</p>
+                <p>Show 1 to 3 entries of 3 entries</p>
             </div>
             <div className="mb-3">
                 <a
@@ -31,4 +31,4 @@ function ProjectPagination() {
     );
 }
 
-export default ProjectPagination;
+export default TicketTablePagination;
