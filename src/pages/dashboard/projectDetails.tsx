@@ -1,5 +1,5 @@
 import ProjectDetails from "DashboardPages/ProjectDetails/ProjectDetails";
-import DashboardLayout from "molecules/DashboardLayout";
+import DashboardLayout from "Layouts/DashboardLayout";
 import React from "react";
 
 const projectDetails = ({ projects, users, tickets }: any) => (
