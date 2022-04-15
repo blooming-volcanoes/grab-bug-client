@@ -1,6 +1,6 @@
 import React from "react";
 
-function Entries() {
+function TicketEntries() {
     return (
         <div className="">
             <span className="uppercase"> Show </span>
@@ -20,4 +20,4 @@ function Entries() {
     );
 }
 
-export default Entries;
+export default TicketEntries;
