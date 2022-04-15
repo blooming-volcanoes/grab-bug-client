@@ -12,31 +12,37 @@ import TableTopText from "./ManageUserRolesComponents/TableTopText";
 import UserList from "./ManageUserRolesComponents/UserList";
 
 const ManageUserRoles = ({ users, roles }: any) => (
-    <div className="flex flex-col justify-between space-x-20 lg:flex-row">
-        <div className="w-1/3">
-            <HeadingText />
-            <div>
-                <SelectUsers users={users} />
-                <AssignRoles roles={roles} />
-                <button className="w-full rounded bg-indigo-500 py-1 text-white">Submit</button>
-            </div>
-        </div>
-        <div className="w-2/3">
-            <TableTopText />
-            <div>
-                {/* number of entries and search */}
-                <div className="mb-3 flex justify-between">
-                    <NumberOfEntries users={users} />
-                    <SearchUser />
+    <div className="my-3 mx-2">
+        <div className="container mx-auto rounded-[20px] border border-sky-700 md:p-4">
+            <div className="flex flex-col justify-between space-x-3 md:flex-row">
+                <div className="md:w-[40%]">
+                    <HeadingText />
+                    <div className="px-4">
+                        <SelectUsers users={users} />
+                        <AssignRoles roles={roles} />
+                        <button className="w-[100px] rounded bg-sky-700 py-1 text-white hover:text-blue-300">
+                            Submit
+                        </button>
+                    </div>
                 </div>
-                <div>
-                    {/* Users table */}
-                    <TableHeading />
-                    {/* users lists */}
-                    <UserList users={users} />
-                    <hr />
+                <div className="md:w-[60%]">
+                    <TableTopText />
+                    <div>
+                        {/* number of entries and search */}
+                        <div className="flex flex-col justify-between px-4 py-2 md:flex-row">
+                            <NumberOfEntries users={users} />
+                            <SearchUser />
+                        </div>
+                        <div className="w-full overflow-x-scroll">
+                            <table className="mt-2 w-[900px] border border-sky-900">
+                                {/* Users table */}
+                                <TableHeading />
+                                {/* users lists */}
+                                <UserList users={users} roles={roles} />
+                            </table>
+                        </div>
+                    </div>
                 </div>
-                <div />
             </div>
         </div>
     </div>

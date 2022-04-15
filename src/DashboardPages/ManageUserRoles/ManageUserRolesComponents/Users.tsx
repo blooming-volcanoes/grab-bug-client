@@ -6,7 +6,7 @@ function Users({ users }: any) {
     return (
         <div>
             {users.map((user: any) => (
-                <Text key={user.id} className="cursor-pointer">
+                <Text key={user.id} className="cursor-pointer hover:text-sky-700">
                     {user.name}
                 </Text>
             ))}
