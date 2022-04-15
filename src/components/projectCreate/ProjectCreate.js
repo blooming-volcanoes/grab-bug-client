@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 function ProjectCreate() {
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = (data) => {
-        fetch("http://localhost:5000/api/v1/project", {
+        fetch("https://blooming-volcanoes.herokuapp.com/project", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
