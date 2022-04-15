@@ -3,11 +3,9 @@ import React from "react";
 
 function ProjectPageHeading() {
     return (
-        <div className="relative top-[-20px] rounded-lg bg-orange-500 py-7 px-4 shadow-2xl">
-            <h1 className="text-2xl font-bold text-white">Your Projects</h1>
-            <a className="text-white" href="#">
-                All the projects in database
-            </a>
+        <div className="rounded-[20px] bg-sky-700 p-4">
+            <h1 className="text-2xl font-bold uppercase text-[#FAFFAF]">Projects Names</h1>
+            <p className="text-[#95D1CC]">Available projects in the database</p>
         </div>
     );
 }

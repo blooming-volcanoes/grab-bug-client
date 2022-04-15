@@ -12,19 +12,21 @@ import TableHeader from "./ProjectDescriptionComponents/TableHeader";
 
 function ProjectDescriptionTable({ projects }: any) {
     return (
-        <div className="bg-gray-100 py-6">
-            <div className="container mx-auto rounded-lg bg-white  px-4 pb-5 shadow">
-                <div className="border-b-2 border-gray-400 pb-3">
+        <div className="my-3 mx-2">
+            <div className="container mx-auto rounded-[20px] border border-sky-700 md:p-4">
+                <div className="">
                     <ProjectPageHeading />
-                    <div className="justify-left  flex flex-col  sm:grid sm:grid-cols-2">
+                    <div className="flex flex-col justify-between px-4 py-2 md:flex-row">
                         <Entries />
                         <Search />
                     </div>
                 </div>
-                <table className="mt-3 w-full">
-                    <TableHeader />
-                    <TableBody projects={projects} />
-                </table>
+                <div className="w-full overflow-auto">
+                    <table className="mt-2 w-[1300px] border border-sky-900 md:w-full">
+                        <TableHeader />
+                        <TableBody projects={projects} />
+                    </table>
+                </div>
                 <ProjectPagination />
             </div>
         </div>
