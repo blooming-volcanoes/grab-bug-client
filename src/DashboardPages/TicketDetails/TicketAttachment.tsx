@@ -36,7 +36,7 @@ function TicketAttachment() {
             </div>
 
             {/* ticket comments */}
-            <div className="mt-4 rounded-lg border-r bg-white p-4 shadow">
+            <div className="mt-4 rounded-lg border border-r bg-white p-4 shadow">
                 <div className="space-y-2  rounded-lg bg-indigo-500 p-4 capitalize text-white shadow-2xl">
                     {/* ticket header */}
                     <h1 className="text-lg">Ticket Attachments</h1>

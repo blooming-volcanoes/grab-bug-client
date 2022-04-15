@@ -1,17 +1,14 @@
 import React from "react";
-import Text from "./Text";
 
 function TableHeading() {
     return (
-        <>
-            {/* table heading */}
-            <div className="flex items-center justify-between text-left">
-                <Text className="w-3/12 font-bold">User Name</Text>
-                <Text className="w-6/12 font-bold">Email</Text>
-                <Text className="w-3/12 font-bold">Role</Text>
-            </div>
-            <hr />
-        </>
+        <thead className="table-th  h-[40px] rounded-[5px] border-b border-black bg-sky-400">
+            <tr className="text-center">
+                <th className="text-[20px]">Userame</th>
+                <th className="text-[20px]">Email</th>
+                <th className="text-[20px]">Role</th>
+            </tr>
+        </thead>
     );
 }
 

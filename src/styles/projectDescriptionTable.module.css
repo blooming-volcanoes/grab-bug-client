@@ -1,8 +1,4 @@
 .td {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding: 20px 5px;
+    border-right: 1px solid green;
 }
-
-/* .td:first-child {
-    padding-left: 20px;
-} */

@@ -1,16 +1,32 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 
 function ProjectPagination() {
     return (
-        <div className="mt-3 justify-between align-middle md:flex">
-            <p>Show 1 to 2 entries of 2 entries</p>
-            <p>
-                Previous{" "}
-                <button type="button" className="cursor-pointer bg-indigo-600 p-3 text-white">
+        <div className="mt-3 flex flex-col px-4 md:flex-row md:justify-between md:align-middle">
+            <div>
+                <p>Show 1 to 5 entries of 5 entries</p>
+            </div>
+            <div className="mb-3">
+                <a
+                    href="#"
+                    className="relative inline-flex items-center rounded-md border border-gray-300 bg-sky-200 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                >
+                    Previous
+                </a>
+                <a
+                    href="#"
+                    className="relative  items-center border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-50 md:inline-flex"
+                >
                     1
-                </button>{" "}
-                Next
-            </p>
+                </a>
+                <a
+                    href="#"
+                    className="relative inline-flex items-center rounded-md border border-gray-300 bg-sky-200 px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50"
+                >
+                    next
+                </a>
+            </div>
         </div>
     );
 }

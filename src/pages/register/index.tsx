@@ -1,99 +1,122 @@
+/* eslint-disable consistent-return */
+/* eslint-disable no-console */
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from "react";
+import logo from "assets/images/logo.svg";
+import cogoToast from "cogo-toast";
+import CircleLoader from "components/custom/CircleLoader";
+import useAuth from "hooks/useAuth";
+import UnAuthenticatedLayout from "Layouts/UnAuthenticatedLayout";
+import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect } from "react";
+import { useForm } from "react-hook-form";
+import { IUser } from "types/Auth";
 
 function Register() {
+    const { register, handleSubmit } = useForm<IUser>();
+    const { register: siginUp, verify, authLoading } = useAuth();
+
+    useEffect(() => {
+        console.log(verify);
+    }, [verify]);
+
+    const handelRegister = async (data: IUser): Promise<void> => {
+        if (data.password!.length < 6) {
+            return cogoToast.error("Password must be at least 6 characters !!!");
+        }
+        if (verify.success) {
+            console.log(data);
+        } else {
+            await siginUp(data);
+        }
+    };
+
     return (
-        <div>
-            <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-                <div className="w-full max-w-md space-y-8">
-                    <div>
-                        <img
-                            className="mx-auto h-12 w-auto"
-                            src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-                            alt="Workflow"
-                        />
-                        <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-                            Sign in to your account
-                        </h2>
+        <UnAuthenticatedLayout title="Let's sign up - Grab bug">
+            <div className="flex items-center justify-center bg-gray-100 py-10">
+                <form
+                    onSubmit={handleSubmit(handelRegister)}
+                    className="mx-6 flex w-full flex-col space-y-6 rounded-lg border bg-white px-7 py-10 shadow-lg lg:w-2/5"
+                >
+                    {/* logo */}
+                    <div className="mx-auto w-44">
+                        <Image src={logo} />
                     </div>
-                    <form className="mt-8 space-y-6" action="#" method="POST">
-                        <input type="hidden" name="remember" defaultValue="true" />
-                        <div className="-space-y-px rounded-md shadow-sm">
-                            <div>
-                                <label htmlFor="email-address" className="sr-only">
-                                    Email address
-                                </label>
-                                <input
-                                    id="email-address"
-                                    name="email"
-                                    type="email"
-                                    autoComplete="email"
-                                    required
-                                    className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                                    placeholder="Email address"
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="password" className="sr-only">
-                                    Password
-                                </label>
-                                <input
-                                    id="password"
-                                    name="password"
-                                    type="password"
-                                    autoComplete="current-password"
-                                    required
-                                    className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                                    placeholder="Password"
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="password" className="sr-only">
-                                    Password
-                                </label>
-                                <input
-                                    id="password"
-                                    name="password"
-                                    type="password"
-                                    autoComplete="current-password"
-                                    required
-                                    className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
-                                    placeholder="Confirm Password"
-                                />
-                            </div>
-                        </div>
 
-                        <div className="flex items-center justify-between">
-                            <div className="flex items-center">
-                                <input
-                                    id="remember-me"
-                                    name="remember-me"
-                                    type="checkbox"
-                                    className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
-                                />
-                                <label
-                                    htmlFor="remember-me"
-                                    className="ml-2 block text-sm text-gray-900"
-                                >
-                                    Remember me
-                                </label>
-                            </div>
-                        </div>
-
+                    {authLoading && (
                         <div>
+                            <CircleLoader />
+                        </div>
+                    )}
+
+                    {verify.success ? (
+                        <>
+                            <h1 className="text-center text-lg text-gray-500">
+                                Please give your{" "}
+                                <span className="font-semibold text-indigo-500">OTP</span> here
+                            </h1>
+                            <input
+                                className="rounded-lg border-gray-300 py-4  text-sm shadow transition hover:shadow-lg"
+                                type="text"
+                                required
+                                placeholder="Fill your otp"
+                                {...register("code")}
+                            />
+
                             <button
+                                className="rounded-lg bg-indigo-500 py-3 px-4 text-white hover:bg-indigo-600"
                                 type="submit"
-                                className="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                             >
-                                <span className="absolute inset-y-0 left-0 flex items-center pl-3" />
+                                GO
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            <input
+                                className="rounded-lg border-gray-300  py-4 text-sm shadow transition hover:shadow-lg"
+                                type="text"
+                                required
+                                placeholder="Name"
+                                {...register("name")}
+                            />
+                            <input
+                                className="rounded-lg border-gray-300  py-4 text-sm shadow transition hover:shadow-lg"
+                                type="email"
+                                required
+                                placeholder="Email"
+                                {...register("email")}
+                            />
+                            <input
+                                className="rounded-lg border-gray-300 py-4  text-sm shadow transition hover:shadow-lg"
+                                type="password"
+                                required
+                                placeholder="Password"
+                                {...register("password")}
+                            />
+
+                            <button
+                                className="rounded-lg bg-indigo-500 py-3 px-4 text-white hover:bg-indigo-600"
+                                type="submit"
+                            >
                                 Sign up
                             </button>
-                        </div>
-                    </form>
-                </div>
+                        </>
+                    )}
+
+                    {/* already registered */}
+                    {!verify.success && (
+                        <p className="text-center text-sm font-semibold">
+                            Already have an account ?{" "}
+                            <Link href="/login">
+                                <a className="text-indigo-500">Login</a>
+                            </Link>
+                        </p>
+                    )}
+                </form>
             </div>
-        </div>
+        </UnAuthenticatedLayout>
     );
 }
 

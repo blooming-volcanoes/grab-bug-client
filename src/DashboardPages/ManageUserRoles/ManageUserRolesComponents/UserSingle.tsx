@@ -1,25 +1,28 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/button-has-type */
-import Link from "next/link";
 import React from "react";
-import Text from "./Text";
+import styles from "../../../styles/projectDescriptionTable.module.css";
 
 function UserSingle({ user }: any) {
     return (
-        <>
-            <div className="flex items-center justify-between">
-                <Text className="w-3/12">{user.name}</Text>
-                <Text className="w-6/12">{user.email}</Text>
-                <div className="flex w-3/12 flex-col">
-                    <Link href="/" passHref>
-                        <Text className="cursor-pointer text-indigo-600">Manage Users</Text>
-                    </Link>
-                    <Link href="/" passHref>
-                        <Text className="cursor-pointer text-indigo-600">Details</Text>
-                    </Link>
-                </div>
-            </div>
-            <hr />
-        </>
+        <tr className="border-b border-gray-400">
+            <td className={`${styles.td} w-[300px]`}>{user.name}</td>
+            <td className={`${styles.td} w-[300px]`}>{user.email}</td>
+            <td className={`${styles.td} w-[300px]`}>
+                <a
+                    className="h-[30px] rounded-lg bg-slate-500 p-2 text-white hover:text-black"
+                    href="#"
+                >
+                    Manage Users
+                </a>{" "}
+                <a
+                    className="h-[30px] rounded-lg bg-slate-500 p-2 text-white hover:text-black"
+                    href="#"
+                >
+                    More Details
+                </a>{" "}
+            </td>
+        </tr>
     );
 }
 

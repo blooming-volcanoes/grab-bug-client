@@ -4,7 +4,7 @@ import TableRowSingle from "./TableRowSingle";
 
 function TableBody({ projects }: any) {
     return (
-        <tbody>
+        <tbody className="text-center">
             {projects.map((project: any) => (
                 <TableRowSingle project={project} key={project.id} />
             ))}

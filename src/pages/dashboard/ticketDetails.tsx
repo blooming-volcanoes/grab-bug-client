@@ -6,10 +6,15 @@
  */
 
 import Main from "DashboardPages/TicketDetails/TicketDetailsMain";
+import DashboardLayout from "Layouts/DashboardLayout";
 import React from "react";
 
 function TicketDetails() {
-    return <Main />;
+    return (
+        <DashboardLayout>
+            <Main />
+        </DashboardLayout>
+    );
 }
 
 export default TicketDetails;
