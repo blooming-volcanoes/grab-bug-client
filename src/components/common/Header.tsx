@@ -10,7 +10,6 @@
 import logo from "assets/images/logo.svg";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 // our menus
@@ -40,7 +39,7 @@ const menus: IMenu[] = [
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-    const router = useRouter();
+
     console.log(menuOpen);
     return (
         <>
