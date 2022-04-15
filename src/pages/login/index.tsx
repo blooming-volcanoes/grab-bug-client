@@ -1,8 +1,11 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-console */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import logo from "assets/images/logo.svg";
+import cogoToast from "cogo-toast";
+import useAuth from "hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -11,16 +14,20 @@ import { IUser } from "types/Auth";
 
 function Login() {
     const { register, handleSubmit } = useForm<IUser>();
+    const { login } = useAuth();
 
-    const handelRegister = (data: IUser) => {
-        console.log(data);
+    const handelLogin = async (data: IUser): Promise<void> => {
+        if (data.password!.length < 6) {
+            return cogoToast.error("Password must be at least 6 characters !!!");
+        }
+        await login(data);
     };
 
     return (
         <section>
             <div className="flex h-screen items-center justify-center bg-gray-100">
                 <form
-                    onSubmit={handleSubmit(handelRegister)}
+                    onSubmit={handleSubmit(handelLogin)}
                     className="flex flex-col space-y-6 rounded-lg border bg-white px-7 py-10 shadow-lg lg:w-2/5"
                 >
                     {/* logo */}
