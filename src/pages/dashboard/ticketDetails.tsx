@@ -6,7 +6,7 @@
  */
 
 import Main from "DashboardPages/TicketDetails/TicketDetailsMain";
-import DashboardLayout from "molecules/DashboardLayout";
+import DashboardLayout from "Layouts/DashboardLayout";
 import React from "react";
 
 function TicketDetails() {
