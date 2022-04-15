@@ -44,7 +44,7 @@ function SideBar() {
     return (
         <div className="h-screen w-full border-r border-r-gray-200 bg-[#f6f7fb] shadow-xl">
             <div className="flex justify-center py-4">
-                <div className="w-full p-3">
+                <div className="w-[200px] p-3">
                     <Image src={logo} alt="logo" />
                 </div>
                 {/* <p className="font-semibold uppercase text-[#b3b8d4]">Issue Tracker</p> */}
@@ -64,7 +64,7 @@ function SideBar() {
                 ))}
             </ul>
 
-            <li className="mt-10 flex space-x-3 px-6">
+            <li className="mt-4 flex space-x-3 px-6">
                 <button type="button" className="primary-btn w-full">
                     Login
                 </button>
