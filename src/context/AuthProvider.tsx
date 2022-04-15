@@ -11,6 +11,7 @@ export const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 function AuthProvider({ children }: { children: React.ReactNode }) {
     const [user, setUser] = useState<any>({});
     const [loading, setLoading] = useState(false);
+    const [verify, setVerify] = useState<any>({});
     const [authLoading, setAuthLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -18,10 +19,10 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     const login = async (data: IUser) => {
         setAuthLoading(true);
         try {
-            setAuthLoading(false);
-            const user = await AuthHttpReq.login(data);
+            const result = await AuthHttpReq.login(data);
             setError(null);
-            console.log(user);
+            console.log(result);
+            setAuthLoading(false);
         } catch (error: any) {
             setAuthLoading(false);
             const { message } = error.response.data;
@@ -34,12 +35,26 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     const register = async (data: IUser) => {
         setAuthLoading(true);
         try {
-            setAuthLoading(false);
-            const user = await AuthHttpReq.login(data);
+            const result = await AuthHttpReq.register(data);
             setError(null);
-            console.log(user);
-        } catch (error: any) {
+            setVerify(result);
             setAuthLoading(false);
+        } catch (error: any) {
+            const { message } = error.response.data;
+            setError(message);
+            cogoToast.error(`${message} !!!`);
+        }
+    };
+
+    // verify otp
+    const verifyOtp = async (data: IUser) => {
+        setAuthLoading(true);
+        try {
+            const result = await AuthHttpReq.otp(data);
+            setError(null);
+            setVerify(result);
+            setAuthLoading(false);
+        } catch (error: any) {
             const { message } = error.response.data;
             setError(message);
             cogoToast.error(`${message} !!!`);
@@ -51,10 +66,14 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         loading,
         authLoading,
         error,
+        verify,
         setError,
         login,
         register,
+        verifyOtp,
     };
+
+    console.log({ authLoading });
 
     return (
         <AuthContext.Provider value={returnObj}>
