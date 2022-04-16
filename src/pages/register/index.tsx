@@ -56,7 +56,7 @@ function Register() {
 
     return (
         <UnAuthenticatedLayout title="Let's sign up - Grab bug">
-            <div className="flex items-center justify-center bg-gray-100 py-10">
+            <div className="flex  h-screen items-center justify-center bg-gray-100 py-10">
                 <form
                     onSubmit={handleSubmit(handelRegister)}
                     className="mx-6 flex w-full flex-col space-y-6 rounded-lg border bg-white px-7 py-10 shadow-lg lg:w-2/5"

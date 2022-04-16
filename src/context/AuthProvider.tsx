@@ -26,6 +26,9 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
             setError(null);
             console.log(result);
             setAuthLoading(false);
+            localStorage.setItem("user", JSON.stringify(result));
+            cogoToast.success(`Successfully logged in`);
+            router.push("/dashboard");
         } catch (error: any) {
             setAuthLoading(false);
             const { message } = error.response.data;
