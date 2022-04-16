@@ -6,6 +6,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import logo from "assets/images/logo.svg";
 import cogoToast from "cogo-toast";
+import CircleLoader from "components/custom/CircleLoader";
 import useAuth from "hooks/useAuth";
 import UnAuthenticatedLayout from "Layouts/UnAuthenticatedLayout";
 import Image from "next/image";
@@ -16,7 +17,7 @@ import { IUser } from "types/Auth";
 
 function Login() {
     const { register, handleSubmit } = useForm<IUser>();
-    const { login } = useAuth();
+    const { login, authLoading } = useAuth();
 
     const handelLogin = async (data: IUser): Promise<void> => {
         if (data.password!.length < 6) {
@@ -36,6 +37,11 @@ function Login() {
                     <div className="mx-auto w-44">
                         <Image src={logo} />
                     </div>
+                    {authLoading && (
+                        <div>
+                            <CircleLoader />
+                        </div>
+                    )}
                     <input
                         className="rounded-lg border-gray-300  py-4 text-sm shadow transition hover:shadow-lg"
                         type="email"
