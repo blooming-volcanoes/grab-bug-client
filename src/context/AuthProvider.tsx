@@ -46,6 +46,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
             setVerify(result);
             setAuthLoading(false);
             cogoToast.success(`Check your inbox otp has been sent`);
+            router.replace("/dashboard");
         } catch (error: any) {
             const { message } = error.response.data;
             setError(message);
