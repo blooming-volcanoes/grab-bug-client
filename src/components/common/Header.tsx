@@ -8,6 +8,7 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import logo from "assets/images/logo.svg";
+import useAuth from "hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -39,8 +40,8 @@ const menus: IMenu[] = [
 
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
-
-    console.log(menuOpen);
+    const { user, logout } = useAuth();
+    console.log(user);
     return (
         <>
             <header>
@@ -65,14 +66,22 @@ function Header() {
                         </ul>
 
                         {/* login and sign up button */}
-                        <div className="hidden space-x-4 lg:inline-flex">
-                            <Link href="/login">
-                                <button className=" primary-btn">Login</button>
-                            </Link>
-                            <Link href="/register">
-                                <button className="btn-white">Register</button>
-                            </Link>
-                        </div>
+                        {user?.user?.email ? (
+                            <button onClick={logout} className="primary-btn">
+                                Logout
+                            </button>
+                        ) : (
+                            <>
+                                <div className="hidden space-x-4 lg:inline-flex">
+                                    <Link href="/login">
+                                        <button className=" primary-btn">Login</button>
+                                    </Link>
+                                    <Link href="/register">
+                                        <button className="btn-white">Register</button>
+                                    </Link>
+                                </div>
+                            </>
+                        )}
 
                         {/* hamburger menu for mobile */}
                         <div
