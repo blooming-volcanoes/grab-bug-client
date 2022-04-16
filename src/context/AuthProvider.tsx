@@ -28,7 +28,8 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
             setAuthLoading(false);
             localStorage.setItem("user", JSON.stringify(result));
             cogoToast.success(`Successfully logged in`);
-            router.push("/dashboard");
+            router.replace("/dashboard");
+            window.location.reload();
         } catch (error: any) {
             setAuthLoading(false);
             const { message } = error.response.data;
@@ -46,7 +47,6 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
             setVerify(result);
             setAuthLoading(false);
             cogoToast.success(`Check your inbox otp has been sent`);
-            router.replace("/dashboard");
         } catch (error: any) {
             const { message } = error.response.data;
             setError(message);
@@ -71,6 +71,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
                 localStorage.setItem("user", JSON.stringify(user));
                 cogoToast.success(`Congratulations registered successfully`);
                 router.push("/dashboard");
+                window.location.reload();
             }
         } catch (error: any) {
             const { message } = error.response.data;
