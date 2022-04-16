@@ -1,3 +1,4 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable consistent-return */
 /* eslint-disable no-console */
 /* eslint-disable react/jsx-props-no-spreading */
@@ -10,27 +11,47 @@ import useAuth from "hooks/useAuth";
 import UnAuthenticatedLayout from "Layouts/UnAuthenticatedLayout";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { IUser } from "types/Auth";
 
 function Register() {
     const { register, handleSubmit } = useForm<IUser>();
-    const { register: siginUp, verify, authLoading } = useAuth();
+    const { register: signUp, verify, authLoading, verifyOtp } = useAuth();
+    const [counter, setCounter] = useState(59);
+    const [tempData, setTempData] = useState<any>({});
+
+    // set otp minutes
+    let timer: any;
 
     useEffect(() => {
-        console.log(verify);
-    }, [verify]);
+        if (verify.success) {
+            timer = setInterval(() => {
+                if (counter === 0) {
+                    return setCounter(0);
+                }
+                setCounter(counter - 1);
+            }, 1000);
+        }
+
+        return () => clearInterval(timer);
+    }, [counter, verify.success]);
 
     const handelRegister = async (data: IUser): Promise<void> => {
         if (data.password!.length < 6) {
             return cogoToast.error("Password must be at least 6 characters !!!");
         }
         if (verify.success) {
-            console.log(data);
+            await verifyOtp(data);
         } else {
-            await siginUp(data);
+            await signUp(data);
         }
+        setTempData(data);
+    };
+
+    const resendOtp = async () => {
+        setCounter(59);
+        await signUp(tempData);
     };
 
     return (
@@ -71,6 +92,17 @@ function Register() {
                             >
                                 GO
                             </button>
+
+                            <p className="text-center">
+                                Have you received the OPT ?{" "}
+                                {counter === 0 ? (
+                                    <button onClick={resendOtp}>Resend</button>
+                                ) : (
+                                    <span className="font-semibold text-indigo-500">
+                                        00 : {counter < 10 ? `0${counter}` : counter}
+                                    </span>
+                                )}
+                            </p>
                         </>
                     ) : (
                         <>

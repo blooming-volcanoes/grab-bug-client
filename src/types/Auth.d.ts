@@ -17,4 +17,5 @@ export interface IAuthContext {
     login: (data: IUser) => Promise<void>;
     register: (data: IUser) => Promise<void>;
     verifyOtp: (data: IUser) => Promise<void>;
+    logout: () => void;
 }
