@@ -4,6 +4,7 @@ export interface IUser {
     email: string | undefined;
     name?: string | undefined;
     password: string | undefined;
+    code?: string | undefined;
 }
 
 export interface IAuthContext {
@@ -11,7 +12,10 @@ export interface IAuthContext {
     loading: boolean;
     authLoading: boolean;
     error: null;
+    verify: any;
     setError: React.Dispatch<React.SetStateAction<null>>;
     login: (data: IUser) => Promise<void>;
     register: (data: IUser) => Promise<void>;
+    verifyOtp: (data: IUser) => Promise<void>;
+    logout: () => void;
 }
