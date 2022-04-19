@@ -1,26 +1,33 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable react/jsx-props-no-spreading */
-import axios from "axios";
-import React, { useState } from "react";
+import cogoToast from "cogo-toast";
+import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import ProjectHttpReq from "../../services/Project.service";
 
 function IssueCreate() {
     const [success, setSuccess] = useState<any>();
     const { register, handleSubmit, reset } = useForm<any>();
+    const [projects, setProjects] = useState<any>([]);
 
-    const onSubmit = (data: any): any => {
-        axios.post("http://localhost:3000/issues", data).then((res) => {
-            if (res.data.insertedId) {
-                // alert("Package Addeded Successfully!");
-                reset();
-                setSuccess("issue Added Successfully !");
-            }
-        });
+    const onSubmit = async (data: any): Promise<void> => {
+        const res = await ProjectHttpReq.createIssue(data);
+        if (res.data.success) {
+            reset();
+            cogoToast.success("issue Added Successfully !");
+        }
     };
 
     // Text Fill text Remove
     const successTextRemover = () => {
         setSuccess(" ");
     };
+
+    useEffect(async (): any => {
+        const res = await ProjectHttpReq.getAllProjects();
+        setProjects(res.projects);
+    }, []);
+
     return (
         <div className="m-4">
             <form onSubmit={handleSubmit(onSubmit)}>
@@ -49,13 +56,18 @@ function IssueCreate() {
                         placeholder="Status"
                         {...register("status")}
                     />
-                    <input
-                        style={{ outline: "none" }}
-                        onClick={successTextRemover}
-                        className="mb-3 ml-3 w-2/5  flex-auto border-2 border-solid border-indigo-600 py-2 px-3"
-                        placeholder="Project ID"
-                        {...register("project_id")}
-                    />
+                    {projects?.length && (
+                        <select
+                            {...register("projectId")}
+                            className="mb-3 ml-3 w-2/5  flex-auto border-2 border-solid border-indigo-600 py-2 px-3"
+                        >
+                            {projects.map((project: any) => (
+                                <option value={project._id} key={project._id}>
+                                    {project.name}
+                                </option>
+                            ))}
+                        </select>
+                    )}
                 </div>
                 <textarea
                     style={{ outline: "none" }}
