@@ -1,13 +1,13 @@
-import TicketDetailsList from "DashboardPages/Tickets/TicketDetailsList";
+import ProjectCreate from "components/projectCreate/ProjectCreate";
 import DashboardLayout from "Layouts/DashboardLayout";
 import React from "react";
 
-function tickets() {
+function projectCreate() {
     return (
         <DashboardLayout>
-            <TicketDetailsList />
+            <ProjectCreate />
         </DashboardLayout>
     );
 }
 
-export default tickets;
+export default projectCreate;

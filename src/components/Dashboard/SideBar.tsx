@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import {
+    FaAccessibleIcon,
     FaCloudsmith,
     FaFontAwesomeFlag,
     FaHubspot,
@@ -38,11 +39,21 @@ const dashboardRoutes = [
         name: "Tickets",
         icons: FaHubspot,
     },
+    {
+        path: "/dashboard/projectCreate",
+        name: "Create Project",
+        icons: FaAccessibleIcon,
+    },
+    {
+        path: "/dashboard/createAnIssue",
+        name: "Create Issue",
+        icons: FaAccessibleIcon,
+    },
 ];
 
 function SideBar() {
     return (
-        <div className="h-screen w-full border-r border-r-gray-200 bg-[#f6f7fb] shadow-xl">
+        <div className="sidebar-scrollbar h-screen w-full overflow-auto border-r border-r-gray-200 bg-[#f6f7fb] shadow-xl">
             <div className="flex justify-center py-4">
                 <div className="w-[200px] p-3">
                     <Image src={logo} alt="logo" />
@@ -64,12 +75,9 @@ function SideBar() {
                 ))}
             </ul>
 
-            <li className="mt-4 flex space-x-3 px-6">
+            <li className="my-4 flex space-x-3 px-6">
                 <button type="button" className="primary-btn w-full">
-                    Login
-                </button>
-                <button type="button" className="btn-white w-full">
-                    Register
+                    Logout
                 </button>
             </li>
         </div>
