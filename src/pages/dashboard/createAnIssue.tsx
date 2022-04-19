@@ -1,13 +1,13 @@
-import TicketDetailsList from "DashboardPages/Tickets/TicketDetailsList";
+import IssueCreate from "DashboardPages/IssueCreate/IssueCreate";
 import DashboardLayout from "Layouts/DashboardLayout";
 import React from "react";
 
-function tickets() {
+function createAnIssue() {
     return (
         <DashboardLayout>
-            <TicketDetailsList />
+            <IssueCreate />
         </DashboardLayout>
     );
 }
 
-export default tickets;
+export default createAnIssue;
