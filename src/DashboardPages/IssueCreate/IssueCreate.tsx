@@ -10,6 +10,7 @@ function IssueCreate() {
     const [success, setSuccess] = useState<any>();
     const { register, handleSubmit, reset } = useForm<any>();
     const [projects, setProjects] = useState<any>([]);
+    const [severity] = useState<any>(["low", "moderate", "high", "extreme"]);
 
     const onSubmit = async (data: any): Promise<void> => {
         const res = await IssueHttpReq.createIssue(data);
@@ -33,6 +34,14 @@ function IssueCreate() {
         <div className="m-4">
             <form onSubmit={handleSubmit(onSubmit)}>
                 <div className="flex">
+                    <input
+                        style={{ outline: "none" }}
+                        onClick={successTextRemover}
+                        className="mb-3 mr-3 w-2/5 flex-auto border-2 border-solid border-indigo-600 py-2 px-3"
+                        placeholder="Title"
+                        {...register("title")}
+                    />
+
                     <input
                         style={{ outline: "none" }}
                         onClick={successTextRemover}
@@ -65,6 +74,18 @@ function IssueCreate() {
                             {projects.map((project: any) => (
                                 <option value={project._id} key={project._id}>
                                     {project.name}
+                                </option>
+                            ))}
+                        </select>
+                    )}
+                    {severity?.length && (
+                        <select
+                            {...register("severity")}
+                            className="mb-3 ml-3 w-2/5  flex-auto border-2 border-solid border-indigo-600 py-2 px-3"
+                        >
+                            {severity.map((s: any) => (
+                                <option value={s} key={s}>
+                                    {s}
                                 </option>
                             ))}
                         </select>
