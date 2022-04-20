@@ -12,11 +12,6 @@ class ProjectReq {
         const { data } = await httpReq.get("/project/all").then((data) => data);
         return data;
     }
-
-    async createIssue(payload: any) {
-        const data = await httpReq.post("/issue", payload).then((data) => data);
-        return data;
-    }
 }
 
 const ProjectHttpReq = new ProjectReq();

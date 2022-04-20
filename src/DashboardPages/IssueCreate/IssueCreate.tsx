@@ -3,6 +3,7 @@
 import cogoToast from "cogo-toast";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
+import IssueHttpReq from "../../services/Issue.service";
 import ProjectHttpReq from "../../services/Project.service";
 
 function IssueCreate() {
@@ -11,7 +12,7 @@ function IssueCreate() {
     const [projects, setProjects] = useState<any>([]);
 
     const onSubmit = async (data: any): Promise<void> => {
-        const res = await ProjectHttpReq.createIssue(data);
+        const res = await IssueHttpReq.createIssue(data);
         if (res.data.success) {
             reset();
             cogoToast.success("issue Added Successfully !");
@@ -37,7 +38,7 @@ function IssueCreate() {
                         onClick={successTextRemover}
                         className="mb-3 mr-3 w-2/5 flex-auto border-2 border-solid border-indigo-600 py-2 px-3"
                         placeholder="Reporter Name"
-                        {...register("reporter_name")}
+                        {...register("reporterName")}
                     />
 
                     <input
@@ -45,7 +46,7 @@ function IssueCreate() {
                         onClick={successTextRemover}
                         className="mb-3 ml-3 w-2/5 flex-auto border-2 border-solid border-indigo-600 py-2 px-3"
                         placeholder="Bug Category"
-                        {...register("bug_category")}
+                        {...register("bugCategory")}
                     />
                 </div>
                 <div className="flex">
@@ -74,7 +75,7 @@ function IssueCreate() {
                     onClick={successTextRemover}
                     className="mb-3 mr-3 w-full flex-auto border-2 border-solid border-indigo-600 py-2 px-3"
                     placeholder="Bug Description"
-                    {...register("bug_description")}
+                    {...register("bugDescription")}
                 />
 
                 <button
