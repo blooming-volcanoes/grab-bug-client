@@ -24,7 +24,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         try {
             const result = await AuthHttpReq.login(data);
             setError(null);
-            console.log(result);
+            console.log(result, "this is login result");
             setAuthLoading(false);
             localStorage.setItem("user", JSON.stringify(result));
             cogoToast.success(`Successfully logged in`);
