@@ -16,7 +16,7 @@ function IssueCreate() {
         const res = await IssueHttpReq.createIssue(data);
         if (res.data.success) {
             reset();
-            cogoToast.success("issue Added Successfully !");
+            cogoToast.success("issue Added Successfully!");
         }
     };
 
