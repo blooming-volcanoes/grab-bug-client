@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import Link from "next/link";
 import React from "react";
 
@@ -13,7 +14,9 @@ function TableRow({ ticket }: any) {
             <td className="table-td">
                 {" "}
                 <li className="text-blue-600 underline decoration-solid">
-                    <Link href="/home">Edit/Assign</Link>
+                    <Link href="/dashboard/[ticketsId]" as={`/dashboard/${ticket._id}`}>
+                        Edit/Assign
+                    </Link>
                 </li>
                 <li className="text-blue-600 underline decoration-solid">
                     <Link href="/home">Details</Link>
