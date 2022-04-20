@@ -59,7 +59,7 @@ function IssueCreate() {
                     />
                     {projects?.length && (
                         <select
-                            {...register("projectId")}
+                            {...register("project")}
                             className="mb-3 ml-3 w-2/5  flex-auto border-2 border-solid border-indigo-600 py-2 px-3"
                         >
                             {projects.map((project: any) => (
