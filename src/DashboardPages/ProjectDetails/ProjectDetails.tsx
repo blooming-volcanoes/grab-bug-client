@@ -19,8 +19,8 @@ import TicketTablePagination from "./TicketTablePagination";
 
 function ProjectDetails({ project, users, tickets }: any) {
     return (
-        <div className="my-3 mx-2">
-            <div className="container mx-auto rounded-[20px] border border-sky-700 md:p-4">
+        <div className="m-0 md:m-3">
+            <div className="container mx-auto h-max rounded-[3px] shadow-[0_0_10px_#5584AC] md:p-3">
                 <div className="">
                     <ProjectDetailsHeading name={project.name} />
                     <ProjectDescription description={project.description} />
@@ -33,7 +33,7 @@ function ProjectDetails({ project, users, tickets }: any) {
                             <Entries users={users} />
                             <Search />
                         </div>
-                        <div className="w-full overflow-auto rounded-[5px] border border-sky-900">
+                        <div className="w-full overflow-auto rounded-[3px] border border-[#22577E]">
                             <table className="w-[700px] border border-sky-900">
                                 <TableHeader />
                                 <TableBody users={users} />
@@ -48,7 +48,7 @@ function ProjectDetails({ project, users, tickets }: any) {
                             <TicketEntries />
                             <TicketSearch />
                         </div>
-                        <div className="w-full overflow-auto rounded-[5px] border border-sky-900">
+                        <div className="w-full overflow-auto rounded-[3px] border border-[#22577E]">
                             <table className="w-[1300px] border border-sky-900">
                                 <TicketTableHeader />
                                 <TicketTableBody tickets={tickets} />

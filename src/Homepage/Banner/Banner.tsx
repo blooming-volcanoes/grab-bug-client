@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/button-has-type */
-import bannerImage from "assets/images/banner-1.png";
+import bannerImage from "assets/images/banner.png";
 import Image from "next/image";
 import React from "react";
 
@@ -72,7 +72,7 @@ function Banner() {
 
                 {/* right side  */}
                 <div className="order-1 w-full lg:order-2 lg:w-[60%]">
-                    <div className="bg-none bg-cover bg-center bg-no-repeat lg:bg-[url('https://clickup.com/landing/images/main/bg_gradient__main-header.svg')]">
+                    <div className="bg-none bg-cover bg-center bg-no-repeat shadow-[0_0_10px_#5584AC]">
                         <Image src={bannerImage} />
                     </div>
                 </div>

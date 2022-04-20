@@ -7,7 +7,7 @@
 /* eslint-disable react/button-has-type */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import logo from "assets/images/logo.svg";
+import logo from "assets/images/grabbug-logo.png";
 import useAuth from "hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,20 +21,16 @@ interface IMenu {
 
 const menus: IMenu[] = [
     {
-        name: "Product",
-        path: "/product",
+        name: "Documentation",
+        path: "/documentation",
     },
     {
-        name: "Learn",
-        path: "/learn",
+        name: "Contact Us",
+        path: "/contact",
     },
     {
-        name: "Pricing",
-        path: "/pricing",
-    },
-    {
-        name: "Contact Sales",
-        path: "/sales",
+        name: "About Us",
+        path: "/about",
     },
 ];
 
@@ -45,7 +41,7 @@ function Header() {
     return (
         <>
             <header>
-                <div className="bg-white shadow">
+                <div className="bg-white shadow-lg">
                     <nav className="flex items-center justify-between px-4  py-4 md:mx-auto md:max-w-3xl lg:mx-auto lg:max-w-6xl">
                         {/* logo */}
                         <div className="w-36 flex-shrink-0">
@@ -60,7 +56,9 @@ function Header() {
                         <ul className="hidden space-x-8 text-sm font-semibold lg:inline-flex">
                             {menus.map((menu, i) => (
                                 <Link key={i} href={`${menu.path}`}>
-                                    <a>{menu.name}</a>
+                                    <a className=" text-[18px] text-[#22577E] transition-all duration-[0.3s] ease-in hover:text-[20px]">
+                                        {menu.name}
+                                    </a>
                                 </Link>
                             ))}
                         </ul>
