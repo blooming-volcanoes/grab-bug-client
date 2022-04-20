@@ -25,9 +25,12 @@ function IssueCreate() {
         setSuccess(" ");
     };
 
-    useEffect(async (): any => {
-        const res = await ProjectHttpReq.getAllProjects();
-        setProjects(res.projects);
+    useEffect(() => {
+        const fetchData = async () => {
+            const res = await ProjectHttpReq.getAllProjects();
+            setProjects(res.projects);
+        };
+        fetchData();
     }, []);
 
     return (
