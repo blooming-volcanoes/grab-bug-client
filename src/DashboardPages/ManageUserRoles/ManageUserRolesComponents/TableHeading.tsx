@@ -2,11 +2,11 @@ import React from "react";
 
 function TableHeading() {
     return (
-        <thead className="table-th  h-[40px] rounded-[5px] border-b border-black bg-sky-400">
+        <thead className="table-th  h-[40px] rounded-[5px] border-b border-[#22577E] bg-[#5584AC]">
             <tr className="text-center">
-                <th className="text-[20px]">Userame</th>
-                <th className="text-[20px]">Email</th>
-                <th className="text-[20px]">Role</th>
+                <th className="text-[18px] text-[#FAFFAF]">Userame</th>
+                <th className="text-[18px] text-[#FAFFAF]">Email</th>
+                <th className="text-[18px] text-[#FAFFAF]">Role</th>
             </tr>
         </thead>
     );

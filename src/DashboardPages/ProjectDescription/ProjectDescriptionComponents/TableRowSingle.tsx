@@ -7,19 +7,16 @@ function TableRowSingle({ project }: any) {
     return (
         <tr className="border-b border-gray-400">
             <td className={`${styles.td} w-[200px]`}>{project.name}</td>
-            <td className={`${styles.td} w-[700px]`}>{project.description}</td>
-            <td className={`${styles.td} w-[300px]`}>
-                <Link href="/dashboard/projectDetails">
-                    <a className="mr-1 h-[30px] rounded-lg bg-slate-500 p-2 text-white hover:text-black">
-                        More Details
+            <td className={`${styles.td} w-[500px]`}>{project.description}</td>
+            <td className={`${styles.td} md:w-[300px]`}>
+                <div className="flex justify-center">
+                    <Link href="/dashboard/projectDetails">
+                        <a className="table-btn ">More Details</a>
+                    </Link>
+                    <a className="table-btn mx-2" href="#">
+                        Manage Users
                     </a>
-                </Link>
-                <a
-                    className="h-[30px] rounded-lg bg-slate-500 p-2 text-white hover:text-black"
-                    href="#"
-                >
-                    Manage Users
-                </a>
+                </div>
             </td>
         </tr>
     );

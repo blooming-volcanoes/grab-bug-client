@@ -11,18 +11,15 @@ function TicketTableRowSingle({ ticket }: any) {
             <td className={`${styles.td} w-[200px]`}>{ticket.developer}</td>
             <td className={`${styles.td} w-[200px]`}>{ticket.status}</td>
             <td className={`${styles.td} w-[200px]`}>{ticket.created}</td>
-            <td className={`${styles.td} w-[300px]`}>
-                <Link href="/dashboard/projectDetails">
-                    <a className="mr-1 h-[30px] rounded-lg bg-slate-500 p-2 text-white hover:text-black">
-                        More Details
+            <td className={`${styles.td} md:w-[300px]`}>
+                <div className="flex justify-center">
+                    <Link href="/dashboard/projectDetails">
+                        <a className="table-btn ">More Details</a>
+                    </Link>
+                    <a className="table-btn mx-2" href="#">
+                        Manage Users
                     </a>
-                </Link>
-                <a
-                    className="h-[30px] rounded-lg bg-slate-500 p-2 text-white hover:text-black"
-                    href="#"
-                >
-                    Manage Users
-                </a>
+                </div>
             </td>
         </tr>
     );
