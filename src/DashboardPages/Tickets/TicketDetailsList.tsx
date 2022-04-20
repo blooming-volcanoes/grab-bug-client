@@ -2,7 +2,7 @@ import React from "react";
 import SerchTicket from "./SearchTicket";
 import TicketList from "./TicketList";
 
-function TicketDetailsList() {
+function TicketDetailsList({ tickets }: any) {
     return (
         <div className="mx-4 mt-10 rounded-lg  border-r p-4 shadow-lg">
             {/* Ticker Header */}
@@ -15,7 +15,7 @@ function TicketDetailsList() {
             <SerchTicket />
 
             {/* Ticket List */}
-            <TicketList />
+            <TicketList tickets={tickets} />
         </div>
     );
 }
