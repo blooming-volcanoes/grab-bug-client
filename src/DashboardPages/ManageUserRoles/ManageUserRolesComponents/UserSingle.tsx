@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/button-has-type */
+import Link from "next/link";
 import React from "react";
 import styles from "../../../styles/projectDescriptionTable.module.css";
 
@@ -8,19 +9,15 @@ function UserSingle({ user }: any) {
         <tr className="border-b border-gray-400">
             <td className={`${styles.td} w-[300px]`}>{user.name}</td>
             <td className={`${styles.td} w-[300px]`}>{user.email}</td>
-            <td className={`${styles.td} w-[300px]`}>
-                <a
-                    className="h-[30px] rounded-lg bg-slate-500 p-2 text-white hover:text-black"
-                    href="#"
-                >
-                    Manage Users
-                </a>{" "}
-                <a
-                    className="h-[30px] rounded-lg bg-slate-500 p-2 text-white hover:text-black"
-                    href="#"
-                >
-                    More Details
-                </a>{" "}
+            <td className={`${styles.td} md:w-[300px]`}>
+                <div className="flex justify-center">
+                    <Link href="/dashboard/projectDetails">
+                        <a className="table-btn ">More Details</a>
+                    </Link>
+                    <a className="table-btn mx-2" href="#">
+                        Manage Users
+                    </a>
+                </div>
             </td>
         </tr>
     );

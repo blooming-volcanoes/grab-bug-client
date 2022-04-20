@@ -12,17 +12,15 @@ import TableTopText from "./ManageUserRolesComponents/TableTopText";
 import UserList from "./ManageUserRolesComponents/UserList";
 
 const ManageUserRoles = ({ users, roles }: any) => (
-    <div className="my-3 mx-2">
-        <div className="container mx-auto rounded-[20px] border border-sky-700 md:p-4">
+    <div className="m-0 md:m-3">
+        <div className="container mx-auto h-max rounded-[3px] shadow-[0_0_10px_#5584AC] md:p-3">
             <div className="flex flex-col justify-between space-x-3 md:flex-row">
                 <div className="md:w-[40%]">
                     <HeadingText />
                     <div className="px-4">
                         <SelectUsers users={users} />
                         <AssignRoles roles={roles} />
-                        <button className="w-[100px] rounded bg-sky-700 py-1 text-white hover:text-blue-300">
-                            Submit
-                        </button>
+                        <button className="primary-btn">Submit</button>
                     </div>
                 </div>
                 <div className="md:w-[60%]">
@@ -33,8 +31,8 @@ const ManageUserRoles = ({ users, roles }: any) => (
                             <NumberOfEntries users={users} />
                             <SearchUser />
                         </div>
-                        <div className="w-full overflow-x-scroll">
-                            <table className="mt-2 w-[900px] border border-sky-900">
+                        <div className="w-full overflow-auto rounded-[3px] border border-[#22577E]">
+                            <table className="w-[900px]">
                                 {/* Users table */}
                                 <TableHeading />
                                 {/* users lists */}

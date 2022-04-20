@@ -6,7 +6,10 @@
 
 @layer components {
     .primary-btn {
-        @apply rounded bg-[#7b68ee] py-2 px-6 text-sm font-semibold text-white shadow-lg transition-all hover:bg-[#5941df];
+        @apply rounded bg-[#22567E] py-2 px-6 text-sm font-semibold text-white shadow-lg transition-all duration-[0.5s] ease-in-out hover:bg-[#95D1CC] hover:text-black;
+    }
+    .table-btn {
+        @apply rounded-[3px] bg-[#95D1CC] p-2 transition-all duration-[0.3s] hover:bg-[#5584AC];
     }
     .btn-white {
         @apply rounded bg-gray-100 py-2 px-6 text-sm font-semibold text-gray-400 shadow-lg transition-all hover:text-gray-500;
@@ -19,6 +22,12 @@
     }
     .table-td {
         @apply whitespace-nowrap px-4 py-4  text-sm font-medium text-gray-500;
+    }
+    .sidebar-routes {
+        @apply block py-3 pl-10 text-[18px] font-medium text-[#22577E] hover:text-[#5584AC];
+    }
+    .active {
+        @apply border-l-[5px] border-[#95D1CC] bg-[#22577E] text-white;
     }
 }
 

@@ -3,6 +3,7 @@
 import logo from "assets/images/grabbug-logo.png";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 import {
     FaAccessibleIcon,
@@ -52,19 +53,49 @@ const dashboardRoutes = [
 ];
 
 function SideBar() {
+    const router: any = useRouter();
+    console.log(router);
     return (
-        <div className="sidebar-scrollbar h-screen w-full overflow-auto border-r border-r-gray-200 bg-[#f6f7fb] shadow-xl">
-            <div className="flex justify-center py-4">
+        <div className="sidebar-scrollbar h-screen w-full overflow-auto border-r border-r-gray-200 bg-[#ffffff] shadow-xl">
+            <div className="flex justify-center">
                 <div className="w-[200px] p-3">
-                    <Image src={logo} alt="logo" />
+                    <Link href="/dashboard">
+                        <Image className="cursor-pointer" src={logo} alt="logo" />
+                    </Link>
                 </div>
                 {/* <p className="font-semibold uppercase text-[#b3b8d4]">Issue Tracker</p> */}
             </div>
-            <ul className=" flex flex-col justify-center space-y-4 border-t border-b  px-6 pt-10 pb-28 text-[15px]">
+            <div className="border-t border-b pt-4 pb-10">
                 {dashboardRoutes.map((route, i) => (
-                    <li className="py-2" key={i}>
+                    <div className="w-full" key={i}>
                         <Link href={`${route.path}`}>
-                            <a className="font-medium text-gray-500 hover:text-indigo-500">
+                            <a
+                                className={
+                                    router.pathname === route.path
+                                        ? "sidebar-routes active my-2"
+                                        : "sidebar-routes"
+                                }
+                            >
+                                <span>
+                                    <route.icons className="mr-2 inline" />
+                                </span>
+                                {route.name}
+                            </a>
+                        </Link>
+                    </div>
+                ))}
+            </div>
+            {/* <ul className="border-t border-b pt-4 pb-10">
+                {dashboardRoutes.map((route, i) => (
+                    <li className="w-full" key={i}>
+                        <Link href={`${route.path}`}>
+                            <a
+                                className={
+                                    router.pathname === route.path
+                                        ? "active my-2"
+                                        : "sidebar-routes"
+                                }
+                            >
                                 <span>
                                     <route.icons className="mr-2 inline" />
                                 </span>
@@ -73,7 +104,7 @@ function SideBar() {
                         </Link>
                     </li>
                 ))}
-            </ul>
+            </ul> */}
 
             <li className="my-4 flex space-x-3 px-6">
                 <button type="button" className="primary-btn w-full">
