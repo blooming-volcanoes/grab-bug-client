@@ -14,7 +14,10 @@ function TableRow({ ticket }: any) {
             <td className="table-td">
                 {" "}
                 <li className="text-blue-600 underline decoration-solid">
-                    <Link href="/dashboard/[ticketsId]" as={`/dashboard/${ticket._id}`}>
+                    <Link
+                        href={`/dashboard/tickets/${ticket._id}`}
+                        as="/dashboard/tickets/issue-details"
+                    >
                         Edit/Assign
                     </Link>
                 </li>
