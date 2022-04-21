@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/heading-has-content */
+import Link from "next/link";
 import React, { useState } from "react";
 
 function Overview() {
@@ -8,26 +10,26 @@ function Overview() {
     function showItems(name: string) {
         if (name === "docs") {
             setHeading("The world's most powerful (and fun) Docs.");
-            setImageUrl("https://i.ibb.co/1XHmBQ8/videoOne.gif");
+            setImageUrl("https://i.ibb.co/jr0Rp9F/localhost-3000-dashboard-tickets.png");
             document.getElementById("docsId")?.classList.add("border-indigo-500");
             document.getElementById("whiteboardsId")?.classList.remove("border-indigo-500");
             document.getElementById("dashboardId")?.classList.remove("border-indigo-500");
         } else if (name === "whiteboard") {
             setHeading("Bring your ideas to life with Whiteboards.");
-            setImageUrl("https://i.ibb.co/3Rf7fdT/videoTwo.gif");
+            setImageUrl("https://i.ibb.co/h1M0Vv9/localhost-3000-dashboard-manage-User-Roles.png");
             document.getElementById("whiteboardsId")?.classList.add("border-indigo-500");
             document.getElementById("docsId")?.classList.remove("border-indigo-500");
             document.getElementById("dashboardId")?.classList.remove("border-indigo-500");
         } else if (name === "dashboard") {
             setHeading("See how you're doing in real-time with Dashboards.");
-            setImageUrl("https://i.ibb.co/b3N1tVh/video-Three.gif");
+            setImageUrl("https://i.ibb.co/5WCVw0W/localhost-3000-dashboard-project-Details.png");
             document.getElementById("dashboardId")?.classList.add("border-indigo-500");
             document.getElementById("whiteboardsId")?.classList.remove("border-indigo-500");
             document.getElementById("docsId")?.classList.remove("border-indigo-500");
         }
     }
     return (
-        <div className="mx-6 my-12 rounded-[55px] bg-violet-100  md:max-w-3xl lg:mx-auto lg:max-w-7xl">
+        <div className="mx-1 my-12 rounded-[55px] bg-violet-100  md:max-w-3xl lg:mx-auto lg:max-w-7xl">
             <div className="flex flex-wrap justify-evenly py-5 md:justify-center">
                 <button
                     onClick={() => showItems("docs")}
@@ -54,7 +56,7 @@ function Overview() {
                     Dashboard
                 </button>
             </div>
-            <div className="py-3 lg:py-7">
+            <div className="p-3 lg:py-7">
                 <div className="mx-auto md:w-2/5">
                     <h1 className="text-center text-4xl font-bold">{heading}</h1>
                 </div>
@@ -63,12 +65,9 @@ function Overview() {
                 </div>
             </div>
             <div className="flex w-full justify-center rounded-b-[55px] bg-violet-300 py-3">
-                <button
-                    type="button"
-                    className="rounded-lg px-5 py-2 font-bold transition-all ease-in hover:bg-slate-100 hover:shadow-lg"
-                >
-                    Get Started
-                </button>
+                <Link href="/register">
+                    <a className="btn-white">Get Started</a>
+                </Link>
             </div>
         </div>
     );
