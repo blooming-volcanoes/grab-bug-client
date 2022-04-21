@@ -4,18 +4,22 @@ import TicketList from "./TicketList";
 
 function TicketDetailsList({ tickets }: any) {
     return (
-        <div className="mx-4 mt-10 rounded-lg  border-r p-4 shadow-lg">
-            {/* Ticker Header */}
-            <div className="-mt-10  mb-8 space-y-2 rounded-lg bg-indigo-500 p-4 capitalize text-white shadow-2xl">
-                <h1 className="text-lg">Your Tickets </h1>
-                <p className="text-sm ">All the ticket that you have in the database </p>
+        <div className="m-0 md:m-3">
+            <div className="container mx-auto h-max rounded-[3px] shadow-[0_0_10px_#5584AC] md:p-3">
+                {/* Ticker Header */}
+                <div className="rounded-[3px] bg-gradient-to-r from-[#22577E] via-[#5584AC] to-[#22577E] p-4">
+                    <h1 className="text-2xl font-bold uppercase text-[#FAFFAF]">
+                        Edit and Assign Developer
+                    </h1>
+                    <p className="text-[#95D1CC]">Assign multiple user role in one go</p>
+                </div>
+
+                {/* Serch Option */}
+                <SerchTicket />
+
+                {/* Ticket List */}
+                <TicketList tickets={tickets} />
             </div>
-
-            {/* Serch Option */}
-            <SerchTicket />
-
-            {/* Ticket List */}
-            <TicketList tickets={tickets} />
         </div>
     );
 }

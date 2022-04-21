@@ -3,7 +3,7 @@ import React from "react";
 function SerchTicket() {
     return (
         <div>
-            <div className="flex  items-center justify-between px-4">
+            <div className="mt-3 flex  items-center justify-between px-4">
                 <div className="">
                     <p className="text-sm font-light">Show entries</p>
                 </div>
