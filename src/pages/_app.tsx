@@ -2,6 +2,7 @@
 /* eslint-disable import/no-unresolved */
 /* eslint-disable react/react-in-jsx-scope */
 import AuthProvider from "context/AuthProvider";
+import ChatProvider from "context/ChatProvider";
 import AuthenticatedLayout from "Layouts/AuthenticatedLayout";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
@@ -14,13 +15,15 @@ function MyApp({ Component, pageProps }: AppProps) {
 
     return (
         <AuthProvider>
-            {noAuthRequired.includes(router.pathname) ? (
-                <Component {...pageProps} />
-            ) : (
-                <AuthenticatedLayout>
+            <ChatProvider>
+                {noAuthRequired.includes(router.pathname) ? (
                     <Component {...pageProps} />
-                </AuthenticatedLayout>
-            )}
+                ) : (
+                    <AuthenticatedLayout>
+                        <Component {...pageProps} />
+                    </AuthenticatedLayout>
+                )}
+            </ChatProvider>
         </AuthProvider>
     );
 }
