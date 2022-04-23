@@ -7,7 +7,7 @@ export const ChatContext = createContext<UserChatContext>({} as UserChatContext)
 function ChatProvider({ children }: { children: React.ReactNode }) {
     const [selectedChat, setSelectedChat] = useState();
     const [notification, setNotification] = useState([]);
-    const [chats, setChats] = useState();
+    const [chats, setChats] = useState([]);
 
     const chatObj: UserChatContext = {
         selectedChat,

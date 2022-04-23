@@ -15,12 +15,9 @@ function index() {
                     <SideDrawer />
                 </div>
                 <div className="flex h-screen w-full justify-between p-3">
-                    <div>
-                        <MyChats />
-                    </div>
-                    <div>
-                        <Chatbox />
-                    </div>
+                    <MyChats />
+
+                    <Chatbox />
                 </div>
             </div>
         </AuthenticatedLayout>

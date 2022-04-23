@@ -6,7 +6,7 @@
 import React, { Dialog, Transition } from "@headlessui/react";
 import axios from "axios";
 import cogoToast from "cogo-toast";
-import ChatLoading from "components/ChatAvatar/ChatLoading";
+import { ChatLoading, Spinner } from "components/ChatAvatar/ChatLoading";
 import UserList from "components/ChatAvatar/UserList";
 import chatState from "hooks/chatState";
 import useAuth from "hooks/useAuth";
@@ -35,7 +35,7 @@ function SideDrawer() {
             setLoading(true);
             const config = {
                 headers: {
-                    Authorization: `Bearer ${user.token}`,
+                    Authorization: ` ${user.token}`,
                 },
             };
 
@@ -61,7 +61,7 @@ function SideDrawer() {
             const config = {
                 headers: {
                     "Content-type": "application/json",
-                    Authorization: `Bearer ${user.token}`,
+                    Authorization: ` ${user.token}`,
                 },
             };
 
@@ -71,11 +71,9 @@ function SideDrawer() {
             // const chatData = data.fullChat;
 
             console.log(data);
-            console.log(!chats.find((c: any) => c._id === data._id), "kalam");
+            //     console.log(!chats.find((c: any) => c._id === data._id), 'kalam');
 
-            if (!chats.find((c: any) => c._id === data._id)) {
-                alert("working");
-            }
+            if (!chats.find((c: any) => c._id === data._id)) setChats([data, ...chats]);
             console.log(chats, "kalam");
 
             setSelectedChat(data);
@@ -183,6 +181,8 @@ function SideDrawer() {
                                                     />
                                                 ))
                                             )}
+                                            {/* Spinner  */}
+                                            {loadingChat && <Spinner />}
                                             {/* /End replace */}
                                         </div>
                                     </div>
