@@ -9,7 +9,7 @@ function SingleTicketDetails() {
     const { ticketId } = router.query;
     return (
         <DashboardLayout>
-            <EditAsignTicket ticketsId={ticketId} />
+            <EditAsignTicket ticketId={ticketId} />
         </DashboardLayout>
     );
 }

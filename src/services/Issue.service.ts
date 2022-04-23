@@ -12,6 +12,11 @@ class IssueReq {
         const data = await httpReq.get("/issue/all").then((data) => data);
         return data;
     }
+
+    async getIssue(id: any) {
+        const data = await httpReq.get(`/issue/${id}`).then((data) => data);
+        return data;
+    }
 }
 
 const IssueHttpReq = new IssueReq();
