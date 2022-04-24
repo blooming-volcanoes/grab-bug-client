@@ -1,6 +1,7 @@
 import ProjectDescriptionTable from "DashboardPages/ProjectDescription/ProjectDescriptionTable";
 import DashboardLayout from "Layouts/DashboardLayout";
 import React from "react";
+import ProjectHttpReq from "services/Project.service";
 
 // eslint-disable-next-line arrow-body-style
 const projectDescription = ({ projects }: any) => {
@@ -13,17 +14,11 @@ const projectDescription = ({ projects }: any) => {
 
 export default projectDescription;
 
-export function getServerSideProps() {
-    const projects = [
-        { id: 1, name: "Project 1", description: "Description  Description Description" },
-        { id: 2, name: "Project 2", description: "Description  Description Description" },
-        { id: 3, name: "Project 3", description: "Description  Description Description" },
-        { id: 4, name: "Project 4", description: "Description  Description Description" },
-        { id: 5, name: "Project 5", description: "Description  Description Description" },
-    ];
+export async function getServerSideProps() {
+    const result = await ProjectHttpReq.getAllProjects();
     return {
         props: {
-            projects,
+            projects: result.projects,
         },
     };
 }

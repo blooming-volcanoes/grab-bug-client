@@ -17,7 +17,7 @@ function ProjectDescriptionTable({ projects }: any) {
                 <div className="">
                     <ProjectPageHeading />
                     <div className="flex flex-col justify-between px-4 py-2 md:flex-row">
-                        <Entries />
+                        <Entries projects={projects} />
                         <Search />
                     </div>
                 </div>
