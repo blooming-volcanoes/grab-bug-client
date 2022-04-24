@@ -37,7 +37,6 @@ const menus: IMenu[] = [
 function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
     const { user, logout } = useAuth();
-    console.log(user);
     return (
         <>
             <header>

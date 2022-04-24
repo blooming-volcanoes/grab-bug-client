@@ -3,8 +3,6 @@
 import React from "react";
 
 function UserList({ chatUser, handleFunction }: any) {
-    // console.log(props);
-
     return (
         <div
             onClick={handleFunction}

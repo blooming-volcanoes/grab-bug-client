@@ -1,10 +1,21 @@
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/button-has-type */
-import bannerImage from "assets/images/banner.png";
-import Image from "next/image";
+// import bannerImage from "assets/images/banner.png";
+// import Image from "next/image";
 import React from "react";
+import Lottie from "react-lottie";
+import bug from "../../assets/animation/bug.json";
 
 function Banner() {
+    const defaultOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: bug,
+        rendererSettings: {
+            preserveAspectRatio: "xMidYMid slice",
+        },
+    };
+
     return (
         <section>
             <div className="mx-4 my-12 flex flex-col items-center justify-between py-10 md:max-w-3xl  lg:mx-auto lg:max-w-6xl lg:flex-row">
@@ -72,8 +83,11 @@ function Banner() {
 
                 {/* right side  */}
                 <div className="order-1 w-full lg:order-2 lg:w-[60%]">
-                    <div className="bg-none bg-cover bg-center bg-no-repeat shadow-[0_0_10px_#5584AC]">
-                        <Image src={bannerImage} />
+                    <div className="bg-none bg-cover bg-center bg-no-repeat ">
+                        {/* shadow-[0_0_10px_#5584AC] */}
+                        {/* <Image src={bannerImage} /> */}
+
+                        <Lottie options={defaultOptions} />
                     </div>
                 </div>
             </div>

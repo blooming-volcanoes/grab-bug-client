@@ -54,8 +54,6 @@ function SideDrawer() {
     // accessing Chat
 
     const accessChat = async (userId: string): Promise<void> => {
-        console.log(userId);
-
         try {
             setLoadingChat(true);
             const config = {
@@ -70,11 +68,7 @@ function SideDrawer() {
 
             // const chatData = data.fullChat;
 
-            console.log(data);
-            //     console.log(!chats.find((c: any) => c._id === data._id), 'kalam');
-
             if (!chats.find((c: any) => c._id === data._id)) setChats([data, ...chats]);
-            console.log(chats, "kalam");
 
             setSelectedChat(data);
             setLoading(false);

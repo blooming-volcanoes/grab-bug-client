@@ -24,7 +24,6 @@ function ProjectCreate() {
                 }
             });
 
-        console.log(data);
         reset();
     };
     return (

@@ -24,7 +24,6 @@ function MyChats() {
             };
 
             const { data } = await axios.get("http://localhost:5000/chat", config);
-            console.log(data.chat);
 
             const getData = await axios.get("http://localhost:5000/me", config);
             setLoggedUser(getData.data.user);
@@ -37,7 +36,7 @@ function MyChats() {
 
     useEffect(() => {
         fetchChats();
-    }, []);
+    }, [chats.length]);
     return (
         <div className={` bg-grey-800 h-screen  w-full justify-between border-4 md:w-3/12`}>
             <div className="flex w-full items-center justify-between px-2 pb-2">
@@ -58,7 +57,7 @@ function MyChats() {
                                 }`}
                                 key={chat._id}
                             >
-                                <p>{chat?.users[1]?.name}</p>
+                                <p>{chat.users && chat?.users[1]?.name}</p>
                             </div>
                         ))}
                     </div>
