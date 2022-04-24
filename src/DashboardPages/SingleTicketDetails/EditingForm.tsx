@@ -1,9 +1,13 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable jsx-a11y/label-has-associated-control */
+import cogoToast from "cogo-toast";
+import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import IssueHttpReq from "services/Issue.service";
 import ProjectHttpReq from "services/Project.service";
 
 function EditingForm({ ticketId }: any) {
+    const router = useRouter();
     const [ticket, setTicket] = useState<any>({});
     const [project, setProject] = useState<any>({});
 
@@ -15,6 +19,17 @@ function EditingForm({ ticketId }: any) {
     const getProject = async (id: any) => {
         const projectData = await ProjectHttpReq.getProject(id);
         setProject(projectData.project);
+    };
+
+    const handleApprove = async () => {
+        const response = await IssueHttpReq.approveIssue(ticket._id, {
+            ...ticket,
+            status: "approved",
+        });
+        if (response.data.success) {
+            cogoToast.success("Ticket is approved");
+            router.push("/dashboard/tickets");
+        }
     };
 
     useEffect(() => {
@@ -97,7 +112,7 @@ function EditingForm({ ticketId }: any) {
                                 htmlFor="created-at"
                                 className="block text-sm font-medium text-gray-700"
                             >
-                                Created at
+                                Reported at
                             </label>
                             <input
                                 disabled
@@ -132,10 +147,21 @@ function EditingForm({ ticketId }: any) {
                                 Status
                             </label>
                             <input
+                                disabled
                                 type="text"
                                 value={ticket.status}
                                 onChange={() => {}}
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#22577E] focus:ring-[#22577E] sm:text-sm"
+                            />
+                        </div>
+                        <div className="col-span-6 sm:col-span-3">
+                            Description
+                            <textarea
+                                onChange={() => {}}
+                                disabled
+                                rows={7}
+                                className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-[#22577E] focus:ring-[#22577E] sm:text-sm"
+                                value={ticket.bugDescription}
                             />
                         </div>
 
@@ -152,16 +178,28 @@ function EditingForm({ ticketId }: any) {
                                 autoComplete="priority-name"
                                 className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-[#22577E] focus:ring-[#22577E] sm:text-sm"
                             >
-                                <option>United States</option>
-                                <option>Canada</option>
-                                <option>Mexico</option>
+                                <option value="approved">Approve</option>
+                                <option value="rejected">Reject</option>
                             </select>
                         </div>
                     </div>
                 </div>
                 <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
-                    <button type="submit" className="primary-btn inline-flex justify-center">
-                        Assign
+                    <button
+                        onClick={handleApprove}
+                        type="button"
+                        className="primary-btn inline-flex justify-center bg-green-600"
+                    >
+                        Approve
+                    </button>
+                </div>
+                <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
+                    <button
+                        onClick={() => {}}
+                        type="button"
+                        className="primary-btn inline-flex justify-center bg-red-600"
+                    >
+                        Reject
                     </button>
                 </div>
             </div>

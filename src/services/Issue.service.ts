@@ -17,6 +17,11 @@ class IssueReq {
         const data = await httpReq.get(`/issue/${id}`).then((data) => data);
         return data;
     }
+
+    async approveIssue(id: any, payload: any) {
+        const data = await httpReq.put(`/issue/${id}`, payload).then((data) => data);
+        return data;
+    }
 }
 
 const IssueHttpReq = new IssueReq();
