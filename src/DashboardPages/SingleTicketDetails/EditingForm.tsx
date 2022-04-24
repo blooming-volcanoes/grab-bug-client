@@ -32,6 +32,11 @@ function EditingForm({ ticketId }: any) {
         }
     };
 
+    const handleReject = async () => {
+        cogoToast.info("Rejection functionality will be implemented soon!");
+        router.push("/dashboard/tickets");
+    };
+
     useEffect(() => {
         getIssue(ticketId);
     }, [ticketId]);
@@ -195,7 +200,7 @@ function EditingForm({ ticketId }: any) {
                 </div>
                 <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
                     <button
-                        onClick={() => {}}
+                        onClick={handleReject}
                         type="button"
                         className="primary-btn inline-flex justify-center bg-red-600"
                     >
