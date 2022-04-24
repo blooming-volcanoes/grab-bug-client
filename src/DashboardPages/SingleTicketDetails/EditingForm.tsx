@@ -169,24 +169,6 @@ function EditingForm({ ticketId }: any) {
                                 value={ticket.bugDescription}
                             />
                         </div>
-
-                        <div className="col-span-6 sm:col-span-3">
-                            <label
-                                htmlFor="priority"
-                                className="block text-sm font-medium text-gray-700"
-                            >
-                                Ticket Priority
-                            </label>
-                            <select
-                                id="priority"
-                                name="priority"
-                                autoComplete="priority-name"
-                                className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-[#22577E] focus:ring-[#22577E] sm:text-sm"
-                            >
-                                <option value="approved">Approve</option>
-                                <option value="rejected">Reject</option>
-                            </select>
-                        </div>
                     </div>
                 </div>
                 <div className="bg-gray-50 px-4 py-3 text-right sm:px-6">
