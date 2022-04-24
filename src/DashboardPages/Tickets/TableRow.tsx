@@ -6,7 +6,6 @@ function TableRow({ ticket }: any) {
     return (
         <tr className="border-b">
             <td className="table-td">{ticket.title}</td>
-            <td className="table-td">N/A</td>
             <td className="table-td">{ticket.severity}</td>
             <td className="table-td">{ticket.status}</td>
             <td className="table-td">{ticket.bugCategory}</td>
@@ -18,7 +17,7 @@ function TableRow({ ticket }: any) {
                         href={`/dashboard/tickets/${ticket._id}`}
                         // as="/dashboard/tickets/issue-details"
                     >
-                        Edit/Assign
+                        Approve/Reject
                     </Link>
                 </li>
                 <li className="text-blue-600 underline decoration-solid">
