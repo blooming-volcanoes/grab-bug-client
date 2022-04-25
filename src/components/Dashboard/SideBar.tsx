@@ -21,7 +21,7 @@ const dashboardRoutes = [
         icons: FaRegUser,
     },
     {
-        path: "/dashboard/projectDescription",
+        path: "/dashboard/projects",
         name: "Projects",
         icons: FaRegCalendarCheck,
     },

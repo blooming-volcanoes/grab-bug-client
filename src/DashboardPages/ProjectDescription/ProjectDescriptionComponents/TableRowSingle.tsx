@@ -11,7 +11,7 @@ function TableRowSingle({ project }: any) {
             <td className={`${styles.td} md:w-[300px]`}>
                 <div className="flex justify-center">
                     <Link href="/dashboard/projectDetails">
-                        <a className="table-btn ">More Details</a>
+                        <a className="table-btn ">Project Details</a>
                     </Link>
                     <a className="table-btn mx-2" href="#">
                         Manage Users
