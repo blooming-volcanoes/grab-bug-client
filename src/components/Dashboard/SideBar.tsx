@@ -54,7 +54,6 @@ const dashboardRoutes = [
 
 function SideBar() {
     const router: any = useRouter();
-    console.log(router);
     return (
         <div className="sidebar-scrollbar h-screen w-full overflow-auto border-r border-r-gray-200 bg-[#ffffff] shadow-xl">
             <div className="flex justify-center">
