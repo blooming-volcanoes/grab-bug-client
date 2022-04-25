@@ -13,6 +13,7 @@ import Lottie from "react-lottie";
 import io from "socket.io-client";
 import typingAnimation from "../../assets/animation/typing.json";
 import { Spinner } from "./ChatLoading";
+import { getSender } from "./ChatLogic";
 import ScrollableChat from "./ScrollableChat";
 
 const ENDPOINT = "http://localhost:5000";
@@ -146,6 +147,12 @@ function SingleChat() {
         }, timerLength);
     };
 
+    const logId = user.user;
+    // eslint-disable-next-line prefer-destructuring
+    const users = selectedChat?.users;
+
+    // console.log( );
+
     return (
         <div>
             {selectedChat ? (
@@ -159,7 +166,9 @@ function SingleChat() {
                                         src="https://cdn.pixabay.com/photo/2018/01/15/07/51/woman-3083383__340.jpg"
                                         alt="username"
                                     />
-                                    <span className="ml-2 block font-bold text-gray-600">Emma</span>
+                                    <span className="ml-2 block font-bold text-gray-600">
+                                        {selectedChat?.users && getSender(logId, users)}
+                                    </span>
                                     <span className="absolute left-10 top-3 h-3 w-3 rounded-full bg-green-600" />
                                 </div>
                                 <div className="relative h-[25rem] w-full overflow-y-auto p-6">
@@ -170,7 +179,6 @@ function SingleChat() {
                                     ) : (
                                         <div>
                                             <ScrollableChat messages={messages} />
-                                            <h3>Hlloo</h3>
                                             {istyping ? (
                                                 <div>
                                                     <Lottie

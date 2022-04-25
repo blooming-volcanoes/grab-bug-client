@@ -11,6 +11,9 @@ export interface ChatLogic {
     userId: string;
 }
 
+export const getSender = (loggedUser: any, users: any) =>
+    users[0]._id === loggedUser._id ? users[1].name : users[0].name;
+
 export const isSameSenderMargin = (messages: any, m: any, i: any, userId: string) => {
     // console.log(i === messages.length - 1);
 

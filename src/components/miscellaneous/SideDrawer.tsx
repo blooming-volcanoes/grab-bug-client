@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable array-callback-return */
 /* eslint-disable consistent-return */
@@ -26,7 +27,7 @@ function SideDrawer() {
     const { chats, setChats, setSelectedChat } = chatState();
 
     // Search User by email or name
-    const handleSeacht = async (): Promise<void> => {
+    const handleSearch = async (): Promise<void> => {
         if (!search) {
             return cogoToast.error("Please enter something in Serch !!!");
         }
@@ -68,9 +69,12 @@ function SideDrawer() {
 
             // const chatData = data.fullChat;
 
-            if (!chats.find((c: any) => c._id === data._id)) setChats([data, ...chats]);
+            if (!chats.find((c: any) => c._id === data._id)) {
+                chats && setChats([data, ...chats]);
+            }
 
-            setSelectedChat(data);
+            setSelectedChat(data.fullChat);
+
             setLoading(false);
 
             setOpen(false);
@@ -141,7 +145,7 @@ function SideDrawer() {
                                         <div className="px-4 sm:px-6">
                                             <Dialog.Title className="text-lg font-medium text-gray-900">
                                                 {" "}
-                                                Panel title{" "}
+                                                Search User by name or Email{" "}
                                             </Dialog.Title>
                                         </div>
                                         <div className="relative mt-6 flex-1 px-4 sm:px-6">
@@ -156,7 +160,7 @@ function SideDrawer() {
                                                 />
                                                 <button
                                                     className="border-2 border-black px-3 py-2 "
-                                                    onClick={handleSeacht}
+                                                    onClick={handleSearch}
                                                 >
                                                     Go
                                                 </button>

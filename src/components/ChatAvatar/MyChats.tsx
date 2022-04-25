@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -8,9 +9,11 @@ import chatState from "hooks/chatState";
 import useAuth from "hooks/useAuth";
 import React, { useEffect, useState } from "react";
 import { ChatLoading } from "./ChatLoading";
+import { getSender } from "./ChatLogic";
 
 function MyChats() {
     const [loggedUser, setLoggedUser] = useState();
+    const [other, setOther] = useState();
 
     const { user } = useAuth();
     const { selectedChat, chats, setChats, setSelectedChat } = chatState();
@@ -51,13 +54,13 @@ function MyChats() {
                     <div>
                         {chats?.map((chat: any) => (
                             <div
-                                onClick={() => setSelectedChat(chat)}
+                                onClick={() => chat.users && setSelectedChat(chat)}
                                 className={`bottom-2 cursor-pointer px-2 py-2 ${
                                     selectedChat === chat ? "bg-green-900" : "bg-white"
                                 }`}
                                 key={chat._id}
                             >
-                                <p>{chat.users && chat?.users[1]?.name}</p>
+                                <p>{chat.users && getSender(loggedUser, chat.users)}</p>
                             </div>
                         ))}
                     </div>
