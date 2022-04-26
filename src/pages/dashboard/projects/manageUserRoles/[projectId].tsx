@@ -14,7 +14,7 @@ export default manageUserRoles;
 
 export const getServerSideProps: GetServerSideProps = async () => {
     const { users } = await UserHttpReq.getAllUsers();
-    const roles = ["Prject Manager", "Developer", "Submitter", "Designer", "Reviewer"];
+    const roles = ["Project Manager", "Developer", "Submitter", "Designer", "Reviewer"];
     return {
         props: {
             users,

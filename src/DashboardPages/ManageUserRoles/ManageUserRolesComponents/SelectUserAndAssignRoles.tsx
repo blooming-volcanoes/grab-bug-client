@@ -16,7 +16,7 @@ function SelectUserAndAssignRoles({ users, roles }: any) {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div className="my-2 w-full">
-                <Text className="mb-2 text-[20px]">Select 1 or more users</Text>
+                <Text className="mb-2 text-[20px]">Select a user</Text>
                 <div className="mb-5 max-h-24 w-full overflow-y-auto bg-white">
                     <div>
                         <select className="w-full" {...register("user")}>
