@@ -5,30 +5,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-import {
-    FaAccessibleIcon,
-    FaCloudsmith,
-    FaFontAwesomeFlag,
-    FaHubspot,
-    FaRegCalendarCheck,
-    FaRegUser,
-} from "react-icons/fa";
+import { FaAccessibleIcon, FaFontAwesomeFlag, FaHubspot, FaRegCalendarCheck } from "react-icons/fa";
 
 const dashboardRoutes = [
-    {
-        path: "/dashboard/manageUserRoles",
-        name: "Manage",
-        icons: FaRegUser,
-    },
     {
         path: "/dashboard/projects",
         name: "Projects",
         icons: FaRegCalendarCheck,
-    },
-    {
-        path: "/dashboard/projectDetails",
-        name: "Project Details",
-        icons: FaCloudsmith,
     },
     {
         path: "/dashboard/ticketDetails",
