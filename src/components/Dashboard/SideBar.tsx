@@ -41,9 +41,7 @@ function SideBar() {
         <div className="sidebar-scrollbar h-screen w-full overflow-auto border-r border-r-gray-200 bg-[#ffffff] shadow-xl">
             <div className="flex justify-center">
                 <div className="w-[200px] p-3">
-                    <Link href="/dashboard">
-                        <Image className="cursor-pointer" src={logo} alt="logo" />
-                    </Link>
+                    <Image className="cursor-pointer" src={logo} alt="logo" />
                 </div>
                 {/* <p className="font-semibold uppercase text-[#b3b8d4]">Issue Tracker</p> */}
             </div>

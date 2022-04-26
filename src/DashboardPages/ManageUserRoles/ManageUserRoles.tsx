@@ -18,7 +18,6 @@ const ManageUserRoles = ({ users, roles }: any) => (
                     <HeadingText />
                     <div className="px-4">
                         <SelectUserAndAssignRoles users={users} roles={roles} />
-                        <button className="primary-btn">Submit</button>
                     </div>
                 </div>
                 <div className="md:w-[60%]">
