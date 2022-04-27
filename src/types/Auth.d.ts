@@ -13,6 +13,7 @@ export interface IAuthContext {
     authLoading: boolean;
     error: null;
     verify: any;
+    token: string;
     setError: React.Dispatch<React.SetStateAction<null>>;
     login: (data: IUser) => Promise<void>;
     register: (data: IUser) => Promise<void>;

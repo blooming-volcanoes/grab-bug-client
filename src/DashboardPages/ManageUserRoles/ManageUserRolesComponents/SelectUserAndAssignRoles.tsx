@@ -1,16 +1,23 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-unneeded-ternary */
 /* eslint-disable no-underscore-dangle */
+import cogoToast from "cogo-toast";
 import React from "react";
 import { useForm } from "react-hook-form";
 import UserHttpReq from "services/People.service";
 import Text from "./Text";
 
-function SelectUserAndAssignRoles({ users, roles }: any) {
+function SelectUserAndAssignRoles({ users, roles, project }: any) {
+    console.log("====================================");
+    console.log();
+    console.log("====================================");
     const { register, handleSubmit, reset } = useForm<any>();
     const onSubmit = async (data: any) => {
-        const a = await UserHttpReq.editUserRole(data.user, data);
-        console.log(a);
+        const res = await UserHttpReq.editUserRole({ ...data, projectId: project._id });
+        if (res.success) {
+            cogoToast.success("User assigned");
+            reset();
+        }
     };
 
     return (
@@ -26,7 +33,7 @@ function SelectUserAndAssignRoles({ users, roles }: any) {
                             </option>
                             {users.map((user: any) => {
                                 if (roles.indexOf(user.role) === -1) {
-                                    // this check on above line ensures that a user already assigned a role will not appear in the dropdown
+                                    // this condition above line ensures that a user already assigned a role will not appear in the dropdown
                                     return (
                                         <option value={user._id} key={user._id}>
                                             {user.name}
