@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { SocketContext } from "context/SocketContext";
@@ -9,8 +10,7 @@ import { MdAssignment } from "react-icons/md";
 
 function CopyId({ children }) {
     const [idToCall, setIdToCall] = useState("");
-    const { me, callAccepted, name, setName, callEnded, leaveCall, callUser } =
-        useContext(SocketContext);
+    const { me, callAccepted, setName, callEnded, leaveCall, callUser } = useContext(SocketContext);
     return (
         <div className="mx-auto mt-5">
             <div className="grid gap-4 bg-slate-100 md:grid-cols-2">

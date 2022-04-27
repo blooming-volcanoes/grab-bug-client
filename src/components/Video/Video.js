@@ -4,10 +4,7 @@ import { SocketContext } from "context/SocketContext";
 import React, { useContext } from "react";
 
 function Video() {
-    const { name, callAccepted, myVideo, userVideo, callEnded, stream, call } =
-        useContext(SocketContext);
-
-    console.log(stream);
+    const { callAccepted, myVideo, userVideo, callEnded, stream, name } = useContext(SocketContext);
 
     return (
         <div className=" mx-auto grid w-2/3 grid-cols-1 justify-items-center gap-4 p-0 md:grid-cols-2">

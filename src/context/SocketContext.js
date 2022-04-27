@@ -7,7 +7,7 @@ import { io } from "socket.io-client";
 
 export const SocketContext = createContext();
 
-const socket = io("http://localhost:5000");
+const socket = io("http://localhost:8000");
 
 function ContextProvider({ children }) {
     const [callAccepted, setCallAccepted] = useState(false);
@@ -23,8 +23,6 @@ function ContextProvider({ children }) {
 
     const router = useRouter();
     const route = router.asPath;
-
-    const [value, setValue] = useState(false);
 
     useEffect(() => {
         navigator.mediaDevices.getUserMedia({ video: true, audio: true }).then((currentStream) => {
