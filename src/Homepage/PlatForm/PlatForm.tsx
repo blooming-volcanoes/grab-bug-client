@@ -18,7 +18,7 @@ function PlatForm() {
                         className="text mt-5 max-w-sm text-sm leading-6 "
                         style={{ color: "#292d34" }}
                     >
-                        Customize ClickUp to tackle any project or task with 35+ ClickApps. Break
+                        Customize GrabBug to tackle any project or task with 35+ ClickApps. Break
                         down work with subtasks, assign Sprint Points, link tasks to other items
                         with Relationships, and more
                     </p>

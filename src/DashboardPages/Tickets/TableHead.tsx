@@ -8,9 +8,6 @@ function TableHead() {
                     Title
                 </th>
                 <th scope="col" className="table-th">
-                    Developer Assigned
-                </th>
-                <th scope="col" className="table-th">
                     Ticket Priority
                 </th>
                 <th scope="col" className="table-th">
@@ -23,7 +20,7 @@ function TableHead() {
                     Created by
                 </th>
                 <th scope="col" className="table-th">
-                    Edit
+                    Endorsement
                 </th>
             </tr>
         </thead>

@@ -4,7 +4,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import logo from "assets/images/logo.svg";
 import cogoToast from "cogo-toast";
 import CircleLoader from "components/custom/CircleLoader";
 import useAuth from "hooks/useAuth";
@@ -14,6 +13,7 @@ import Link from "next/link";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { IUser } from "types/Auth";
+import logo from "../../assets/images/grabbug-logo.png";
 
 function Login() {
     const { register, handleSubmit } = useForm<IUser>();
@@ -67,10 +67,7 @@ function Login() {
                         {...register("password")}
                     />
 
-                    <button
-                        className="rounded-lg bg-indigo-500 py-3 px-4 text-white hover:bg-indigo-600"
-                        type="submit"
-                    >
+                    <button className="primary-btn" type="submit">
                         Sign up
                     </button>
 
@@ -78,7 +75,7 @@ function Login() {
                     <p className="text-center text-sm font-semibold">
                         Don't have an account ?{" "}
                         <Link href="/register">
-                            <a className="text-indigo-500">Register</a>
+                            <a className="text-blue-500">Register</a>
                         </Link>
                     </p>
                 </form>

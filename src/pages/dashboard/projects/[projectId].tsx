@@ -1,21 +1,22 @@
 import ProjectDetails from "DashboardPages/ProjectDetails/ProjectDetails";
 import DashboardLayout from "Layouts/DashboardLayout";
 import React from "react";
+import ProjectHttpReq from "services/Project.service";
 
-const projectDetails = ({ projects, users, tickets }: any) => (
-    <DashboardLayout>
-        {projects.map((project: any) => (
+function ProjectSingle({ project, users, tickets }: any) {
+    return (
+        <DashboardLayout>
             <ProjectDetails key={project.id} users={users} tickets={tickets} project={project} />
-        ))}
-    </DashboardLayout>
-);
+        </DashboardLayout>
+    );
+}
 
-export default projectDetails;
+export default ProjectSingle;
 
-export function getServerSideProps() {
-    const projects = [
-        { id: 1, name: "Project 1", description: "Description  Description Description" },
-    ];
+export async function getServerSideProps(context: any) {
+    const { params } = context;
+    const { projectId } = params;
+    const project = await ProjectHttpReq.getProject(projectId);
     const users = [
         { id: 1, name: "A.S.M. Habibullah Sadique", email: "abc@firemail.com", role: "Admin" },
         { id: 2, name: "Awal Hossain", email: "abc@firemail.com", role: "Backend Dev" },
@@ -53,9 +54,25 @@ export function getServerSideProps() {
 
     return {
         props: {
-            projects,
+            project: project.project,
             users,
             tickets,
         },
     };
 }
+
+// import DashboardLayout from "Layouts/DashboardLayout";
+// import { useRouter } from "next/router";
+// import React from "react";
+
+// function ProjectSingle() {
+//     const router = useRouter();
+//     const { projectId } = router.query;
+//     return (
+//         <DashboardLayout>
+//             <div>{projectId}</div>
+//         </DashboardLayout>
+//     );
+// }
+
+// export default ProjectSingle;
