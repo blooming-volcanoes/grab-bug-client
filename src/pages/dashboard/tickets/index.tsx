@@ -1,7 +1,7 @@
 import TicketDetailsList from "DashboardPages/Tickets/TicketDetailsList";
 import DashboardLayout from "Layouts/DashboardLayout";
 import React from "react";
-import IssueHttpReq from "../../services/Issue.service";
+import IssueHttpReq from "../../../services/Issue.service";
 
 function tickets({ allTickets }: any) {
     return (
