@@ -2,11 +2,10 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/function-component-definition */
 import React from "react";
-import AssignRoles from "./ManageUserRolesComponents/AssignRoles";
 import HeadingText from "./ManageUserRolesComponents/HeadingText";
 import NumberOfEntries from "./ManageUserRolesComponents/NumberOfEntries";
 import SearchUser from "./ManageUserRolesComponents/SearchUser";
-import SelectUsers from "./ManageUserRolesComponents/SelectUsers";
+import SelectUserAndAssignRoles from "./ManageUserRolesComponents/SelectUserAndAssignRoles";
 import TableHeading from "./ManageUserRolesComponents/TableHeading";
 import TableTopText from "./ManageUserRolesComponents/TableTopText";
 import UserList from "./ManageUserRolesComponents/UserList";
@@ -18,9 +17,7 @@ const ManageUserRoles = ({ users, roles }: any) => (
                 <div className="md:w-[40%]">
                     <HeadingText />
                     <div className="px-4">
-                        <SelectUsers users={users} />
-                        <AssignRoles roles={roles} />
-                        <button className="primary-btn">Submit</button>
+                        <SelectUserAndAssignRoles users={users} roles={roles} />
                     </div>
                 </div>
                 <div className="md:w-[60%]">

@@ -6,10 +6,10 @@ import React from "react";
 
 function SingleTicketDetails() {
     const router = useRouter();
-    const { ticketsId } = router.query;
+    const { ticketId } = router.query;
     return (
         <DashboardLayout>
-            <EditAsignTicket ticketsId={ticketsId} />
+            <EditAsignTicket ticketId={ticketId} />
         </DashboardLayout>
     );
 }
