@@ -20,15 +20,20 @@ function SelectUserAndAssignRoles({ users, roles }: any) {
                 <div className="mb-5 max-h-24 w-full overflow-y-auto bg-white">
                     <div>
                         <select className="w-full" {...register("user")}>
-                            {/* there is a react-specific error with the below line. to be fixed */}
+                            {/* there is a react-specific error with the below line. to be fixed later */}
                             <option selected disabled value="">
                                 Choose one
                             </option>
-                            {users.map((user: any) => (
-                                <option value={user._id} key={user._id}>
-                                    {user.name}
-                                </option>
-                            ))}
+                            {users.map((user: any) => {
+                                if (roles.indexOf(user.role) === -1) {
+                                    // this check on above line ensures that a user already assigned a role will not appear in the dropdown
+                                    return (
+                                        <option value={user._id} key={user._id}>
+                                            {user.name}
+                                        </option>
+                                    );
+                                }
+                            })}
                         </select>
                     </div>
                 </div>
