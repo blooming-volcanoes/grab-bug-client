@@ -1,6 +1,7 @@
+/* eslint-disable react/destructuring-assignment */
 import React from "react";
 
-function Entries() {
+function Entries(projects: any) {
     return (
         <div className="">
             <span className="uppercase"> Show </span>
@@ -10,12 +11,12 @@ function Entries() {
                 id="entries"
                 form="entryform"
             >
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
+                {/* we will update the values later */}
+                <option value="5">X</option>
+                <option value="10">Y</option>
+                <option value="15">Z</option>
             </select>
-            <span className="uppercase"> Entries </span>
+            <span className="uppercase"> Entries out of {projects.projects.length} </span>
         </div>
     );
 }

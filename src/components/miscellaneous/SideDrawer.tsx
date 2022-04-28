@@ -46,7 +46,7 @@ function SideDrawer() {
             };
 
             const { data } = await axios.get(
-                `http://localhost:5000/users?search=${search}`,
+                `${process.env.NEXT_PUBLIC_BASE_URL}/users?search=${search}`,
                 config
             );
 
@@ -70,7 +70,11 @@ function SideDrawer() {
             };
 
             // Fetching chat data with id
-            const { data } = await axios.post(`http://localhost:5000/chat/`, { userId }, config);
+            const { data } = await axios.post(
+                `${process.env.NEXT_PUBLIC_BASE_URL}/chat/`,
+                { userId },
+                config
+            );
 
             // const chatData = data.fullChat;
 

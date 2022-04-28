@@ -17,7 +17,7 @@ import { Spinner } from "./ChatLoading";
 import { getSender } from "./ChatLogic";
 import ScrollableChat from "./ScrollableChat";
 
-const ENDPOINT = "http://localhost:5000";
+const ENDPOINT: any = process.env.NEXT_PUBLIC_BASE_URL;
 
 let socket: any;
 let selectedChatCompare: any;
@@ -66,7 +66,7 @@ function SingleChat() {
             setLoading(true);
 
             const { data } = await axios.get(
-                `http://localhost:5000/message/${selectedChat._id}`,
+                `${process.env.NEXT_PUBLIC_BASE_URL}/message/${selectedChat._id}`,
                 config
             );
             setMessages(data);
@@ -90,7 +90,7 @@ function SingleChat() {
                 };
                 setNewMessage("");
                 const { data } = await axios.post(
-                    "http://localhost:5000/message",
+                    `${process.env.NEXT_PUBLIC_BASE_URL}/message`,
                     {
                         content: newMessage,
                         chatId: selectedChat,

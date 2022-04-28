@@ -26,9 +26,9 @@ function MyChats() {
                 },
             };
 
-            const { data } = await axios.get("http://localhost:5000/chat", config);
+            const { data } = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/chat`, config);
 
-            const getData = await axios.get("http://localhost:5000/me", config);
+            const getData = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/me`, config);
             setLoggedUser(getData.data.user);
 
             setChats(data.chat);
