@@ -26,10 +26,16 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
             setError(null);
             console.log(result, "this is login result");
             setAuthLoading(false);
-            localStorage.setItem("user", JSON.stringify(result));
-            cogoToast.success(`Successfully logged in`);
-            router.replace("/dashboard");
-            window.location.reload();
+            if (result.success) {
+                const user = {
+                    token: `Bearer ${result.token}`,
+                    user: result.user,
+                };
+                localStorage.setItem("user", JSON.stringify(user));
+                cogoToast.success(`Congratulations registered successfully`);
+                router.push("/dashboard");
+                window.location.reload();
+            }
         } catch (error: any) {
             setAuthLoading(false);
             const { message } = error.response.data;

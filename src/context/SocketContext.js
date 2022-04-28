@@ -7,7 +7,7 @@ import { io } from "socket.io-client";
 
 export const SocketContext = createContext();
 
-const socket = io("http://localhost:8000");
+const socket = io(process.env.NEXT_PUBLIC_BASE_URL);
 
 function ContextProvider({ children }) {
     const [callAccepted, setCallAccepted] = useState(false);
