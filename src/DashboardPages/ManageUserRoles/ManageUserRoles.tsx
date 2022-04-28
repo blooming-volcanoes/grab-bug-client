@@ -15,7 +15,7 @@ const ManageUserRoles = ({ users, roles, project }: any) => (
         <div className="container mx-auto h-max rounded-[3px] shadow-[0_0_10px_#5584AC] md:p-3">
             <div className="flex flex-col justify-between space-x-3 md:flex-row">
                 <div className="md:w-[40%]">
-                    <HeadingText />
+                    <HeadingText project={project} />
                     <div className="px-4">
                         <SelectUserAndAssignRoles users={users} roles={roles} project={project} />
                     </div>
