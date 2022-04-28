@@ -9,6 +9,7 @@ import cogoToast from "cogo-toast";
 import chatState from "hooks/chatState";
 import useAuth from "hooks/useAuth";
 import React, { useEffect, useState } from "react";
+import { AiOutlineArrowLeft } from "react-icons/ai";
 import Lottie from "react-lottie";
 import io from "socket.io-client";
 import typingAnimation from "../../assets/animation/typing.json";
@@ -50,7 +51,7 @@ function SingleChat() {
         socket.on("stop typing", () => setIsTyping(false));
     }, []);
 
-    console.log("ites tying", istyping);
+    // console.log("ites tying", socketConnected);
 
     const fetchMessages = async () => {
         if (!selectedChat) return;
@@ -160,6 +161,7 @@ function SingleChat() {
                     <div className="w-full rounded border">
                         <div>
                             <div className="w-full">
+                                <AiOutlineArrowLeft onClick={() => setSelectedChat("")} />
                                 <div className="relative flex items-center border-b border-gray-300 p-3">
                                     <img
                                         className="h-10 w-10 rounded-full object-cover"

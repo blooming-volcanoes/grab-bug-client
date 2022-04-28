@@ -41,12 +41,15 @@ function MyChats() {
         fetchChats();
     }, [chats.length]);
     return (
-        <div className={` bg-grey-800 h-screen  w-full justify-between border-4 md:w-3/12`}>
+        <div
+            className={` ${
+                selectedChat ? "hidden md:flex" : "flex md:flex"
+            } bg-grey-800 h-screen  w-full flex-col justify-between border-4 md:w-3/12`}
+        >
             <div className="flex w-full items-center justify-between px-2 pb-2">
                 <div className="px-3 pb-3 text-lg ">My Chats</div>
-                <div>
-                    <button className="flex">New Group Chat</button>
-                </div>
+
+                <button className="flex">New Group Chat</button>
             </div>
 
             <div className="flex h-full w-full flex-col overflow-y-hidden border-2 p-2">

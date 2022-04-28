@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable array-callback-return */
@@ -8,10 +9,14 @@ import React, { Dialog, Transition } from "@headlessui/react";
 import axios from "axios";
 import cogoToast from "cogo-toast";
 import { ChatLoading, Spinner } from "components/ChatAvatar/ChatLoading";
+import Notification from "components/ChatAvatar/Notification";
 import UserList from "components/ChatAvatar/UserList";
 import chatState from "hooks/chatState";
 import useAuth from "hooks/useAuth";
+import Link from "next/link";
 import { Fragment, useState } from "react";
+import { AiFillCloseCircle } from "react-icons/ai";
+import { FcSearch } from "react-icons/fc";
 
 // import { XIcon } from '@heroicons/react/outline'
 function SideDrawer() {
@@ -85,14 +90,24 @@ function SideDrawer() {
 
     return (
         <>
-            <div className="center flex items-center justify-between">
+            <div className="center flex items-center justify-between p-2">
                 <div>
                     <button onClick={() => setOpen(true)}>
-                        <h3 className="text-sm">Search User</h3>
+                        <h3 className="text-sm">
+                            <span>
+                                <FcSearch className="mr-0 inline-block text-2xl" />
+                            </span>
+                            <span> Search User</span>
+                        </h3>
                     </button>
                 </div>
                 <div>
-                    <h3 className="text-sm">Talk tative</h3>
+                    <Link href="/">
+                        <span className="cursor-pointer text-xl">Home</span>
+                    </Link>
+                </div>
+                <div>
+                    <Notification />
                 </div>
             </div>
             {/* Drawer */}
@@ -137,7 +152,8 @@ function SideDrawer() {
                                                 onClick={() => setOpen(false)}
                                             >
                                                 <span className="sr-only">Close panel</span>
-                                                {/* <XIcon className="h-6 w-6" aria-hidden="true" /> */}
+
+                                                <AiFillCloseCircle className="bg-black text-xl" />
                                             </button>
                                         </div>
                                     </Transition.Child>

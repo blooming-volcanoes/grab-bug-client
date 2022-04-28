@@ -7,8 +7,8 @@ function Chatbox() {
     return (
         <div
             className={`${
-                selectedChat ? "flex" : "  md:flex"
-            }items-center w-full flex-col rounded-lg border-2 p-2 md:w-3/5`}
+                selectedChat ? "flex" : "hiddedn md:flex"
+            }items-center w-full flex-col p-2 md:w-3/5`}
         >
             <SingleChat />
         </div>

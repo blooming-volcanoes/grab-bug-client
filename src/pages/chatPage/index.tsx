@@ -14,7 +14,7 @@ function index() {
                 <div>
                     <SideDrawer />
                 </div>
-                <div className="flex h-screen w-full justify-between p-3">
+                <div className=" h-screen w-full justify-between p-3 md:flex">
                     <MyChats />
 
                     <Chatbox />
