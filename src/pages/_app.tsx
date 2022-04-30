@@ -8,7 +8,15 @@ import AuthenticatedLayout from "Layouts/AuthenticatedLayout";
 import { useRouter } from "next/router";
 import "styles/globals.css";
 
-const noAuthRequired = ["/", "/login", "/register", "/about", "/contact", "/documentation"];
+const noAuthRequired = [
+    "/",
+    "/login",
+    "/register",
+    "/about",
+    "/contact",
+    "/documentation",
+    "/dashboard/issueBoard",
+];
 
 function MyApp({ Component, pageProps }: any) {
     const router = useRouter();
