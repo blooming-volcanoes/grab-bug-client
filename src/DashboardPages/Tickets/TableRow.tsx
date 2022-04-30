@@ -21,7 +21,7 @@ function TableRow({ ticket }: any) {
                     </Link>
                 </li>
                 <li className="text-blue-600 underline decoration-solid">
-                    <Link href="/home">Details</Link>
+                    <Link href="/dashboard/ticketDetails">Details</Link>
                 </li>
             </td>
         </tr>
