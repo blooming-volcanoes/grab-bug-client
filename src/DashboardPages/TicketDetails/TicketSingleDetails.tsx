@@ -7,12 +7,14 @@
 
 import React from "react";
 
-function TicketSingleDetails() {
+function TicketSingleDetails({ issue }: any) {
+    const { title, bugDescription, severity, bugCategory, createdAt, status, project } = issue;
     return (
         <div className="rounded-lg border bg-white p-4 shadow ">
             <div className="space-y-2 space-x-2 rounded-lg bg-indigo-500 p-4 capitalize text-white shadow-2xl">
                 {/* ticket details header */}
-                <h4 className="text-lg">Details for ticket #12</h4>
+                <h4 className="text-3xl">{title}</h4>
+                <p className="text-sm">{bugDescription}</p>
                 <button className="text-sm underline" type="button">
                     Back to list
                 </button>
@@ -32,35 +34,36 @@ function TicketSingleDetails() {
                                     <thead className="border-b uppercase">
                                         <tr>
                                             <th scope="col" className="table-th">
-                                                Target title
+                                                title
                                             </th>
                                             <th scope="col" className="table-th">
-                                                Target Description
+                                                Description
                                             </th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr className="border-b">
-                                            <td className="table-td">AssignedUserId</td>
-                                            <td className="table-td">NamedQuery</td>
+                                            <td className="table-td">Project</td>
+                                            <td className="table-td">{project.name}</td>
                                         </tr>
-                                    </tbody>
-                                </table>
-                                <table className="min-w-full">
-                                    <thead className="border-b uppercase">
-                                        <tr>
-                                            <th scope="col" className="table-th">
-                                                Target title
-                                            </th>
-                                            <th scope="col" className="table-th">
-                                                Target Description
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
                                         <tr className="border-b">
-                                            <td className="table-td">AssignedUserId</td>
-                                            <td className="table-td">NamedQuery</td>
+                                            <td className="table-td">Severity</td>
+                                            <td className="table-td">{severity}</td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <td className="table-td">Category</td>
+                                            <td className="table-td">{bugCategory}</td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <td className="table-td">Status</td>
+                                            <td className="table-td">{status}</td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <td className="table-td">Created at</td>
+                                            <td className="table-td">
+                                                {new Date(createdAt).toLocaleDateString()}{" "}
+                                                {new Date(createdAt).toLocaleTimeString()}
+                                            </td>
                                         </tr>
                                     </tbody>
                                 </table>

@@ -9,7 +9,7 @@ function Details({ issue }: any) {
         <div className="mx-4 grid grid-cols-1 gap-y-10 gap-x-4 px-2 py-10 md:mx-auto md:max-w-3xl lg:mx-auto lg:max-w-7xl lg:px-8 ">
             {/* details side */}
             <div className="pr-2">
-                <TicketSingleDetails />
+                <TicketSingleDetails issue={issue} />
             </div>
 
             {/* comment side */}
