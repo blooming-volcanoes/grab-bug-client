@@ -14,14 +14,14 @@ function TableRow({ ticket }: any) {
                 {" "}
                 <li className="text-blue-600 underline decoration-solid">
                     <Link
-                        href={`/dashboard/tickets/${ticket._id}`}
+                        href={`/dashboard/tickets/approve/${ticket._id}`}
                         // as="/dashboard/tickets/issue-details"
                     >
                         Approve/Reject
                     </Link>
                 </li>
                 <li className="text-blue-600 underline decoration-solid">
-                    <Link href="/dashboard/ticketDetails">Details</Link>
+                    <Link href={`/dashboard/tickets/details/${ticket._id}`}>Details</Link>
                 </li>
             </td>
         </tr>

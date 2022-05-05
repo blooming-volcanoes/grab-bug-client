@@ -56,7 +56,7 @@ const selecTypeInputs: ISelectInputs[] = [
     },
 ];
 
-function TicketEdit() {
+function TicketEdit({ issue }: any) {
     return (
         <div className="mx-auto rounded-lg bg-white p-4  py-10 shadow lg:max-w-5xl">
             <div className="space-y-2  rounded-lg bg-indigo-500 p-4 capitalize text-white shadow-2xl">

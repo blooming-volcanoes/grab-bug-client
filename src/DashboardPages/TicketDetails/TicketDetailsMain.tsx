@@ -2,11 +2,12 @@ import React from "react";
 import Details from "./Details";
 import TicketEdit from "./TicketEdit";
 
-function Main() {
+function Main({ issue }: any) {
+    console.log(issue, "ISSUE");
     return (
         <section className="">
-            <Details />
-            <TicketEdit />
+            <Details issue={issue} />
+            <TicketEdit issue={issue} />
         </section>
     );
 }
