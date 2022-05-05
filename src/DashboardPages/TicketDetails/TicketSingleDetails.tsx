@@ -8,19 +8,28 @@
 import React from "react";
 
 function TicketSingleDetails({ issue }: any) {
-    const { title, bugDescription, severity, bugCategory, createdAt, status, project } = issue;
+    const {
+        title,
+        bugDescription,
+        severity,
+        bugCategory,
+        createdAt,
+        status,
+        project,
+        reporterName,
+    } = issue;
     return (
         <div className="rounded-lg border bg-white p-4 shadow ">
             <div className="space-y-2 space-x-2 rounded-lg bg-indigo-500 p-4 capitalize text-white shadow-2xl">
                 {/* ticket details header */}
-                <h4 className="text-3xl">{title}</h4>
-                <p className="text-sm">{bugDescription}</p>
-                <button className="text-sm underline" type="button">
+                <h4 className="text-3xl">Title: {title}</h4>
+                <p className="text-base">Description: {bugDescription}</p>
+                {/* <button className="text-sm underline" type="button">
                     Back to list
                 </button>
                 <button className="text-sm underline" type="button">
                     Edit ticket
-                </button>
+                </button> */}
             </div>
 
             {/* ticket more details */}
@@ -57,6 +66,10 @@ function TicketSingleDetails({ issue }: any) {
                                         <tr className="border-b">
                                             <td className="table-td">Status</td>
                                             <td className="table-td">{status}</td>
+                                        </tr>
+                                        <tr className="border-b">
+                                            <td className="table-td">Reporter</td>
+                                            <td className="table-td">{reporterName}</td>
                                         </tr>
                                         <tr className="border-b">
                                             <td className="table-td">Created at</td>

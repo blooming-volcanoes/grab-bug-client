@@ -14,7 +14,7 @@ function Details({ issue }: any) {
 
             {/* comment side */}
             <div>
-                <TicketComments />
+                <TicketComments issue={issue} />
             </div>
             {/* History side */}
             <div className="pr-2 pt-5">

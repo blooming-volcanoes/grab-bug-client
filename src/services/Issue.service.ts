@@ -22,6 +22,11 @@ class IssueReq {
         const data = await httpReq.put(`/issue/${id}`, payload).then((data) => data);
         return data;
     }
+
+    async addComment(id: any, payload: any) {
+        const data = await httpReq.put(`/comment/${id}`, payload).then((data) => data);
+        return data;
+    }
 }
 
 const IssueHttpReq = new IssueReq();
