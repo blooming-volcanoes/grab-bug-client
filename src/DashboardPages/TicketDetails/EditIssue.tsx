@@ -133,7 +133,7 @@ function EditIssue({ issue }: any) {
                             </div>
 
                             <button className="primary-btn" type="submit">
-                                Add Issue
+                                Submit
                             </button>
                         </form>
 
