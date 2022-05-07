@@ -8,9 +8,6 @@ import UserHttpReq from "services/People.service";
 import Text from "./Text";
 
 function SelectUserAndAssignRoles({ users, roles, project }: any) {
-    console.log("====================================");
-    console.log();
-    console.log("====================================");
     const { register, handleSubmit, reset } = useForm<any>();
     const onSubmit = async (data: any) => {
         const res = await UserHttpReq.editUserRole({ ...data, projectId: project._id });
