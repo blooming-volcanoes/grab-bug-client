@@ -24,11 +24,11 @@ function TicketComments({ issue }: any) {
     return (
         <div>
             {/* ticket comments */}
-            <div className="rounded-lg border bg-white p-4 shadow lg:border-r">
-                <div className="space-y-2  rounded-lg bg-indigo-500 p-4 capitalize text-white shadow-2xl">
+            <div className="container mx-auto h-max rounded-[3px] shadow-[0_0_10px_#5584AC] md:p-3">
+                <div className="rounded-[3px] bg-gradient-to-r from-[#22577E] via-[#5584AC] to-[#22577E] p-4">
                     {/* ticket header */}
-                    <h1 className="text-lg">Ticket comments</h1>
-                    <p className="text-sm font-light">All comments for ticket</p>
+                    <h1 className="text-2xl font-bold uppercase text-[#FAFFAF]">Ticket comments</h1>
+                    <p className="text-[#95D1CC]">All comments for ticket</p>
                 </div>
 
                 {/* commenter details */}
@@ -76,15 +76,11 @@ function TicketComments({ issue }: any) {
             <div className="my-5 flex flex-col space-x-0 space-y-4 lg:flex-row lg:space-y-0 lg:space-x-4">
                 <textarea
                     onChange={(e) => setComment(e.target.value)}
-                    rows={7}
+                    rows={3}
                     className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-[#22577E] focus:ring-[#22577E] sm:text-sm"
                     value={comment}
                 />
-                <button
-                    className="primary-btn max-h-14 w-full lg:w-[30%]"
-                    type="button"
-                    onClick={handleComment}
-                >
+                <button className="primary-btn" type="button" onClick={handleComment}>
                     ADD COMMENT
                 </button>
             </div>

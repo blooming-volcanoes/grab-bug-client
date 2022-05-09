@@ -95,7 +95,7 @@ function EditIssue({ issue }: any) {
                                 />
                                 <select
                                     {...register("project")}
-                                    className="mb-3 mr-3 w-full flex-auto rounded-[3px] border-2 border-solid py-2 px-3 focus:border-[#22577E] md:w-2/5"
+                                    className="mb-3 mr-3 w-full flex-auto rounded-[3px] border-2 border-solid border-gray-200 py-2 px-3 focus:border-[#22577E] md:w-2/5"
                                 >
                                     {projects.map((proj: any) => (
                                         <option value={proj._id} key={proj._id}>
@@ -106,7 +106,7 @@ function EditIssue({ issue }: any) {
                                 {projectSeverity?.length && (
                                     <select
                                         {...register("severity")}
-                                        className="mb-3 mr-3 w-full flex-auto rounded-[3px] border-2 border-solid py-2 px-3 focus:border-[#22577E] md:w-2/5"
+                                        className="mb-3 mr-3 w-full flex-auto rounded-[3px] border-2 border-solid border-gray-200 py-2 px-3 focus:border-[#22577E] md:w-2/5"
                                     >
                                         <option value={severity} key={severity}>
                                             {severity}
@@ -126,7 +126,7 @@ function EditIssue({ issue }: any) {
                                     style={{ outline: "none" }}
                                     onClick={successTextRemover}
                                     rows={5}
-                                    className="mb-3 mr-3 w-full flex-auto rounded-[3px] border-2 border-solid py-2 px-3 focus:border-[#22577E]"
+                                    className="mb-3 mr-3 w-full flex-auto rounded-[3px] border-2 border-solid border-gray-200 py-2 px-3 focus:border-[#22577E]"
                                     placeholder="Bug Description"
                                     {...register("bugDescription")}
                                 />

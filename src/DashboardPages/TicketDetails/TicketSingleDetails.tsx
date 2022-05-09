@@ -19,11 +19,11 @@ function TicketSingleDetails({ issue }: any) {
         reporterName,
     } = issue;
     return (
-        <div className="rounded-lg border bg-white p-4 shadow ">
-            <div className="space-y-2 space-x-2 rounded-lg bg-indigo-500 p-4 capitalize text-white shadow-2xl">
+        <div className="container mx-auto h-max rounded-[3px] shadow-[0_0_10px_#5584AC] md:p-3">
+            <div className="rounded-[3px] bg-gradient-to-r from-[#22577E] via-[#5584AC] to-[#22577E] p-4">
                 {/* ticket details header */}
-                <h4 className="text-3xl">Title: {title}</h4>
-                <p className="text-base">Description: {bugDescription}</p>
+                <h4 className="text-2xl font-bold uppercase text-[#FAFFAF]">Title: {title}</h4>
+                <p className="text-[#95D1CC]">Description: {bugDescription.slice(0, 50)}...</p>
                 {/* <button className="text-sm underline" type="button">
                     Back to list
                 </button>
