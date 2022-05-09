@@ -4,21 +4,32 @@
 import cogoToast from "cogo-toast";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import IssueHttpReq from "../../services/Issue.service";
+import IssueHttpReq from "services/Issue.service";
 import ProjectHttpReq from "../../services/Project.service";
-import Heading from "./Heading";
 
-function IssueCreate() {
+function EditIssue({ issue }: any) {
+    const { title, reporterName, bugCategory, bugDescription, status, project, severity } = issue;
     const [success, setSuccess] = useState<any>();
-    const { register, handleSubmit, reset } = useForm<any>();
+    const { register, handleSubmit } = useForm<any>({
+        defaultValues: {
+            title,
+            reporterName,
+            bugCategory,
+            bugDescription,
+            status,
+            project: project?._id,
+            severity,
+        },
+    });
     const [projects, setProjects] = useState<any>([]);
-    const [severity] = useState<any>(["low", "moderate", "high", "extreme"]);
+    const [projectSeverity] = useState<any>(["low", "moderate", "high", "extreme"]);
 
     const onSubmit = async (data: any): Promise<void> => {
-        const res = await IssueHttpReq.createIssue(data);
+        // need an api to edit an issue/ticket
+        const res = await IssueHttpReq.editIssue(issue._id, data);
         if (res.data.success) {
-            reset();
-            cogoToast.success("issue Added Successfully!");
+            window.location.reload();
+            cogoToast.success("Ticket edited successfully!");
         }
     };
 
@@ -37,10 +48,17 @@ function IssueCreate() {
 
     return (
         <>
-            {projects.length ? (
+            {issue._id && projects.length ? (
                 <div className="m-0 md:m-3">
                     <div className="container mx-auto h-max rounded-[3px] shadow-[0_0_10px_#5584AC] md:p-3">
-                        <Heading />
+                        <div className="rounded-[3px] bg-gradient-to-r from-[#22577E] via-[#5584AC] to-[#22577E] p-4">
+                            <h1 className="text-2xl font-bold uppercase text-[#FAFFAF]">
+                                Edit Ticket
+                            </h1>
+                            <p className="text-[#95D1CC]">
+                                You can edit the existing fields here or rewrite them
+                            </p>
+                        </div>
                         <form className="mx-1 mt-3" onSubmit={handleSubmit(onSubmit)}>
                             <div className="flex flex-col md:flex-row">
                                 <input
@@ -79,22 +97,27 @@ function IssueCreate() {
                                     {...register("project")}
                                     className="mb-3 mr-3 w-full flex-auto rounded-[3px] border-2 border-solid py-2 px-3 focus:border-[#22577E] md:w-2/5"
                                 >
-                                    {projects.map((project: any) => (
-                                        <option value={project._id} key={project._id}>
-                                            {project.name}
+                                    {projects.map((proj: any) => (
+                                        <option value={proj._id} key={proj._id}>
+                                            {proj.name}
                                         </option>
                                     ))}
                                 </select>
-                                {severity?.length && (
+                                {projectSeverity?.length && (
                                     <select
                                         {...register("severity")}
                                         className="mb-3 mr-3 w-full flex-auto rounded-[3px] border-2 border-solid py-2 px-3 focus:border-[#22577E] md:w-2/5"
                                     >
-                                        {severity.map((s: any) => (
-                                            <option value={s} key={s}>
-                                                {s}
-                                            </option>
-                                        ))}
+                                        <option value={severity} key={severity}>
+                                            {severity}
+                                        </option>
+                                        {projectSeverity
+                                            .filter((sev: any) => sev !== severity)
+                                            .map((s: any) => (
+                                                <option value={s} key={s}>
+                                                    {s}
+                                                </option>
+                                            ))}
                                     </select>
                                 )}
                             </div>
@@ -102,6 +125,7 @@ function IssueCreate() {
                                 <textarea
                                     style={{ outline: "none" }}
                                     onClick={successTextRemover}
+                                    rows={5}
                                     className="mb-3 mr-3 w-full flex-auto rounded-[3px] border-2 border-solid py-2 px-3 focus:border-[#22577E]"
                                     placeholder="Bug Description"
                                     {...register("bugDescription")}
@@ -109,7 +133,7 @@ function IssueCreate() {
                             </div>
 
                             <button className="primary-btn" type="submit">
-                                Add Issue
+                                Submit
                             </button>
                         </form>
 
@@ -125,4 +149,4 @@ function IssueCreate() {
     );
 }
 
-export default IssueCreate;
+export default EditIssue;
