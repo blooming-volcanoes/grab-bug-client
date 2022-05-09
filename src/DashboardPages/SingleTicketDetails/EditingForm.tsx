@@ -77,7 +77,7 @@ function EditingForm({ ticketId }: any) {
                             <input
                                 disabled
                                 type="text"
-                                value={project.name}
+                                value={project?.name}
                                 onChange={() => {}}
                                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#22577E] focus:ring-[#22577E] sm:text-sm"
                             />
