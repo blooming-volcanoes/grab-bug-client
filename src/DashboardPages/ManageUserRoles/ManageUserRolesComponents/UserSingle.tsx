@@ -12,10 +12,10 @@ function UserSingle({ user }: any) {
             <td className={`${styles.td} md:w-[300px]`}>
                 <div className="flex justify-center">
                     <Link href="/dashboard/projectDetails">
-                        <a className="table-btn ">More Details</a>
+                        <a className="table-btn ">about {user.assignedUser.name}</a>
                     </Link>
                     <a className="table-btn mx-2" href="#">
-                        Manage Users
+                        change role
                     </a>
                 </div>
             </td>
