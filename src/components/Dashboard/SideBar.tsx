@@ -6,33 +6,28 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
 import { BsChatLeftDotsFill } from "react-icons/bs";
-import { FaAccessibleIcon, FaFontAwesomeFlag, FaHubspot, FaRegCalendarCheck } from "react-icons/fa";
+import { FaPlusCircle, FaPlusSquare, FaProjectDiagram, FaTicketAlt } from "react-icons/fa";
 
 const dashboardRoutes = [
     {
         path: "/dashboard/projects",
         name: "Projects",
-        icons: FaRegCalendarCheck,
-    },
-    {
-        path: "/dashboard/ticketDetails",
-        name: "Ticket Details",
-        icons: FaFontAwesomeFlag,
+        icons: FaProjectDiagram,
     },
     {
         path: "/dashboard/tickets",
         name: "Tickets",
-        icons: FaHubspot,
+        icons: FaTicketAlt,
     },
     {
         path: "/dashboard/projectCreate",
         name: "Create Project",
-        icons: FaAccessibleIcon,
+        icons: FaPlusSquare,
     },
     {
         path: "/dashboard/createAnIssue",
         name: "Create Issue",
-        icons: FaAccessibleIcon,
+        icons: FaPlusCircle,
     },
     {
         path: "/chatPage",

@@ -16,6 +16,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     const [verify, setVerify] = useState<any>({});
     const [authLoading, setAuthLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [token, setToken] = useState("");
     const router = useRouter();
 
     // login
@@ -99,6 +100,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         const user = JSON.parse(getUser);
         setUser(user);
         setLoading(false);
+        setToken(user.token);
         console.log(user);
     }, []);
 
@@ -113,6 +115,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         register,
         verifyOtp,
         logout,
+        token,
     };
 
     console.log({ authLoading });
