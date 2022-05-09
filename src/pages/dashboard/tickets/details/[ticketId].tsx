@@ -10,7 +10,7 @@ import DashboardLayout from "Layouts/DashboardLayout";
 import React from "react";
 import IssueHttpReq from "services/Issue.service";
 
-function TicketDetails({ issue }: any) {
+function TicketDetails({ issue }: { issue: any }) {
     return (
         <DashboardLayout>
             <Main issue={issue} />
