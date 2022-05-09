@@ -37,7 +37,7 @@ function TicketComments({ issue }: any) {
                         <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
                             <div className="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                                 <div className="overflow-hidden">
-                                    {issue.comments.length ? (
+                                    {issue?.comments?.length ? (
                                         <table className="min-w-full ">
                                             <thead className="border-b uppercase">
                                                 <tr>
@@ -53,7 +53,7 @@ function TicketComments({ issue }: any) {
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                {issue.comments.map((com: any) => (
+                                                {issue?.comments?.map((com: any) => (
                                                     <TicketCommentSingle
                                                         key={com._id}
                                                         comment={com}

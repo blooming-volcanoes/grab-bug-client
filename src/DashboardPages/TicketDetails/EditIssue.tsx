@@ -10,14 +10,14 @@ import ProjectHttpReq from "../../services/Project.service";
 function EditIssue({ issue }: any) {
     const { title, reporterName, bugCategory, bugDescription, status, project, severity } = issue;
     const [success, setSuccess] = useState<any>();
-    const { register, handleSubmit, reset } = useForm<any>({
+    const { register, handleSubmit } = useForm<any>({
         defaultValues: {
             title,
             reporterName,
             bugCategory,
             bugDescription,
             status,
-            project: project._id,
+            project: project?._id,
             severity,
         },
     });

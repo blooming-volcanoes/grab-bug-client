@@ -23,7 +23,7 @@ function Support() {
                             24/7 real-time <br /> support.
                         </h1>
                         <p className="text-center text-sm leading-[25px] text-gray-800 lg:text-left">
-                            ClickUp has the highest rated client support in software. We're here 24
+                            GrabBug has the highest rated client support in software. We're here 24
                             hours a day, every day of the week, including holidays.
                         </p>
                         <ul className="flex flex-wrap justify-center space-x-3   lg:justify-start">

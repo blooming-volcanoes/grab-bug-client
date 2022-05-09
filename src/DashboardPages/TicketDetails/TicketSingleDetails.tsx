@@ -53,7 +53,7 @@ function TicketSingleDetails({ issue }: any) {
                                     <tbody>
                                         <tr className="border-b">
                                             <td className="table-td">Project</td>
-                                            <td className="table-td">{project.name}</td>
+                                            <td className="table-td">{project?.name}</td>
                                         </tr>
                                         <tr className="border-b">
                                             <td className="table-td">Severity</td>

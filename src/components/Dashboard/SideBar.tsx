@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+import { BsChatLeftDotsFill } from "react-icons/bs";
 import { FaPlusCircle, FaPlusSquare, FaProjectDiagram, FaTicketAlt } from "react-icons/fa";
 
 const dashboardRoutes = [
@@ -27,6 +28,11 @@ const dashboardRoutes = [
         path: "/dashboard/createAnIssue",
         name: "Create Issue",
         icons: FaPlusCircle,
+    },
+    {
+        path: "/chatPage",
+        name: "Chat",
+        icons: BsChatLeftDotsFill,
     },
 ];
 

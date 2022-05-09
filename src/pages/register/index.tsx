@@ -4,7 +4,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import logo from "assets/images/logo.svg";
 import cogoToast from "cogo-toast";
 import CircleLoader from "components/custom/CircleLoader";
 import useAuth from "hooks/useAuth";
@@ -14,6 +13,7 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { IUser } from "types/Auth";
+import logo from "../../assets/images/grabbug-logo.png";
 
 function Register() {
     const { register, handleSubmit } = useForm<IUser>();
@@ -86,10 +86,7 @@ function Register() {
                                 {...register("code")}
                             />
 
-                            <button
-                                className="rounded-lg bg-indigo-500 py-3 px-4 text-white hover:bg-indigo-600"
-                                type="submit"
-                            >
+                            <button className="primary-btn" type="submit">
                                 GO
                             </button>
 
@@ -98,7 +95,7 @@ function Register() {
                                 {counter === 0 ? (
                                     <button onClick={resendOtp}>Resend</button>
                                 ) : (
-                                    <span className="font-semibold text-indigo-500">
+                                    <span className="font-semibold text-blue-500">
                                         00 : {counter < 10 ? `0${counter}` : counter}
                                     </span>
                                 )}
@@ -128,10 +125,7 @@ function Register() {
                                 {...register("password")}
                             />
 
-                            <button
-                                className="rounded-lg bg-indigo-500 py-3 px-4 text-white hover:bg-indigo-600"
-                                type="submit"
-                            >
+                            <button className="primary-btn" type="submit">
                                 Sign up
                             </button>
                         </>
@@ -142,7 +136,7 @@ function Register() {
                         <p className="text-center text-sm font-semibold">
                             Already have an account ?{" "}
                             <Link href="/login">
-                                <a className="text-indigo-500">Login</a>
+                                <a className="text-blue-500">Login</a>
                             </Link>
                         </p>
                     )}

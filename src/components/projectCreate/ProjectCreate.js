@@ -22,7 +22,7 @@ function ProjectCreate() {
         reset();
     };
     return (
-        <div className="flex h-screen justify-center bg-gradient-to-r bg-gradient-to-r from-violet-200 to-fuchsia-300 p-5 ">
+        <div className="flex h-screen justify-center bg-gradient-to-r  from-violet-200 to-fuchsia-300 p-5 ">
             <form
                 className=" flex w-full flex-col content-center rounded bg-slate-100 p-2 shadow-lg shadow-cyan-500/50 lg:w-1/2 lg:p-5"
                 onSubmit={handleSubmit(onSubmit)}
