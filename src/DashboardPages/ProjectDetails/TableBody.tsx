@@ -5,9 +5,6 @@ import React from "react";
 import TableRowSingle from "./TableRowSingle";
 
 function TableBody({ peopleAssigned }: any) {
-    console.log("====================================");
-    console.log(peopleAssigned);
-    console.log("====================================");
     return (
         <tbody className="text-center">
             {peopleAssigned.map((person: any) => (
