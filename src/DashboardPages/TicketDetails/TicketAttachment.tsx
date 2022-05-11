@@ -12,7 +12,7 @@ function TicketAttachment() {
     // click the input file
     const clickRef = useRef<HTMLInputElement>(null);
     return (
-        <div>
+        <div className="container mx-auto h-max rounded-[3px]">
             <h1 className="text-xl">Add an attachment ?</h1>
 
             {/* input for comment */}
