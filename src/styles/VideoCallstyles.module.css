@@ -1,0 +1,6 @@
+.backgroundImage {
+    background-image: url("../assets/images/videoCallBack.svg");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
