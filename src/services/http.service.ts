@@ -2,7 +2,7 @@
 import axios, { AxiosInstance, AxiosResponse } from "axios";
 
 const axiosConfig = {
-    baseURL: "http://localhost:5000",
+    baseURL: `${process.env.NEXT_PUBLIC_BASE_URL}`,
     // timeout: 6000,
 };
 

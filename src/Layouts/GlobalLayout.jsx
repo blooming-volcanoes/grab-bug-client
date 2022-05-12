@@ -16,7 +16,7 @@ const GlobalLayout = ({children}) => {
     const {auth, socket, call} = useSelector(state => state)
     useEffect(() => {
         dispatch(loadUser())
-    const socket = io('http://localhost:5000')
+    const socket = io(process.env.NEXT_PUBLIC_BASE_URL)
     // console.log(socket);
     dispatch({type: GLOBALTYPES.SOCKET, payload:socket})
     return () => socket.close()
