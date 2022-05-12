@@ -10,13 +10,21 @@ import { IAuthContext, IUser } from "types/Auth";
 
 export const AuthContext = createContext<IAuthContext>({} as IAuthContext);
 
+<<<<<<< HEAD
+=======
+// const socket = io("http://localhost:5000");
+
+>>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
 function AuthProvider({ children }: { children: React.ReactNode }) {
     const [user, setUser] = useState<any>({});
     const [loading, setLoading] = useState(true);
     const [verify, setVerify] = useState<any>({});
     const [authLoading, setAuthLoading] = useState(false);
     const [error, setError] = useState(null);
+<<<<<<< HEAD
     const [token, setToken] = useState("");
+=======
+>>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
     const router = useRouter();
 
     // login
@@ -33,6 +41,10 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
                     user: result.user,
                 };
                 localStorage.setItem("user", JSON.stringify(user));
+<<<<<<< HEAD
+=======
+                localStorage.setItem("token", `Bearer ${result.token}`);
+>>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
                 cogoToast.success(`Congratulations registered successfully`);
                 router.push("/dashboard");
                 window.location.reload();
@@ -76,6 +88,10 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
                     user: result.user,
                 };
                 localStorage.setItem("user", JSON.stringify(user));
+<<<<<<< HEAD
+=======
+                localStorage.setItem("token", `Bearer ${result.token}`);
+>>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
                 cogoToast.success(`Congratulations registered successfully`);
                 router.push("/dashboard");
                 window.location.reload();
@@ -100,7 +116,10 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         const user = JSON.parse(getUser);
         setUser(user);
         setLoading(false);
+<<<<<<< HEAD
         setToken(user.token);
+=======
+>>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
         console.log(user);
     }, []);
 
@@ -115,11 +134,16 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         register,
         verifyOtp,
         logout,
+<<<<<<< HEAD
         token,
     };
 
     console.log({ authLoading });
 
+=======
+    };
+
+>>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
     return (
         <AuthContext.Provider value={returnObj}>
             {loading ? "loading..." : children}

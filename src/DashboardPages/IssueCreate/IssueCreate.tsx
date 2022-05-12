@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 /* eslint-disable react/jsx-no-useless-fragment */
+=======
+>>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/jsx-props-no-spreading */
 import cogoToast from "cogo-toast";
@@ -36,6 +39,7 @@ function IssueCreate() {
     }, []);
 
     return (
+<<<<<<< HEAD
         <>
             {projects.length ? (
                 <div className="m-0 md:m-3">
@@ -122,6 +126,90 @@ function IssueCreate() {
                 <h2>Loading</h2>
             )}
         </>
+=======
+        <div className="m-0 md:m-3">
+            <div className="container mx-auto h-max rounded-[3px] shadow-[0_0_10px_#5584AC] md:p-3">
+                <Heading />
+                <form className="mx-1 mt-3" onSubmit={handleSubmit(onSubmit)}>
+                    <div className="flex flex-col md:flex-row">
+                        <input
+                            style={{ outline: "none" }}
+                            onClick={successTextRemover}
+                            className="mb-3 mr-3 w-full flex-auto rounded-[3px] border-2 border-solid py-2 px-3 focus:border-[#22577E] md:w-2/5"
+                            placeholder="Title"
+                            {...register("title")}
+                        />
+
+                        <input
+                            style={{ outline: "none" }}
+                            onClick={successTextRemover}
+                            className="mb-3 mr-3 w-full flex-auto rounded-[3px] border-2 border-solid py-2 px-3 focus:border-[#22577E] md:w-2/5"
+                            placeholder="Reporter Name"
+                            {...register("reporterName")}
+                        />
+
+                        <input
+                            style={{ outline: "none" }}
+                            onClick={successTextRemover}
+                            className="mb-3 mr-3 w-full flex-auto rounded-[3px] border-2 border-solid py-2 px-3 focus:border-[#22577E] md:w-2/5"
+                            placeholder="Bug Category"
+                            {...register("bugCategory")}
+                        />
+                    </div>
+                    <div className="flex flex-col md:flex-row">
+                        <input
+                            style={{ outline: "none" }}
+                            onClick={successTextRemover}
+                            className="mb-3 mr-3 w-full flex-auto rounded-[3px] border-2 border-solid py-2 px-3 focus:border-[#22577E] md:w-2/5"
+                            placeholder="Status"
+                            {...register("status")}
+                        />
+                        {projects?.length && (
+                            <select
+                                {...register("project")}
+                                className="mb-3 mr-3 w-full flex-auto rounded-[3px] border-2 border-solid py-2 px-3 focus:border-[#22577E] md:w-2/5"
+                            >
+                                {projects.map((project: any) => (
+                                    <option value={project._id} key={project._id}>
+                                        {project.name}
+                                    </option>
+                                ))}
+                            </select>
+                        )}
+                        {severity?.length && (
+                            <select
+                                {...register("severity")}
+                                className="mb-3 mr-3 w-full flex-auto rounded-[3px] border-2 border-solid py-2 px-3 focus:border-[#22577E] md:w-2/5"
+                            >
+                                {severity.map((s: any) => (
+                                    <option value={s} key={s}>
+                                        {s}
+                                    </option>
+                                ))}
+                            </select>
+                        )}
+                    </div>
+                    <div className="mx-1 flex flex-col md:flex-row">
+                        <textarea
+                            style={{ outline: "none" }}
+                            onClick={successTextRemover}
+                            className="mb-3 mr-3 w-full flex-auto rounded-[3px] border-2 border-solid py-2 px-3 focus:border-[#22577E]"
+                            placeholder="Bug Description"
+                            {...register("bugDescription")}
+                        />
+                    </div>
+
+                    <button className="primary-btn" type="submit">
+                        Add Issue
+                    </button>
+                </form>
+
+                <p className="text-danger text-uppercase fs-4 mt-4 mb-5 pb-5 text-center">
+                    {success}
+                </p>
+            </div>
+        </div>
+>>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
     );
 }
 

@@ -30,7 +30,7 @@ const dashboardRoutes = [
         icons: FaPlusCircle,
     },
     {
-        path: "/chatPage",
+        path: "/message",
         name: "Chat",
         icons: BsChatLeftDotsFill,
     },

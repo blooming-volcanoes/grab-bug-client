@@ -8,6 +8,7 @@
         "test": "jest"
     },
     "dependencies": {
+<<<<<<< HEAD
         "@headlessui/react": "^1.5.0",
         "@types/simple-peer": "^9.11.4",
         "@emailjs/browser": "^3.6.2",
@@ -17,10 +18,23 @@
         "react": "^17.0.2",
         "react-copy-to-clipboard": "^5.1.0",
         "react-dom": "^17.0.2",
+=======
+        "@emailjs/browser": "^3.6.2",
+        "@headlessui/react": "^1.5.0",
+        "axios": "^0.26.1",
+        "cogo-toast": "^4.2.3",
+        "moment": "^2.29.3",
+        "next": "^12.1.5",
+        "peerjs": "1.3.2",
+        "react": "^18.1.0",
+        "react-copy-to-clipboard": "^5.1.0",
+        "react-dom": "^18.1.0",
+>>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
         "react-hook-form": "^7.29.0",
         "react-icons": "^4.3.1",
         "react-js-pagination": "^3.0.3",
         "react-lottie": "^1.2.3",
+<<<<<<< HEAD
         "react-notification-badge": "^1.5.1",
         "react-scrollable-feed": "^1.3.1",
         "react-messenger-customer-chat": "^0.8.0",
@@ -28,6 +42,17 @@
         "recharts": "^2.1.9",
         "simple-peer": "^9.11.1",
         "socket.io-client": "^4.4.1",
+=======
+        "react-messenger-customer-chat": "^0.8.0",
+        "react-notification-badge": "^1.5.1",
+        "react-redux": "^8.0.1",
+        "react-scrollable-feed": "^1.3.1",
+        "react-table": "^7.7.0",
+        "redux": "^4.2.0",
+        "redux-devtools-extension": "^2.13.9",
+        "redux-thunk": "^2.4.1",
+        "socket.io-client": "4.5.0",
+>>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
         "tw-elements": "^1.0.0-alpha12"
     },
     "devDependencies": {
@@ -47,6 +72,10 @@
         "eslint-plugin-jsx-a11y": "^6.5.1",
         "eslint-plugin-react": "^7.29.4",
         "eslint-plugin-react-hooks": "^4.4.0",
+<<<<<<< HEAD
+=======
+        "file-loader": "^6.2.0",
+>>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
         "husky": "^7.0.0",
         "postcss": "^8.4.5",
         "prettier": "^2.5.1",
@@ -54,6 +83,11 @@
         "pretty-quick": "^3.1.3",
         "tailwindcss": "^3.0.7",
         "ts-jest": "^27.1.4",
+<<<<<<< HEAD
         "typescript": "4.5.4"
+=======
+        "typescript": "4.5.4",
+        "url-loader": "^4.1.1"
+>>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
     }
 }

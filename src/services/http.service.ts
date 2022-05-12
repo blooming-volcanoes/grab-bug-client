@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* eslint-disable no-unneeded-ternary */
 /* eslint-disable class-methods-use-this */
 import axios, { AxiosInstance, AxiosResponse } from "axios";
@@ -13,6 +14,14 @@ const axiosConfig = {
     headers: {
         authorization: token ? token : "",
     },
+=======
+/* eslint-disable class-methods-use-this */
+import axios, { AxiosInstance, AxiosResponse } from "axios";
+
+const axiosConfig = {
+    baseURL:"http://localhost:5000",
+    // timeout: 6000,
+>>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
 };
 
 const instance: AxiosInstance = axios.create(axiosConfig);

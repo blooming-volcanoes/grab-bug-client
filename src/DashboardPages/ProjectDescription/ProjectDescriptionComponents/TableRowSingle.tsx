@@ -14,9 +14,15 @@ function TableRowSingle({ project }: any) {
                     <Link href={`/dashboard/projects/${project._id}`}>
                         <a className="table-btn ">Project Details</a>
                     </Link>
+<<<<<<< HEAD
                     <Link href={`/dashboard/projects/manageUserRoles/${project._id}`}>
                         <a className="table-btn mx-2">Manage Users</a>
                     </Link>
+=======
+                    <a className="table-btn mx-2" href="#">
+                        Manage Users
+                    </a>
+>>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
                 </div>
             </td>
         </tr>

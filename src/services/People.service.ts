@@ -8,8 +8,13 @@ class PeopleReq {
         return data;
     }
 
+<<<<<<< HEAD
     async editUserRole(payload: any) {
         const { data } = await httpReq.put(`/user`, payload).then((data: any) => data);
+=======
+    async editUserRole(id: any, payload: any) {
+        const { data } = await httpReq.put(`/user/${id}`, payload).then((data: any) => data);
+>>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
         return data;
     }
 }
