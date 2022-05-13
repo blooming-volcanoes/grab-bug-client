@@ -1,42 +1,42 @@
-.header{
+.header {
     width: 100%;
     min-height: 70px;
     position: sticky;
-    top:0;
+    top: 0;
     left: 0;
     z-index: 2;
     box-shadow: 0 0 10px #ddd;
     background: #f8f9fa;
-    border: 1px solid rgb(0, 0, 0, .125);
+    border: 1px solid rgb(0, 0, 0, 0.125);
 }
-.header .navbar{
+.header .navbar {
     width: 100%;
     height: 100%;
 }
-.header .logo h1{
+.header .logo h1 {
     font-size: 2rem;
-} 
+}
 
 /* ----------- Header Menu ---------- */
-.header .menu li{
+.header .menu li {
     opacity: 0.5;
 }
-.header .menu li.active{
+.header .menu li.active {
     opacity: 1;
 }
-.header .menu .material-icons{
+.header .menu .material-icons {
     font-size: 30px;
 }
-.header .menu .dropdown-menu{
+.header .menu .dropdown-menu {
     position: absolute;
     left: inherit;
     right: 0;
 }
-.header .menu label{
+.header .menu label {
     cursor: pointer;
 }
 
-.header .menu .notify_length{
+.header .menu .notify_length {
     position: absolute;
     top: 45%;
     left: 50%;
@@ -47,10 +47,10 @@
 }
 
 /* ---------- Header Search -------- */
-.header .search_form{
+.header .search_form {
     position: relative;
 }
-.header .search_form #search{
+.header .search_form #search {
     background: #fafafa;
     border: 1px solid #ddd;
     min-width: 250px;
@@ -59,7 +59,7 @@
     text-indent: 5px;
     border-radius: 3px;
 }
-.header .search_form .search_icon{
+.header .search_form .search_icon {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -67,11 +67,11 @@
     font-size: 12px;
     pointer-events: none;
 }
-.header .search_form .search_icon .material-icons{
+.header .search_form .search_icon .material-icons {
     font-size: 14px;
     transform: translateY(3px);
 }
-.header .search_form .close_search{
+.header .search_form .close_search {
     position: absolute;
     top: 0;
     right: 5px;
@@ -79,7 +79,7 @@
     font-weight: 900;
     color: crimson;
 }
-.header .search_form .users{
+.header .search_form .users {
     position: absolute;
     width: 100%;
     min-width: 250px;
@@ -88,7 +88,7 @@
     overflow: auto;
     margin-top: 3px;
 }
-.header .search_form .loading{
+.header .search_form .loading {
     position: absolute;
     top: 50%;
     right: 5px;
@@ -96,4 +96,3 @@
     height: 15px;
     transform: translateY(-50%);
 }
-

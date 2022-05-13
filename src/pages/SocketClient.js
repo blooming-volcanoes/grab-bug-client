@@ -6,39 +6,36 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable no-underscore-dangle */
-import React, { useEffect, useRef } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { GLOBALTYPES } from 'redux/actions/globalTypes';
-import { MESS_TYPES } from 'redux/actions/messageAction';
-
-
-
-
+import React, { useEffect, useRef } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { GLOBALTYPES } from "redux/actions/globalTypes";
+import { MESS_TYPES } from "redux/actions/messageAction";
 
 const spawnNotification = (body, icon, url, title) => {
     let options = {
-        body, icon
-    }
-    let n = new Notification(title, options)
+        body,
+        icon,
+    };
+    let n = new Notification(title, options);
 
-    n.onclick = e => {
-        e.preventDefault()
-        window.open(url, '_blank')
-    }
-}
+    n.onclick = (e) => {
+        e.preventDefault();
+        window.open(url, "_blank");
+    };
+};
 
 const SocketClient = () => {
-  console.log("ehlo i am host hugh gorgie");
-    const { auth, socket, notify, online, call } = useSelector(state => state)
-    const dispatch = useDispatch()
+    console.log("ehlo i am host hugh gorgie");
+    const { auth, socket, notify, online, call } = useSelector((state) => state);
+    const dispatch = useDispatch();
 
-    const audioRef = useRef()
+    const audioRef = useRef();
 
     // joinUser
     useEffect(() => {
-      console.log(socket.connected, auth.user?._id, "socket");
-    (auth.user?._id && socket.connected) && socket.emit('joinUser', auth.user)
-    },[socket, auth.user])
+        console.log(socket.connected, auth.user?._id, "socket");
+        auth.user?._id && socket.connected && socket.emit("joinUser", auth.user);
+    }, [socket, auth.user]);
 
     // // Likes
     // useEffect(() => {
@@ -57,7 +54,6 @@ const SocketClient = () => {
     //     return () => socket.off('unLikeToClient')
     // },[socket, dispatch])
 
-
     // // Comments
     // useEffect(() => {
     //     socket.on('createCommentToClient', newPost =>{
@@ -75,7 +71,6 @@ const SocketClient = () => {
     //     return () => socket.off('deleteCommentToClient')
     // },[socket, dispatch])
 
-
     // // Follow
     // useEffect(() => {
     //     socket.on('followToClient', newUser =>{
@@ -92,7 +87,6 @@ const SocketClient = () => {
 
     //     return () => socket.off('unFollowToClient')
     // },[socket, dispatch, auth])
-
 
     // // Notification
     // useEffect(() => {
@@ -119,24 +113,25 @@ const SocketClient = () => {
     //     return () => socket.off('removeNotifyToClient')
     // },[socket, dispatch])
 
-
     // // Message
     useEffect(() => {
-      (auth.user?._id && socket.connected) &&     socket.on('addMessageToClient', msg =>{
-            dispatch({type: MESS_TYPES.ADD_MESSAGE, payload: msg})
-          console.log(msg, "from socket ");
-            dispatch({
-                type: MESS_TYPES.ADD_USER, 
-                payload: {
-                    ...msg.user, 
-                    text: msg.text, 
-                    media: msg.media
-                }
-            })
-        })
+        auth.user?._id &&
+            socket.connected &&
+            socket.on("addMessageToClient", (msg) => {
+                dispatch({ type: MESS_TYPES.ADD_MESSAGE, payload: msg });
+                console.log(msg, "from socket ");
+                dispatch({
+                    type: MESS_TYPES.ADD_USER,
+                    payload: {
+                        ...msg.user,
+                        text: msg.text,
+                        media: msg.media,
+                    },
+                });
+            });
 
-        return () => socket.connect === false && socket.off('addMessageToClient')
-    },[socket, dispatch])
+        return () => socket.connect === false && socket.off("addMessageToClient");
+    }, [socket, dispatch]);
 
     // // Check User Online / Offline
     // useEffect(() => {
@@ -174,26 +169,30 @@ const SocketClient = () => {
     //     return () => socket.off('CheckUserOffline')
     // },[socket, dispatch])
 
-
     // // Call User
     useEffect(() => {
-        (auth.user?._id && socket.connected) &&      socket.on('callUserToClient', data =>{
-            console.log(data, 'from user');
-            dispatch({type: GLOBALTYPES.CALL, payload: data})
-        })
+        auth.user?._id &&
+            socket.connected &&
+            socket.on("callUserToClient", (data) => {
+                console.log(data, "from user");
+                dispatch({ type: GLOBALTYPES.CALL, payload: data });
+            });
 
-        return () => socket.connect === false && socket.off('callUserToClient')
-    },[socket, dispatch])
+        return () => socket.connect === false && socket.off("callUserToClient");
+    }, [socket, dispatch]);
 
     useEffect(() => {
-        (auth.user?._id && socket.connected) &&       socket.on('userBusy', data =>{
-            dispatch({type: GLOBALTYPES.ALERT, payload: {error: `${call.username} is busy!`}})
-        })
+        auth.user?._id &&
+            socket.connected &&
+            socket.on("userBusy", (data) => {
+                dispatch({
+                    type: GLOBALTYPES.ALERT,
+                    payload: { error: `${call.username} is busy!` },
+                });
+            });
 
-        return () => socket.connect === false && socket.off('userBusy')
-    },[socket, dispatch, call])
-
-
+        return () => socket.connect === false && socket.off("userBusy");
+    }, [socket, dispatch, call]);
 
     return (
         <>
@@ -201,7 +200,7 @@ const SocketClient = () => {
                 <source src={audiobell} type="audio/mp3" />
             </audio> */}
         </>
-    )
-}
+    );
+};
 
-export default SocketClient
+export default SocketClient;

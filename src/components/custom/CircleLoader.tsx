@@ -4,7 +4,7 @@ import React from "react";
 
 function CircleLoader({ className }: { className?: string }) {
     return (
-        <div className={`w-100 flex justify-center ${className}`}>
+        <div className={` flex justify-center ${className}`}>
             <svg
                 width="24"
                 height="24"

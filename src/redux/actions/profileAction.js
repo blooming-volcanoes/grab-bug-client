@@ -3,7 +3,6 @@
 // import { createNotify, removeNotify } from '../actions/notifyAction'
 // import { DeleteData, GLOBALTYPES } from './globalTypes'
 
-
 // export const PROFILE_TYPES = {
 //     LOADING: 'LOADING_PROFILE',
 //     GET_USER: 'GET_PROFILE_USER',
@@ -14,7 +13,6 @@
 //     UPDATE_POST: 'UPDATE_PROFILE_POST'
 // }
 
-
 // export const getProfileUsers = ({id, auth}) => async (dispatch) => {
 //     dispatch({type: PROFILE_TYPES.GET_ID, payload: id})
 
@@ -22,7 +20,7 @@
 //         dispatch({type: PROFILE_TYPES.LOADING, payload: true})
 //         const res = getDataAPI(`/user/${id}`, auth.token)
 //         const res1 = getDataAPI(`/user_posts/${id}`, auth.token)
-        
+
 //         const users = await res;
 //         const posts = await res1;
 
@@ -39,13 +37,12 @@
 //         dispatch({type: PROFILE_TYPES.LOADING, payload: false})
 //     } catch (err) {
 //         dispatch({
-//             type: GLOBALTYPES.ALERT, 
+//             type: GLOBALTYPES.ALERT,
 //             payload: {error: err.response.data.msg}
 //         })
 //     }
-    
-// }
 
+// }
 
 // export const updateProfileUser = ({userData, avatar, auth}) => async (dispatch) => {
 //     if(!userData.fullname)
@@ -82,7 +79,7 @@
 //         dispatch({type: GLOBALTYPES.ALERT, payload: {success: res.data.msg}})
 //     } catch (err) {
 //         dispatch({
-//             type: GLOBALTYPES.ALERT, 
+//             type: GLOBALTYPES.ALERT,
 //             payload: {error: err.response.data.msg}
 //         })
 //     }
@@ -90,7 +87,7 @@
 
 // export const follow = ({users, user, auth, socket}) => async (dispatch) => {
 //     let newUser;
-    
+
 //     if(users.every(item => item._id !== user._id)){
 //         newUser = {...user, followers: [...user.followers, auth.user]}
 //     }else{
@@ -104,13 +101,12 @@
 //     dispatch({ type: PROFILE_TYPES.FOLLOW, payload: newUser })
 
 //     dispatch({
-//         type: GLOBALTYPES.AUTH, 
+//         type: GLOBALTYPES.AUTH,
 //         payload: {
 //             ...auth,
 //             user: {...auth.user, following: [...auth.user.following, newUser]}
 //         }
 //     })
-
 
 //     try {
 //         const res = await patchDataAPI(`user/${user._id}/follow`, null, auth.token)
@@ -128,7 +124,7 @@
 
 //     } catch (err) {
 //         dispatch({
-//             type: GLOBALTYPES.ALERT, 
+//             type: GLOBALTYPES.ALERT,
 //             payload: {error: err.response.data.msg}
 //         })
 //     }
@@ -151,16 +147,15 @@
 //     dispatch({ type: PROFILE_TYPES.UNFOLLOW, payload: newUser })
 
 //     dispatch({
-//         type: GLOBALTYPES.AUTH, 
+//         type: GLOBALTYPES.AUTH,
 //         payload: {
 //             ...auth,
-//             user: { 
-//                 ...auth.user, 
-//                 following: DeleteData(auth.user.following, newUser._id) 
+//             user: {
+//                 ...auth.user,
+//                 following: DeleteData(auth.user.following, newUser._id)
 //             }
 //         }
 //     })
-   
 
 //     try {
 //         const res = await patchDataAPI(`user/${user._id}/unfollow`, null, auth.token)
@@ -178,7 +173,7 @@
 
 //     } catch (err) {
 //         dispatch({
-//             type: GLOBALTYPES.ALERT, 
+//             type: GLOBALTYPES.ALERT,
 //             payload: {error: err.response.data.msg}
 //         })
 //     }

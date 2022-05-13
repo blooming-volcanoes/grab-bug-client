@@ -26,7 +26,6 @@
 //         serviceRegion = document.getElementById("serviceRegion");
 //         phraseDiv = document.getElementById("phraseDiv");
 
-     
 //     }, [])
 
 // const startRecognizeOnceAsyncButton =()=>{
@@ -60,7 +59,6 @@
 //         });
 // }
 
-
 //     if (!!window.SpeechSDK) {
 //         SpeechSDK = window.SpeechSDK;
 //         startRecognizeOnceAsyncButton.disabled = false;
@@ -68,18 +66,16 @@
 //         document.getElementById('content').style.display = 'block';
 //         document.getElementById('warning').style.display = 'none';
 //       }
-    
+
 //   return (
 //     <div>speechToText
-
 
 // <div id="content"  >
 //     <div style={{width:"100%"}}>
 //         <div>
-    
-       
+
 //         <h1 style={{fontWeight:500}} >Microsoft Cognitive Services Speech SDK JavaScript Quickstart</h1></div>
-      
+
 //       <div>
 //         <div align="right"><a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/get-started" target="_blank" rel="noreferrer">Subscription</a>:</div>
 //         <div><input id="subscriptionKey" type="text" size="40"  /></div>
@@ -88,9 +84,9 @@
 //         <div align="right">Region</div>
 //         <div><input id="serviceRegion" type="text" size="40"  /></div>
 //       </div>
-     
+
 //         <div><button onClick={startRecognizeOnceAsyncButton} id="startRecognizeOnceAsyncButton">Start recognition</button></div>
- 
+
 //       <div>
 //         <div align="right" valign="top">Results</div>
 //         <div><textarea id="phraseDiv" style={{display:"inline-block", width:"500px", height:"200px"}}></textarea></div>
@@ -99,7 +95,6 @@
 //     </div>
 //     <Script src="https://aka.ms/csspeech/jsbrowserpackageraw"></Script>
 //   </div>
-
 
 //   )
 // }
