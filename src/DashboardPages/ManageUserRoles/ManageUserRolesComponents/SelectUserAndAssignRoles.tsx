@@ -1,3 +1,6 @@
+/* eslint-disable consistent-return */
+/* eslint-disable array-callback-return */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-unneeded-ternary */
 /* eslint-disable no-underscore-dangle */
@@ -10,7 +13,7 @@ function SelectUserAndAssignRoles({ users, roles }: any) {
     const { register, handleSubmit, reset } = useForm<any>();
     const onSubmit = async (data: any) => {
         const a = await UserHttpReq.editUserRole(data.user, data);
-        console.log(a);
+        // console.log(a);
     };
 
     return (

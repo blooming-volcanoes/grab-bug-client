@@ -16,6 +16,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     const [verify, setVerify] = useState<any>({});
     const [authLoading, setAuthLoading] = useState(false);
     const [error, setError] = useState(null);
+    const [token, setToken] = useState("");
     const router = useRouter();
 
     // login
@@ -97,7 +98,14 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     useEffect(() => {
         const getUser: any = localStorage.getItem("user");
         const user = JSON.parse(getUser);
-        setUser(user);
+        if (!user) {
+            const user = localStorage.setItem("user", JSON.stringify({}));
+            setUser(user);
+        } else {
+            setUser(user);
+            setLoading(false);
+            setToken(user?.token);
+        }
         setLoading(false);
         console.log(user);
     }, []);
@@ -113,6 +121,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         register,
         verifyOtp,
         logout,
+        token,
     };
 
     return (

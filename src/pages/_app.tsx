@@ -1,12 +1,13 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable react/react-in-jsx-scope */
 import AuthProvider from "context/AuthProvider";
-import ChatProvider from "context/ChatProvider";
-import ContextProvider from "context/SocketContext";
 import AuthenticatedLayout from "Layouts/AuthenticatedLayout";
+import GlobalLayout from "Layouts/GlobalLayout";
 import { useRouter } from "next/router";
-import "styles/globals.css";
+import DataProvider from "redux/store";
+import "../styles/global.css";
 
 const noAuthRequired = ["/", "/login", "/register", "/about", "/contact", "/documentation"];
 
@@ -15,17 +16,17 @@ function MyApp({ Component, pageProps }: any) {
 
     return (
         <AuthProvider>
-            <ChatProvider>
-                <ContextProvider>
-                    {noAuthRequired.includes(router.pathname) ? (
-                        <Component {...pageProps} />
-                    ) : (
-                        <AuthenticatedLayout>
+            <DataProvider>
+                {noAuthRequired.includes(router.pathname) ? (
+                    <Component {...pageProps} />
+                ) : (
+                    <AuthenticatedLayout>
+                        <GlobalLayout>
                             <Component {...pageProps} />
-                        </AuthenticatedLayout>
-                    )}
-                </ContextProvider>
-            </ChatProvider>
+                        </GlobalLayout>
+                    </AuthenticatedLayout>
+                )}
+            </DataProvider>
         </AuthProvider>
     );
 }
