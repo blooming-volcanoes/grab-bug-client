@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable radix */
 import React from "react";
 
