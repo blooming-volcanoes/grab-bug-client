@@ -100,7 +100,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         const user = JSON.parse(getUser);
         setUser(user);
         setLoading(false);
-        setToken(user.token);
+        setToken(user?.token);
         console.log(user);
     }, []);
 

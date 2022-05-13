@@ -5,7 +5,7 @@ import axios, { AxiosInstance, AxiosResponse } from "axios";
 let token: any | undefined;
 if (typeof window !== "undefined") {
     const userString: any = window.localStorage.getItem("user");
-    token = JSON.parse(userString).token;
+    token = JSON.parse(userString)?.token;
 }
 
 const axiosConfig = {
