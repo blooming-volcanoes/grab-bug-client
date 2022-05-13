@@ -13,7 +13,7 @@ const Conversation = () => {
                 <LeftSide />
             </div>
 
-            <div className="md:w-3/4 px-0">
+            <div className="w-full md:w-3/4 px-0">
                 <RightSide />
             </div>
         </div>

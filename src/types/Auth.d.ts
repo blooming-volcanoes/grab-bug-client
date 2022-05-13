@@ -14,10 +14,7 @@ export interface IAuthContext {
     authLoading: boolean;
     error: null;
     verify: any;
-<<<<<<< HEAD
-    token: string;
-=======
->>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
+    token?: string;
     setError: React.Dispatch<React.SetStateAction<null>>;
     login: (data: IUser) => Promise<void>;
     register: (data: IUser) => Promise<void>;
@@ -30,12 +27,9 @@ export interface UserChatContext {
     setSelectedChat: any;
     chats: any;
     setChats: any;
-    notification: any;
-    setNotification: any;
-<<<<<<< HEAD
-=======
-    socket: any
->>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
+    notification?: any;
+    setNotification?: any;
+    socket?: any;
 }
 
 export interface ChatUser {

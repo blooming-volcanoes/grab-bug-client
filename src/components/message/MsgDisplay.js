@@ -1,3 +1,4 @@
+/* eslint-disable no-alert */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable react/no-array-index-key */
@@ -32,7 +33,7 @@ const MsgDisplay = ({user, msg, theme, data}) => {
         <>
             <div className="chat_title">
                 <Avatar src={user.pic} size="small-avatar" />
-                <span>{user.username}</span>
+                <span>{user.name}</span>
             </div>
 
             <div className="you_content">
