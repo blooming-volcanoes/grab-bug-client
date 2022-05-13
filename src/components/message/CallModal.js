@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable react/button-has-type */
