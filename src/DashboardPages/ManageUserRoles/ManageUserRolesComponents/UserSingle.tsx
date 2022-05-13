@@ -7,13 +7,8 @@ import styles from "../../../styles/projectDescriptionTable.module.css";
 function UserSingle({ user }: any) {
     return (
         <tr className="border-b border-gray-400">
-<<<<<<< HEAD
-            <td className={`${styles.td} w-[300px]`}>{user.assignedUser.name}</td>
-            <td className={`${styles.td} w-[300px]`}>{user.role}</td>
-=======
             <td className={`${styles.td} w-[300px]`}>{user.name}</td>
             <td className={`${styles.td} w-[300px]`}>{user.email}</td>
->>>>>>> 690308be5cd3958a24faf9db8d12562fb7ae173a
             <td className={`${styles.td} md:w-[300px]`}>
                 <div className="flex justify-center">
                     <Link href="/dashboard/projectDetails">

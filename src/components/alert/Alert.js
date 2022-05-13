@@ -1,9 +1,10 @@
+/* eslint-disable react/function-component-definition */
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { GLOBALTYPES } from '../../redux/actions/globalTypes'
-
 import Loading from './Loading'
 import Toast from './Toast'
+
 
 const Notify = () => {
     const { alert } = useSelector(state => state)

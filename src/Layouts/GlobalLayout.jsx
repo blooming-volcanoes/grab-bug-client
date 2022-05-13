@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { loadUser } from 'redux/actions/authAction';
 import { GLOBALTYPES } from "redux/actions/globalTypes";
 import { io } from "socket.io-client";
+import Alert from '../components/alert/Alert';
 
 const GlobalLayout = ({children}) => {
     const dispatch = useDispatch();
@@ -38,6 +39,7 @@ const GlobalLayout = ({children}) => {
 
   return (
     <div>
+      < Alert />
       {(auth.user?._id && socket.connected) &&         <SocketClient />}
       {(call)&& <CallModal /> }
         <main>{children}</main>
