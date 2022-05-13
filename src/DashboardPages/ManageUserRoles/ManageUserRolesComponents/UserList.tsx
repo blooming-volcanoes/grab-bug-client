@@ -7,7 +7,7 @@ function UserList({ users }: any) {
     return (
         <tbody className="text-center">
             {users.map((user: any) => (
-                <UserSingle user={user} key={user.assignedUser._id} />
+                <UserSingle user={user} key={user._id} />
             ))}
         </tbody>
     );

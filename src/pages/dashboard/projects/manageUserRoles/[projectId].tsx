@@ -3,36 +3,22 @@ import DashboardLayout from "Layouts/DashboardLayout";
 import { GetServerSideProps } from "next";
 import React from "react";
 import UserHttpReq from "services/People.service";
-import ProjectHttpReq from "services/Project.service";
 
-const manageUserRoles = ({ users, roles, project }: any) => (
+const manageUserRoles = ({ users, roles }: any) => (
     <DashboardLayout>
-        <ManageUserRoles users={users} roles={roles} project={project} />
+        <ManageUserRoles users={users} roles={roles} />
     </DashboardLayout>
 );
 
 export default manageUserRoles;
 
-export const getServerSideProps: GetServerSideProps = async (context: any) => {
-    const { params } = context;
-    const { projectId } = params;
+export const getServerSideProps: GetServerSideProps = async () => {
     const { users } = await UserHttpReq.getAllUsers();
-    const { project } = await ProjectHttpReq.getProject(projectId);
-    const roles = [
-        "Project Manager",
-        "Front-end Developer",
-        "Back-end Developer",
-        "Submitter",
-        "UI/UX Designer",
-        "Reviewer",
-        "Pen Tester",
-        "QA Analyst",
-    ];
+    const roles = ["Project Manager", "Developer", "Submitter", "Designer", "Reviewer"];
     return {
         props: {
             users,
             roles,
-            project,
         },
     };
 };

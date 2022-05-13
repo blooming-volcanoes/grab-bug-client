@@ -98,9 +98,15 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     useEffect(() => {
         const getUser: any = localStorage.getItem("user");
         const user = JSON.parse(getUser);
-        setUser(user);
+        if (!user) {
+            const user = localStorage.setItem("user", JSON.stringify({}));
+            setUser(user);
+        } else {
+            setUser(user);
+            setLoading(false);
+            setToken(user?.token);
+        }
         setLoading(false);
-        setToken(user.token);
         console.log(user);
     }, []);
 

@@ -1,10 +1,10 @@
 import React from "react";
 
-function Entries({ peopleAssigned }: any) {
+function Entries({ users }: any) {
     return (
         <div className="">
             <span className="uppercase"> Show </span>
-            <span> {peopleAssigned.length} </span>
+            <span> {users.length} </span>
             <span className="uppercase"> Entries </span>
         </div>
     );

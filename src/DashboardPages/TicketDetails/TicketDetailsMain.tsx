@@ -1,13 +1,12 @@
 import React from "react";
 import Details from "./Details";
-import EditIssue from "./EditIssue";
+import TicketEdit from "./TicketEdit";
 
-function Main({ issue }: { issue: any }) {
-    console.log(issue, "ISSUE");
+function Main() {
     return (
         <section className="">
-            <Details issue={issue} />
-            <EditIssue issue={issue} />
+            <Details />
+            <TicketEdit />
         </section>
     );
 }

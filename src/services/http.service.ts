@@ -1,18 +1,9 @@
-/* eslint-disable no-unneeded-ternary */
 /* eslint-disable class-methods-use-this */
 import axios, { AxiosInstance, AxiosResponse } from "axios";
 
-let token: any | undefined;
-if (typeof window !== "undefined") {
-    const userString: any = window.localStorage.getItem("user");
-    token = JSON.parse(userString).token;
-}
-
 const axiosConfig = {
-    baseURL: process.env.NEXT_PUBLIC_BASE_URL,
-    headers: {
-        authorization: token ? token : "",
-    },
+    baseURL: `${process.env.NEXT_PUBLIC_BASE_URL}`,
+    // timeout: 6000,
 };
 
 const instance: AxiosInstance = axios.create(axiosConfig);
