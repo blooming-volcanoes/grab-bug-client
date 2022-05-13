@@ -29,7 +29,7 @@ export interface UserChatContext {
     setChats: any;
     notification?: any;
     setNotification?: any;
-    socket: any;
+    socket?: any;
 }
 
 export interface ChatUser {
