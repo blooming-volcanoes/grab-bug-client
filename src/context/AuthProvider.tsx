@@ -115,8 +115,6 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         logout,
     };
 
-    console.log({ authLoading });
-
     return (
         <AuthContext.Provider value={returnObj}>
             {loading ? "loading..." : children}
