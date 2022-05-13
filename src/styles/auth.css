@@ -1,4 +1,4 @@
-.auth_page{
+.auth_page {
     width: 100%;
     min-height: 100vh;
     background: #fdfdfd;
@@ -6,7 +6,7 @@
     align-items: center;
     justify-content: center;
 }
-.auth_page form{
+.auth_page form {
     background: #fff;
     max-width: 400px;
     width: 100%;
@@ -14,11 +14,11 @@
     padding: 50px 25px;
 }
 
-.auth_page form .pass{
+.auth_page form .pass {
     position: relative;
 }
 
-.auth_page form .pass small{
+.auth_page form .pass small {
     position: absolute;
     top: 50%;
     right: 5px;

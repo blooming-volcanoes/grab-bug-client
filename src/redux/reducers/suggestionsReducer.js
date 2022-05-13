@@ -1,26 +1,25 @@
-import { SUGGES_TYPES } from '../actions/suggestionsAction'
+import { SUGGES_TYPES } from "../actions/suggestionsAction";
 
 const initialState = {
     loading: false,
-    users: []
-}
-
+    users: [],
+};
 
 const suggestionsReducer = (state = initialState, action) => {
-    switch (action.type){
+    switch (action.type) {
         case SUGGES_TYPES.LOADING:
             return {
                 ...state,
-                loading: action.payload
+                loading: action.payload,
             };
         case SUGGES_TYPES.GET_USERS:
             return {
                 ...state,
-                users: action.payload.users
+                users: action.payload.users,
             };
         default:
             return state;
     }
-}
+};
 
-export default suggestionsReducer
+export default suggestionsReducer;

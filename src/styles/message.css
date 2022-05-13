@@ -1,4 +1,4 @@
-.message{
+.message {
     width: 100%;
     height: calc(100vh - 100px);
     border: 1px solid #ddd;
@@ -7,7 +7,7 @@
     background: #fbfbfb;
 }
 
-.message_header{
+.message_header {
     width: 100%;
     height: 60px;
     border-bottom: 1px solid #ddd;
@@ -16,7 +16,7 @@
     align-items: center;
     background: #f8f8f8;
 }
-.message_header input{
+.message_header input {
     flex: 1;
     height: 100%;
     border: none;
@@ -24,12 +24,12 @@
     background: #f8f8f8;
     padding: 0 5px;
 }
-.message_chat_list{
+.message_chat_list {
     width: 100%;
     height: calc(100% - 60px);
     overflow-y: auto;
 }
-.message_chat_list .message_user{
+.message_chat_list .message_user {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -38,57 +38,57 @@
     color: #555;
     cursor: pointer;
 }
-.message_chat_list .message_user.active{
+.message_chat_list .message_user.active {
     background: #eee;
 }
 
-.message_chat_list .message_user a{
+.message_chat_list .message_user a {
     color: #555;
 }
-.message_chat_list .message_user a:hover{
+.message_chat_list .message_user a:hover {
     text-decoration: none;
 }
 
-.message_chat_list .message_user .fa-circle{
+.message_chat_list .message_user .fa-circle {
     font-size: 8px;
     color: #aaa;
 }
-.message_chat_list .message_user .fa-circle.active{
+.message_chat_list .message_user .fa-circle.active {
     color: forestgreen;
 }
 
 /* -------- Chat Input----- */
-.chat_input{
+.chat_input {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
     border-top: 1px solid #ddd;
 }
-.chat_input input{
+.chat_input input {
     width: 100%;
     height: 49px;
     border: none;
     outline: none;
 }
-.chat_input button{
+.chat_input button {
     border: none;
     outline: none;
     background: white;
 }
 
-.chat_input .file_upload{
+.chat_input .file_upload {
     position: relative;
     overflow: hidden;
     margin: 0 10px;
 }
-.chat_input .file_upload #file{
+.chat_input .file_upload #file {
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     opacity: 0;
 }
-.show_media{
+.show_media {
     width: 100%;
     height: 70px;
     overflow: hidden;
@@ -100,7 +100,7 @@
     border-radius: 5px;
     padding: 0 5px;
 }
-.show_media #file_media{
+.show_media #file_media {
     position: relative;
     width: 100%;
     height: 100%;
@@ -108,13 +108,13 @@
     max-height: 70px;
 }
 .show_media #file_media img,
-.show_media #file_media video{
+.show_media #file_media video {
     width: 100%;
     height: 100%;
     display: block;
     object-fit: contain;
 }
-.show_media #file_media span{
+.show_media #file_media span {
     position: absolute;
     top: 0;
     right: 0;
@@ -130,59 +130,59 @@
 }
 
 /* -------- Chat Container ----- */
-.chat_container{
+.chat_container {
     width: 100%;
     height: calc(100% - 110px);
     overflow-y: auto;
     padding: 0 10px;
 }
-.chat_display{
+.chat_display {
     width: 100%;
     min-height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 }
-.chat_row{
+.chat_row {
     display: grid;
     grid-template-columns: 70%;
     margin-bottom: 10px;
 }
-.you_message{
+.you_message {
     justify-content: end;
     justify-items: end;
 }
-.other_message{
+.other_message {
     justify-content: start;
     justify-items: start;
 }
-.chat_text{
+.chat_text {
     padding: 9px 14px;
     margin-bottom: 5px;
 }
-.chat_time{
+.chat_time {
     font-size: 13px;
     color: #777;
 }
-.you_message .chat_text{
-    background: #0048AA;
+.you_message .chat_text {
+    background: #0048aa;
     color: white;
-    border: 1px solid #0048AA;
+    border: 1px solid #0048aa;
     border-radius: 14px 14px 0 14px;
 }
-.other_message .chat_text{
+.other_message .chat_text {
     background: white;
     color: #111;
     border: 1px solid #ddd;
     border-radius: 14px 14px 14px 0;
 }
-.chat_title{
+.chat_title {
     margin-bottom: 3px;
 }
-.you_content{
+.you_content {
     position: relative;
 }
-.you_content .fa-trash{
+.you_content .fa-trash {
     position: absolute;
     top: 50%;
     left: -15px;
@@ -191,9 +191,9 @@
     font-size: 14px;
     opacity: 0;
 }
-.you_content:hover .fa-trash{
+.you_content:hover .fa-trash {
     opacity: 1;
 }
-.chat_input .dropdown-menu{
+.chat_input .dropdown-menu {
     transform: translate3d(-110px, -200px, 0px) !important;
 }

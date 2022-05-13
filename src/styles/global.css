@@ -1,5 +1,3 @@
-
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @tailwind base;
@@ -92,38 +90,32 @@ body {
     background: #efefef;
 }
 
-
-
-
-
-
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 #theme {
-  display: none;
+    display: none;
 }
 #theme:checked ~ * {
-  filter: invert(1);
+    filter: invert(1);
 }
 
 .App {
-  width: 100%;
-  min-height: 100vh;
-  background: white;
+    width: 100%;
+    min-height: 100vh;
+    background: white;
 }
 
 .main {
-  max-width: 1000px;
-  width: 100%;
-  min-height: 100vh;
-  margin: auto;
+    max-width: 1000px;
+    width: 100%;
+    min-height: 100vh;
+    margin: auto;
 }
 
 img {
-  object-fit: cover;
+    object-fit: cover;
 }
 
 /* -------- AUTH ---------- */
@@ -165,50 +157,45 @@ img {
 /* -------- Call Modal---------- */
 @import url("./call_modal.css");
 
-
-
 /* --------- Responsive ------ */
-@media (max-width: 766px){
-  .header .navbar .logo{
-    display: none;
-  }
-  .header .menu{
-      width: 100%;
-      height: 40px;
-  }
-  .header .menu .navbar-nav{
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-  }
-  
-  .header .search_form{
-      width: 100%;
-  }
-  .header .logo{
-      margin: auto;
-  }
-  .header .logo h1{
-      font-size: 1.5rem;
-  }
-  
-  .message{
-    height: calc(100vh - 100px);
-  }
-  .right_mess,
-  .left_mess{
-    display: none;
-  }
-  .status{
-    padding: 20px 10px;
-  }
+@media (max-width: 766px) {
+    .header .navbar .logo {
+        display: none;
+    }
+    .header .menu {
+        width: 100%;
+        height: 40px;
+    }
+    .header .menu .navbar-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .header .search_form {
+        width: 100%;
+    }
+    .header .logo {
+        margin: auto;
+    }
+    .header .logo h1 {
+        font-size: 1.5rem;
+    }
+
+    .message {
+        height: calc(100vh - 100px);
+    }
+    .right_mess,
+    .left_mess {
+        display: none;
+    }
+    .status {
+        padding: 20px 10px;
+    }
 }
 
-
-
-
-.mode{
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
+.mode {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
