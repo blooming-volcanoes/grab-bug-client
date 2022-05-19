@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 /*
  *** Title : Ticket view Dashboard
  *** Date : 4/5/2022
@@ -12,9 +11,10 @@ import React from "react";
 import IssueHttpReq from "services/Issue.service";
 
 function TicketDetails({ issue }: { issue: any }) {
+    console.log("small change");
     return (
         <DashboardLayout>
-            <Main />
+            <Main issue={issue} />
         </DashboardLayout>
     );
 }

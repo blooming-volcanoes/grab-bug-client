@@ -6,9 +6,11 @@ function TicketTableHeader() {
             <tr className="text-center">
                 <th className="text-[18px] text-[#FAFFAF]">Title</th>
                 <th className="text-[18px] text-[#FAFFAF]">Submitter</th>
-                <th className="text-[18px] text-[#FAFFAF]">Developer</th>
-                <th className="text-[18px] text-[#FAFFAF]">Role</th>
-                <th className="text-[18px] text-[#FAFFAF]">Time</th>
+                <th className="text-[18px] text-[#FAFFAF]">Severity</th>
+                <th className="text-[18px] text-[#FAFFAF]">Category</th>
+                <th className="text-[18px] text-[#FAFFAF]">Status</th>
+                <th className="text-[18px] text-[#FAFFAF]">Reported at</th>
+                <th className="text-[18px] text-[#FAFFAF]">Description</th>
                 <th className="text-[18px] text-[#FAFFAF]">More</th>
             </tr>
         </thead>

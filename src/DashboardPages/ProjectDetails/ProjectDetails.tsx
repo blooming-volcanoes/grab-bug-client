@@ -17,7 +17,7 @@ import TicketTableBody from "./TicketTableBody";
 import TicketTableHeader from "./TicketTableHeader";
 import TicketTablePagination from "./TicketTablePagination";
 
-function ProjectDetails({ project, users, tickets }: any) {
+function ProjectDetails({ project, peopleAssigned, tickets }: any) {
     return (
         <div className="m-0 md:m-3">
             <div className="container mx-auto h-max rounded-[3px] shadow-[0_0_10px_#5584AC] md:p-3">
@@ -30,13 +30,13 @@ function ProjectDetails({ project, users, tickets }: any) {
                     <div className="md:col-span-2">
                         <AssignedTableHead />
                         <div className="flex flex-col justify-between px-4 py-2 md:flex-row">
-                            <Entries users={users} />
+                            <Entries peopleAssigned={peopleAssigned} />
                             <Search />
                         </div>
                         <div className="w-full overflow-auto rounded-[3px] border border-[#22577E]">
                             <table className="w-[700px] border border-sky-900">
                                 <TableHeader />
-                                <TableBody users={users} />
+                                <TableBody peopleAssigned={peopleAssigned} />
                             </table>
                         </div>
                     </div>
