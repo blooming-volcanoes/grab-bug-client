@@ -5,7 +5,6 @@ import React from "react";
 import styles from "../../styles/projectDescriptionTable.module.css";
 
 function TicketTableRowSingle({ ticket }: any) {
-    console.log(ticket);
     return (
         <tr className="border-b border-gray-400">
             <td className={`${styles.td} w-[200px]`}>{ticket.title}</td>

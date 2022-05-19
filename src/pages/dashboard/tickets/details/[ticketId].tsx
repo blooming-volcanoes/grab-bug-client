@@ -11,7 +11,6 @@ import React from "react";
 import IssueHttpReq from "services/Issue.service";
 
 function TicketDetails({ issue }: { issue: any }) {
-    console.log("small change");
     return (
         <DashboardLayout>
             <Main issue={issue} />
