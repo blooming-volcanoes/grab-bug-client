@@ -18,6 +18,7 @@ function TicketSingleDetails({ issue }: any) {
         project,
         reporterName,
     } = issue;
+    // console.log(issue);
     return (
         <div className="container mx-auto h-max rounded-[3px] shadow-[0_0_10px_#5584AC] md:p-3">
             <div className="rounded-[3px] bg-gradient-to-r from-[#22577E] via-[#5584AC] to-[#22577E] p-4">
@@ -25,11 +26,11 @@ function TicketSingleDetails({ issue }: any) {
                 <h4 className="text-2xl font-bold uppercase text-[#FAFFAF]">Title: {title}</h4>
                 <p className="text-[#95D1CC]">Description: {bugDescription.slice(0, 50)}...</p>
                 {/* <button className="text-sm underline" type="button">
-                    Back to list
-                </button>
-                <button className="text-sm underline" type="button">
-                    Edit ticket
-                </button> */}
+                     Back to list
+                 </button>
+                 <button className="text-sm underline" type="button">
+                     Edit ticket
+                 </button> */}
             </div>
 
             {/* ticket more details */}

@@ -1,3 +1,5 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable consistent-return */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-unneeded-ternary */
 /* eslint-disable no-underscore-dangle */
