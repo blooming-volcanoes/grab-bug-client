@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Link from "next/link";
 import React from "react";
@@ -22,12 +23,9 @@ function TicketTableRowSingle({ ticket }: any) {
             </td>
             <td className={`${styles.td} md:w-[300px]`}>
                 <div className="flex justify-center">
-                    <Link href="/dashboard/projectDetails">
-                        <a className="table-btn ">More Details</a>
+                    <Link href={`/dashboard/tickets/details/${ticket._id}`}>
+                        <a className="table-btn ">Details</a>
                     </Link>
-                    <a className="table-btn mx-2" href="#">
-                        Manage Users
-                    </a>
                 </div>
             </td>
         </tr>
