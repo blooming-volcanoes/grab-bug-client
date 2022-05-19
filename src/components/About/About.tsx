@@ -18,7 +18,7 @@ function about() {
                     />
                     <h1 className="mt-2 font-bold text-blue-700">A.S.M. Habibullah Sadique</h1>
                     <h2 className="my-1 rounded-full border border-indigo-500 text-indigo-500">
-                        Team Leader
+                        Team Lead, Full-stack Dev
                     </h2>
                 </div>
                 <div className="rounded-[3px] p-5 text-center shadow-[0_0_5px_#5584AC] transition-all duration-[0.5s] hover:shadow-[0_0_10px_#5584AC] md:col-start-1">

@@ -23,13 +23,13 @@ class IssueReq {
         return data;
     }
 
-    async IssueFileUpload(payload: any) {
-        const { data } = await httpReq.post(`/files/attachments`, payload).then((data) => data);
+    async addComment(id: any, payload: any) {
+        const data = await httpReq.put(`/comment/${id}`, payload).then((data) => data);
         return data;
     }
 
-    async getIssuesFiles() {
-        const { data } = await httpReq.get(`/files`).then((data) => data);
+    async editIssue(id: any, payload: any) {
+        const data = await httpReq.put(`/issue/${id}`, payload).then((data) => data);
         return data;
     }
 }

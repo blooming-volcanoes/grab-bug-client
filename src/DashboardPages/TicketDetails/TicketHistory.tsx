@@ -9,11 +9,11 @@ import React from "react";
 
 function TicketHistory() {
     return (
-        <div className="rounded-lg border  bg-white p-4 shadow">
-            <div className="space-y-2  rounded-lg bg-indigo-500 p-4 capitalize text-white shadow-2xl">
+        <div className="container mx-auto h-max rounded-[3px] shadow-[0_0_10px_#5584AC] md:p-3">
+            <div className="rounded-[3px] bg-gradient-to-r from-[#22577E] via-[#5584AC] to-[#22577E] p-4">
                 {/* ticket details header */}
-                <h4 className="text-lg">Ticket History</h4>
-                <p className="text-sm font-light">All history information for this ticket</p>
+                <h4 className="text-2xl font-bold uppercase text-[#FAFFAF]">Ticket History</h4>
+                <p className="text-[#95D1CC]">All history information for this ticket</p>
             </div>
 
             {/* ticket more details */}
