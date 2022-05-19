@@ -29,6 +29,8 @@ const MsgDisplay = ({ user, msg, theme, data }) => {
         }
     };
 
+    // console.log(msg, "dispala");
+
     return (
         <>
             <div className="chat_title">
@@ -37,17 +39,17 @@ const MsgDisplay = ({ user, msg, theme, data }) => {
             </div>
 
             <div className="you_content">
-                {user?._id === auth.user?._id && (
+                {user._id === auth.user._id && (
                     <i className="fas fa-trash text-danger" onClick={handleDeleteMessages} />
                 )}
 
                 <div>
-                    {msg?.text && (
+                    {msg.text && (
                         <div
                             className="chat_text"
                             style={{ filter: theme ? "invert(1)" : "invert(0)" }}
                         >
-                            {msg?.text}
+                            {msg.text}
                         </div>
                     )}
                     {msg.media.map((item, index) => (

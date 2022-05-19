@@ -19,7 +19,7 @@ import {
     addMessage,
     deleteConversation,
     getMessages,
-    loadMoreMessages,
+    loadMoreMessages
 } from "../../redux/actions/messageAction";
 import { imageUpload } from "../../utils/imageUpload";
 import { imageShow, videoShow } from "../../utils/mediaShow";
@@ -241,13 +241,13 @@ function RightSide() {
 
                     {data.map((msg, index) => (
                         <div key={index}>
-                            {msg?.sender !== auth.user?._id && (
+                            {msg.sender !== auth.user._id && (
                                 <div className="chat_row other_message">
                                     <MsgDisplay user={user} msg={msg} theme={theme} />
                                 </div>
                             )}
 
-                            {msg?.sender === auth.user?._id && (
+                            {msg.sender === auth.user._id && (
                                 <div className="chat_row you_message">
                                     <MsgDisplay
                                         user={auth.user}

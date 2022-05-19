@@ -121,6 +121,7 @@ const SocketClient = () => {
         auth.user?._id &&
             socket.connected &&
             socket.on("addMessageToClient", (msg) => {
+                console.log(msg, "from nested");
                 dispatch({ type: MESS_TYPES.ADD_MESSAGE, payload: msg });
                 dispatch({
                     type: MESS_TYPES.ADD_USER,
@@ -131,13 +132,12 @@ const SocketClient = () => {
                     },
                 });
 
-// console.log("spanw");
-// window.open("url", "_blank");
+
          spawnNotification(
                 `A message Arrived `,
                "check it out",
-               " msg.url",
-                'V-NETWORK'
+               "/message",
+                'Issue-Tracker'
             )
 
 
