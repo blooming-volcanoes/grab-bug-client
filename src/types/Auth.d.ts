@@ -14,7 +14,7 @@ export interface IAuthContext {
     authLoading: boolean;
     error: null;
     verify: any;
-    token: string;
+    token?: string;
     setError: React.Dispatch<React.SetStateAction<null>>;
     login: (data: IUser) => Promise<void>;
     register: (data: IUser) => Promise<void>;
@@ -27,8 +27,9 @@ export interface UserChatContext {
     setSelectedChat: any;
     chats: any;
     setChats: any;
-    notification: any;
-    setNotification: any;
+    notification?: any;
+    setNotification?: any;
+    socket?: any;
 }
 
 export interface ChatUser {

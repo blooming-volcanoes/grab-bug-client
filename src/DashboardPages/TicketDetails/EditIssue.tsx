@@ -1,10 +1,8 @@
 /* eslint-disable react/jsx-no-useless-fragment */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/jsx-props-no-spreading */
-import cogoToast from "cogo-toast";
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import IssueHttpReq from "services/Issue.service";
 import ProjectHttpReq from "../../services/Project.service";
 
 function EditIssue({ issue }: any) {
@@ -24,13 +22,13 @@ function EditIssue({ issue }: any) {
     const [projects, setProjects] = useState<any>([]);
     const [projectSeverity] = useState<any>(["low", "moderate", "high", "extreme"]);
 
-    const onSubmit = async (data: any): Promise<void> => {
+    const onSubmit = async (): Promise<void> => {
         // need an api to edit an issue/ticket
-        const res = await IssueHttpReq.editIssue(issue._id, data);
-        if (res.data.success) {
-            window.location.reload();
-            cogoToast.success("Ticket edited successfully!");
-        }
+        // const res = await IssueHttpReq.editIssue(issue._id, data);
+        // if (res.data.success) {
+        //     window.location.reload();
+        //     cogoToast.success("Ticket edited successfully!");
+        // }
     };
 
     // Text Fill text Remove

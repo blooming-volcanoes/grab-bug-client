@@ -1,4 +1,3 @@
-/* eslint-disable no-unneeded-ternary */
 /* eslint-disable class-methods-use-this */
 import axios, { AxiosInstance, AxiosResponse } from "axios";
 
@@ -11,7 +10,7 @@ if (typeof window !== "undefined") {
 const axiosConfig = {
     baseURL: process.env.NEXT_PUBLIC_BASE_URL,
     headers: {
-        authorization: token ? token : "",
+        authorization: token || "",
     },
 };
 

@@ -1,5 +1,6 @@
-/* eslint-disable no-underscore-dangle */
 /* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-underscore-dangle */
+
 import Link from "next/link";
 import React from "react";
 import styles from "../../../styles/projectDescriptionTable.module.css";
