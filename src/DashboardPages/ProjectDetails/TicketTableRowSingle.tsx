@@ -16,7 +16,10 @@ function TicketTableRowSingle({ ticket }: any) {
                 {new Date(ticket.createdAt).toLocaleDateString()}{" "}
                 {new Date(ticket.createdAt).toLocaleTimeString()}
             </td>
-            <td className={`${styles.td} w-[200px]`}>{ticket.bugDescription}</td>
+            <td className={`${styles.td} w-[200px]`}>
+                {`${ticket.bugDescription.slice(0, 40)}...`}{" "}
+                {/** shows only 40 characters coz description is too long */}
+            </td>
             <td className={`${styles.td} md:w-[300px]`}>
                 <div className="flex justify-center">
                     <Link href="/dashboard/projectDetails">
