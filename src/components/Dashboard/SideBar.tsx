@@ -51,7 +51,7 @@ function SideBar() {
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!",
+            confirmButtonText: "Yes, Log out!",
         }).then((result) => {
             if (result.isConfirmed) {
                 logout();
