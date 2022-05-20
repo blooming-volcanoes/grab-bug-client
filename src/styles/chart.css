@@ -144,6 +144,40 @@
     width: 70%;
 }
 
+@media screen and (max-width: 1200px) {
+    .Cards {
+        flex-direction: column;
+        overflow-y: scroll;
+    }
+    .parentContainer {
+        height: 7rem;
+        margin: 25px 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Cards {
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .ExpandedCard {
+        top: 2rem;
+        height: 45vh;
+        left: 6rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ExpandedCard {
+        top: 8rem;
+        height: 50%;
+        left: 25px;
+        width: 80%;
+    }
+}
+
 /* @media screen and (max-width: 1200px) {
     .AppGlass {
         grid-template-columns: 10% 50% auto;
