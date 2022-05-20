@@ -1,0 +1,198 @@
+:root {
+    --yellow: linear-gradient(180deg, #f8d49a -146.42%, #fad79d -46.42%);
+    --orange: #fca61f;
+    --black: #242d49;
+    --gray: #788097;
+    --purple: linear-gradient(180deg, #bb67ff 0%, #c484f3 100%);
+    --pink: #ff919d;
+    --glass: rgba(255, 255, 255, 0.54);
+    --boxShadow: 0px 19px 60px rgb(0 0 0 / 8%);
+    --smboxShadow: -79px 51px 60px rgba(0, 0, 0, 0.08);
+    --activeItem: #f799a354;
+}
+
+.App {
+    /* padding: 0.5rem 3.5rem; */
+    color: var(--black);
+    background: linear-gradient(
+        106.37deg,
+        #ffe1bc 29.63%,
+        #ffcfd1 51.55%,
+        #f3c6f1 90.85%
+    ) !important;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.AppGlass {
+    height: 97%;
+    width: 97%;
+    background: var(--glass);
+    border-radius: 2rem;
+    gap: 16px;
+    overflow: hidden;
+}
+
+.MainDash {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+/* cards styling starts */
+
+.Cards {
+    display: flex;
+    gap: 10px;
+}
+.parentContainer {
+    width: 100%;
+}
+.CompactCard {
+    display: flex;
+    flex: 1;
+    height: 10rem !important;
+    border-radius: 0.7rem;
+    color: white;
+    padding: 1rem;
+    position: relative;
+    cursor: pointer;
+}
+.CompactCard:hover {
+    box-shadow: none !important;
+}
+
+/* Radial Bar */
+.radialBar {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+.radialBar > span {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+/* CircularBar */
+
+.CircularProgressbar {
+    width: 4rem !important;
+    overflow: visible;
+}
+.CircularProgressbar-path {
+    stroke: white !important;
+    stroke-width: 12px !important;
+    filter: drop-shadow(2px 4px 6px white);
+}
+.CircularProgressbar-trail {
+    display: none;
+}
+.CircularProgressbar-text {
+    fill: white !important;
+}
+
+/* Details styles */
+/* sideDetail*/
+.detail {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.detail > span:nth-child(2) {
+    font-size: 22px;
+    font-weight: bold;
+}
+.detail > span:nth-child(3) {
+    font-size: 12px;
+}
+
+/* Expanded card styles */
+
+/* ExpandedCard */
+.ExpandedCard {
+    position: absolute;
+    width: 60%;
+    height: 75vh;
+    z-index: 9;
+    left: 30rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+}
+.ExpandedCard > span:nth-of-type(1) {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    text-shadow: 0px 0px 15px white;
+}
+.ExpandedCard > span:nth-of-type(2) {
+    color: rgb(236, 236, 236);
+    font-size: 15px;
+}
+
+.chartContainer {
+    width: 70%;
+}
+
+@media screen and (max-width: 1200px) {
+    .Cards {
+        flex-direction: column;
+    }
+    .parentContainer {
+        height: 7rem;
+        margin: 25px 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Cards {
+        width: 90%;
+    }
+    .MainDash {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .ExpandedCard {
+        top: 2rem;
+        height: 60vh;
+        left: 20rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .ExpandedCard {
+        top: 8rem;
+        height: 50%;
+        left: 25px;
+        width: 80%;
+    }
+}
+
+/* @media screen and (max-width: 1200px) {
+    .AppGlass {
+        grid-template-columns: 10% 50% auto;
+        overflow-y: scroll;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .AppGlass {
+        grid-template-columns: 1fr;
+    }
+} */

@@ -118,6 +118,9 @@ img {
     object-fit: cover;
 }
 
+/* -------- CHART ---------- */
+@import url("./chart.css");
+
 /* -------- AUTH ---------- */
 @import url("./auth.css");
 
