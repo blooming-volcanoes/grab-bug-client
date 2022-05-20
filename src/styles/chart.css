@@ -147,7 +147,6 @@
 @media screen and (max-width: 1200px) {
     .Cards {
         flex-direction: column;
-        overflow-y: scroll;
     }
     .parentContainer {
         height: 7rem;
@@ -159,13 +158,20 @@
     .Cards {
         width: 90%;
     }
+    .MainDash {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 @media screen and (max-width: 1200px) {
     .ExpandedCard {
         top: 2rem;
-        height: 45vh;
-        left: 6rem;
+        height: 60vh;
+        left: 20rem;
     }
 }
 
