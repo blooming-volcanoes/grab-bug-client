@@ -10,7 +10,7 @@ function UnAuthenticatedLayout({ children, title }: { children: React.ReactNode;
     const { user } = useAuth();
     const router = useRouter();
     if (user?.user?.email) {
-        router.replace("/");
+        router.replace("/dashboard");
     }
     return (
         <section>
