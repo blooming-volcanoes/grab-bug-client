@@ -294,9 +294,9 @@ const CallModal = () => {
                 </div>
 
             
-                <button id="screenShareButton" onClick={shareScreen} className=" share_sc text-green-600 cursor-pointer" >
+               {answer &&  <button id="screenShareButton" onClick={shareScreen} className=" share_sc text-green-600 cursor-pointer" >
                     <MdScreenShare  />
-                </button>
+                </button>}
 
                 <button className="material-icons text-danger end_call" onClick={handleEndCall}>
                     <MdCallEnd className="text-red-600" />
