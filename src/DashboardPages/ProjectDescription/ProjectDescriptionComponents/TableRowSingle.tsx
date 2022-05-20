@@ -1,5 +1,6 @@
-/* eslint-disable no-underscore-dangle */
 /* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-underscore-dangle */
+
 import Link from "next/link";
 import React from "react";
 import styles from "../../../styles/projectDescriptionTable.module.css";
@@ -14,9 +15,9 @@ function TableRowSingle({ project }: any) {
                     <Link href={`/dashboard/projects/${project._id}`}>
                         <a className="table-btn ">Project Details</a>
                     </Link>
-                    <a className="table-btn mx-2" href="#">
-                        Manage Users
-                    </a>
+                    <Link href={`/dashboard/projects/manageUserRoles/${project._id}`}>
+                        <a className="table-btn mx-2">Manage Users</a>
+                    </Link>
                 </div>
             </td>
         </tr>

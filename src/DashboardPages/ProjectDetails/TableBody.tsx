@@ -1,13 +1,13 @@
-/* eslint-disable import/extensions */
-/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable no-underscore-dangle */
+
 import React from "react";
 import TableRowSingle from "./TableRowSingle";
 
-function TableBody({ users }: any) {
+function TableBody({ peopleAssigned }: any) {
     return (
         <tbody className="text-center">
-            {users.map((user: any) => (
-                <TableRowSingle user={user} key={user.id} />
+            {peopleAssigned.map((person: any) => (
+                <TableRowSingle person={person} key={person._id} />
             ))}
         </tbody>
     );

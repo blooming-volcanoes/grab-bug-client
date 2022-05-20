@@ -107,6 +107,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
             setToken(user?.token);
         }
         setLoading(false);
+        setToken(user?.token);
         console.log(user);
     }, []);
 
