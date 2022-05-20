@@ -1,3 +1,7 @@
+/* eslint-disable no-alert */
+/* eslint-disable no-empty */
+/* eslint-disable func-names */
+/* eslint-disable prefer-arrow-callback */
 /* eslint-disable no-shadow */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/prop-types */
@@ -15,6 +19,20 @@ import Alert from "../components/alert/Alert";
 const GlobalLayout = ({ children }) => {
     const dispatch = useDispatch();
     const { auth, socket, call } = useSelector((state) => state);
+
+    useEffect(() => {
+        if (!("Notification" in window)) {
+          alert("This browser does not support desktop notification");
+        }
+        else if (Notification.permission === "granted") {}
+        else if (Notification.permission !== "denied") {
+          Notification.requestPermission().then(function (permission) {
+            if (permission === "granted") {}
+          });
+        }
+      },[])
+
+
     useEffect(() => {
         dispatch(loadUser());
         const socket = io(process.env.NEXT_PUBLIC_BASE_URL);

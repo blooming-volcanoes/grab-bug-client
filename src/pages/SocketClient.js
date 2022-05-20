@@ -17,12 +17,15 @@ const spawnNotification = (body, icon, url, title) => {
         icon,
     };
     let n = new Notification(title, options);
-
+    
     n.onclick = (e) => {
         e.preventDefault();
+        console.log(n, "from tile");
         window.open(url, "_blank");
     };
 };
+
+// console.log(spawnNotification, "from spawn nti");
 
 const SocketClient = () => {
     console.log("ehlo i am host hugh gorgie");
@@ -118,8 +121,8 @@ const SocketClient = () => {
         auth.user?._id &&
             socket.connected &&
             socket.on("addMessageToClient", (msg) => {
+                console.log(msg, "from nested");
                 dispatch({ type: MESS_TYPES.ADD_MESSAGE, payload: msg });
-                console.log(msg, "from socket ");
                 dispatch({
                     type: MESS_TYPES.ADD_USER,
                     payload: {
@@ -128,6 +131,16 @@ const SocketClient = () => {
                         media: msg.media,
                     },
                 });
+
+
+         spawnNotification(
+                `A message Arrived `,
+               "check it out",
+               "/message",
+                'Issue-Tracker'
+            )
+
+
             });
 
         return () => socket.connect === false && socket.off("addMessageToClient");

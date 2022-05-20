@@ -81,6 +81,21 @@
     border: none;
     outline: none;
 }
+
+.call_modal .share_sc{
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: initial;
+    font-size: 2rem;
+    background: #eee;
+    padding: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: none;
+    outline: none;
+}
 .call_modal .time_video {
     position: absolute;
     bottom: 170px;

@@ -1,6 +1,5 @@
 /* eslint-disable no-underscore-dangle */
 import AuthenticatedLayout from "Layouts/AuthenticatedLayout";
-import SocketClient from "pages/SocketClient";
 import React from "react";
 import { BsMessenger } from "react-icons/bs";
 import LeftSide from "../../components/message/LeftSide";
@@ -14,7 +13,7 @@ function Message() {
             {/* <div> */}
 
             {/* </div> */}
-            <SocketClient />
+            {/* <SocketClient /> */}
             <div className="message flex">
                 <div className="w-full border-4 px-0 md:w-1/4">
                     <LeftSide />
