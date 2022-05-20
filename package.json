@@ -39,6 +39,7 @@
         "redux-devtools-extension": "^2.13.9",
         "redux-thunk": "^2.4.1",
         "socket.io-client": "4.5.0",
+        "sweetalert2": "^11.4.14",
         "tw-elements": "^1.0.0-alpha12"
     },
     "devDependencies": {
