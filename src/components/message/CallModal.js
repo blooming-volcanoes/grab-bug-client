@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable jsx-a11y/media-has-caption */
 /* eslint-disable react/jsx-no-useless-fragment */
@@ -13,7 +15,7 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable react/function-component-definition */
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { MdCall, MdCallEnd, MdVideoCameraBack } from "react-icons/md";
+import { MdCall, MdCallEnd, MdScreenShare, MdVideoCameraBack } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
 import teams from "../../audio/teams.mp3";
 import { GLOBALTYPES } from "../../redux/actions/globalTypes";
@@ -196,6 +198,15 @@ const CallModal = () => {
         return () => pauseAudio(newAudio);
     }, [answer]);
 
+    const shareScreen=async()=>{
+        console.log("sccreen");
+        let screenStream = await navigator.mediaDevices.getDisplayMedia({
+            video: true
+        })
+
+        peer.call(call.peerId, screenStream)
+    }
+
     return (
         <div className="call_modal">
             <div
@@ -279,11 +290,19 @@ const CallModal = () => {
                     <span>{mins.toString().length < 2 ? "0" + mins : mins}</span>
                     <span>:</span>
                     <span>{second.toString().length < 2 ? "0" + second : second}</span>
+
                 </div>
+
+            
+               {answer &&  <button id="screenShareButton" onClick={shareScreen} className=" share_sc text-green-600 cursor-pointer" >
+                    <MdScreenShare  />
+                </button>}
 
                 <button className="material-icons text-danger end_call" onClick={handleEndCall}>
                     <MdCallEnd className="text-red-600" />
                 </button>
+                <br />
+              
             </div>
         </div>
     );

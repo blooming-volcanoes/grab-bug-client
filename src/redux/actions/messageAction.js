@@ -21,7 +21,7 @@ export const addMessage =
         dispatch({ type: MESS_TYPES.ADD_MESSAGE, payload: msg });
 
         const { _id, pic, name } = auth.user;
-        auth.user?._id &&
+        auth.user._id &&
             socket.connected &&
             socket.emit("addMessage", { ...msg, user: { _id, pic, name } });
 
@@ -40,16 +40,16 @@ export const getConversations =
 
             const newArr = [];
             auth.user._id &&
-                res.data?.conversation?.forEach((item) => {
-                    item?.recipients?.forEach((cv) => {
-                        if (cv._id !== auth?.user._id) {
+                res.data.conversation.forEach((item) => {
+                    item.recipients.forEach((cv) => {
+                        if (cv._id !== auth.user._id) {
                             newArr.push({
                                 ...cv,
                                 text: item.text,
                                 media: item.media,
                                 call: item.call,
                             });
-                            // console.log(cv, "from nested");
+                            
                         }
                     });
                 });
@@ -69,6 +69,7 @@ export const getMessages =
         try {
             // console.log(getDataAPI);
             const res = await getDataAPI(`message/${id}?limit=${page * 9}`, auth.token);
+            
             const newData = { ...res.data, messages: res.data.messages.reverse() };
 
             dispatch({ type: MESS_TYPES.GET_MESSAGES, payload: { ...newData, _id: id, page } });
