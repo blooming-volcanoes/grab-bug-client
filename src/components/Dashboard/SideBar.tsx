@@ -42,7 +42,7 @@ const dashboardRoutes = [
 
 function SideBar() {
     const router: any = useRouter();
-    const { logout } = useAuth();
+    const { logout, user } = useAuth();
 
     const handelLogout = () => {
         Swal.fire({
@@ -73,6 +73,11 @@ function SideBar() {
                     <div className="w-full" key={i}>
                         <Link href={`${route.path}`}>
                             <a
+                                style={{
+                                    // if the user is not attached to any project, he/she will not be able to click the link
+                                    pointerEvents: `${user.user.isActive ? "auto" : "none"}`,
+                                    cursor: `${user.user.isActive ? "pointer" : "not-allowed"}`,
+                                }}
                                 className={
                                     router.pathname === route.path
                                         ? "sidebar-routes active my-2"
