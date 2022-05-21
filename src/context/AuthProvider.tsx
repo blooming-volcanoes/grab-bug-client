@@ -34,8 +34,11 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
                 };
                 localStorage.setItem("user", JSON.stringify(user));
                 cogoToast.success(`Congratulations registered successfully`);
+                setUser(user); // added later
+                setLoading(false); // added later
+                setToken(user?.token); // added later
                 router.push("/dashboard");
-                window.location.reload();
+                // window.location.reload();
             }
         } catch (error: any) {
             setAuthLoading(false);
