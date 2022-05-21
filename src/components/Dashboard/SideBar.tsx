@@ -93,27 +93,6 @@ function SideBar() {
                     </div>
                 ))}
             </div>
-            {/* <ul className="border-t border-b pt-4 pb-10">
-                {dashboardRoutes.map((route, i) => (
-                    <li className="w-full" key={i}>
-                        <Link href={`${route.path}`}>
-                            <a
-                                className={
-                                    router.pathname === route.path
-                                        ? "active my-2"
-                                        : "sidebar-routes"
-                                }
-                            >
-                                <span>
-                                    <route.icons className="mr-2 inline" />
-                                </span>
-                                {route.name}
-                            </a>
-                        </Link>
-                    </li>
-                ))}
-            </ul> */}
-
             <li className="my-4 flex space-x-3 px-6">
                 <button onClick={handelLogout} type="button" className="primary-btn w-full">
                     Logout
