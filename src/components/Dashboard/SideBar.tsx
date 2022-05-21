@@ -69,14 +69,28 @@ function SideBar() {
                 {/* <p className="font-semibold uppercase text-[#b3b8d4]">Issue Tracker</p> */}
             </div>
             <div className="border-t border-b pt-4 pb-10">
+                <Link href="google.com">
+                    <a>{`${user?.user?.isActive}`}</a>
+                </Link>
                 {dashboardRoutes.map((route, i) => (
                     <div className="w-full" key={i}>
                         <Link href={`${route.path}`}>
                             <a
                                 style={{
                                     // if the user is not attached to any project, he/she will not be able to click the link
-                                    pointerEvents: `${user.user.isActive ? "auto" : "none"}`,
-                                    cursor: `${user.user.isActive ? "pointer" : "not-allowed"}`,
+                                    pointerEvents: `${
+                                        !user.user.isActive &&
+                                        route.path !== "/dashboard/projectCreate"
+                                            ? "none"
+                                            : "auto"
+                                    }`,
+                                    filter: `${
+                                        // working for 'isActive === false' but not working for 'isActive === true' | need to make it work
+                                        !user.user.isActive &&
+                                        route.path === "/dashboard/projectCreate"
+                                            ? ""
+                                            : "blur(2px)"
+                                    }`,
                                 }}
                                 className={
                                     router.pathname === route.path
