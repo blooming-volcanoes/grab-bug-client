@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -77,20 +78,20 @@ function SideBar() {
                         <Link href={`${route.path}`}>
                             <a
                                 style={{
-                                    // if the user is not attached to any project, he/she will not be able to click the link
+                                    // if the user is not attached to any project, he/she will not be able to click links other than 'create project'
                                     pointerEvents: `${
-                                        !user.user.isActive &&
+                                        !user?.user?.isActive &&
                                         route.path !== "/dashboard/projectCreate"
                                             ? "none"
                                             : "auto"
                                     }`,
-                                    filter: `${
-                                        // working for 'isActive === false' but not working for 'isActive === true' | need to make it work
-                                        !user.user.isActive &&
-                                        route.path === "/dashboard/projectCreate"
-                                            ? ""
-                                            : "blur(2px)"
-                                    }`,
+                                    // filter: `${
+                                    //     // working for 'isActive === false' but not working for 'isActive === true' | need to make it work
+                                    //     !user.user.isActive &&
+                                    //     route.path === "/dashboard/projectCreate"
+                                    //         ? ""
+                                    //         : "blur(2px)"
+                                    // }`,
                                 }}
                                 className={
                                     router.pathname === route.path

@@ -13,7 +13,8 @@ function ProjectCreate() {
         try {
             const res = await ProjectHttpReq.createProject(data);
             if (res.success) {
-                cogoToast.success("done");
+                console.log(res);
+                cogoToast.success("Project created");
             }
         } catch (err) {
             console.log(err.response.data);

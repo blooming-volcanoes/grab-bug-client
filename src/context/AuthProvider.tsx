@@ -109,7 +109,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         if (!user) {
             const user = localStorage.setItem("user", JSON.stringify({}));
             setUser(user);
-        } else if (!user.user.isActive) {
+        } else if (!user?.user?.isActive) {
             // if the user is not attached to any project, he is taken to the project creation page
             // user is always taken taken to the project creation page, whichever page he/she is on and refreshes it
             setUser(user);
