@@ -17,6 +17,14 @@ class ProjectReq {
         const { data } = await httpReq.get(`/project/${id}`).then((data) => data);
         return data;
     }
+
+    // this will be deleted later
+    async getUsersAllProjects(userId: any) {
+        const { data } = await httpReq.get(`/user-projects/${userId}`).then((data) => data);
+        console.log(userId, "service");
+        console.log(data, "service");
+        return data;
+    }
 }
 
 const ProjectHttpReq = new ProjectReq();
