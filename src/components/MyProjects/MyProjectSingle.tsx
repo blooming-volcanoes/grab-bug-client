@@ -13,7 +13,6 @@ function MyProjectSingle({ projectId }: any) {
         };
         fetcher();
     }, []);
-    console.log(project);
     return (
         <div className="bg-gray-200 p-5">
             <h2 className="text-4xl">Project Name: {project.name}</h2>
