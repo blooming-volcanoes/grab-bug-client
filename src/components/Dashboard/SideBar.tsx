@@ -85,13 +85,16 @@ function SideBar() {
                                             ? "none"
                                             : "auto"
                                     }`,
-                                    // filter: `${
-                                    //     // working for 'isActive === false' but not working for 'isActive === true' | need to make it work
-                                    //     !user.user.isActive &&
-                                    //     route.path === "/dashboard/projectCreate"
-                                    //         ? ""
-                                    //         : "blur(2px)"
-                                    // }`,
+                                    filter: `${
+                                        // working for 'isActive === false' but not working for 'isActive === true' | need to make it work
+                                        !user.user.isActive &&
+                                        route.path === "/dashboard/projectCreate"
+                                            ? ""
+                                            : !user.user.isActive &&
+                                              route.path !== "/dashboard/projectCreate"
+                                            ? "blur(2px)"
+                                            : ""
+                                    }`,
                                 }}
                                 className={
                                     router.pathname === route.path
