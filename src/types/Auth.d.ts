@@ -16,10 +16,12 @@ export interface IAuthContext {
     verify: any;
     token?: string;
     setError: React.Dispatch<React.SetStateAction<null>>;
+    setUser: React.Dispatch<React.SetStateAction<{}>>;
     login: (data: IUser) => Promise<void>;
     register: (data: IUser) => Promise<void>;
     verifyOtp: (data: IUser) => Promise<void>;
     logout: () => void;
+    updateLocalStorageOnUserDataChanged: (updatedUserData) => void;
 }
 
 export interface UserChatContext {

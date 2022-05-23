@@ -1,7 +1,7 @@
 import IssueBoardMain from "DashboardPages/IssueBoard/IssueBoardMain";
 import { GetServerSideProps } from "next";
 import React from "react";
-import DashboardLayout from "../../Layouts/DashboardLayout";
+import DashboardLayout from "../../../Layouts/DashboardLayout";
 
 function issueBoard({ issues }: any) {
     return (

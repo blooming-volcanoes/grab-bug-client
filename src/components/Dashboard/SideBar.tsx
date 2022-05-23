@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -42,7 +43,7 @@ const dashboardRoutes = [
 
 function SideBar() {
     const router: any = useRouter();
-    const { logout } = useAuth();
+    const { logout, user } = useAuth();
 
     const handelLogout = () => {
         Swal.fire({
@@ -73,6 +74,25 @@ function SideBar() {
                     <div className="w-full" key={i}>
                         <Link href={`${route.path}`}>
                             <a
+                                style={{
+                                    // if the user is not attached to any project, he/she will not be able to click links other than 'create project'
+                                    pointerEvents: `${
+                                        !user?.user?.isActive &&
+                                        route.path !== "/dashboard/projectCreate"
+                                            ? "none"
+                                            : "auto"
+                                    }`,
+                                    filter: `${
+                                        // working for 'isActive === false' but not working for 'isActive === true' | need to make it work
+                                        !user.user.isActive &&
+                                        route.path === "/dashboard/projectCreate"
+                                            ? ""
+                                            : !user.user.isActive &&
+                                              route.path !== "/dashboard/projectCreate"
+                                            ? "blur(2px)"
+                                            : ""
+                                    }`,
+                                }}
                                 className={
                                     router.pathname === route.path
                                         ? "sidebar-routes active my-2"
@@ -88,27 +108,6 @@ function SideBar() {
                     </div>
                 ))}
             </div>
-            {/* <ul className="border-t border-b pt-4 pb-10">
-                {dashboardRoutes.map((route, i) => (
-                    <li className="w-full" key={i}>
-                        <Link href={`${route.path}`}>
-                            <a
-                                className={
-                                    router.pathname === route.path
-                                        ? "active my-2"
-                                        : "sidebar-routes"
-                                }
-                            >
-                                <span>
-                                    <route.icons className="mr-2 inline" />
-                                </span>
-                                {route.name}
-                            </a>
-                        </Link>
-                    </li>
-                ))}
-            </ul> */}
-
             <li className="my-4 flex space-x-3 px-6">
                 <button onClick={handelLogout} type="button" className="primary-btn w-full">
                     Logout
