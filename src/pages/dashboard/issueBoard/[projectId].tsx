@@ -8,6 +8,14 @@ function issueBoard({ project }: any) {
     return (
         <DashboardLayout>
             <IssueBoardMain project={project} />
+            {/* Graphs and Charts */}
+            <div
+                style={{
+                    fontSize: "50px",
+                }}
+            >
+                graph and charts
+            </div>
         </DashboardLayout>
     );
 }
