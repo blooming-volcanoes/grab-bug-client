@@ -8,7 +8,6 @@ import React from "react";
 const index = () => {
     const auth = useAuth();
     const { projects } = auth?.user?.user;
-
     return (
         <DashboardLayout>
             <div className="grid grid-cols-2 gap-8">

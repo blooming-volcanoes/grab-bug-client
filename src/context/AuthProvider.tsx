@@ -33,17 +33,15 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
                     user: result.user,
                 };
                 localStorage.setItem("user", JSON.stringify(user));
-                cogoToast.success(`Congratulations registered successfully`);
+                cogoToast.success(`Logged in successfully`);
                 setUser(user); // added later
                 setLoading(false); // added later
                 setToken(user?.token); // added later
                 if (!result.user.isActive) {
                     router.push("/dashboard/projectCreate");
                 } else {
-                    router.push("/dashboard");
+                    router.push("/dashboard/projects/myProjects");
                 }
-                // router.push("/dashboard");
-                // window.location.reload();
             }
         } catch (error: any) {
             setAuthLoading(false);
@@ -84,9 +82,13 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
                     user: result.user,
                 };
                 localStorage.setItem("user", JSON.stringify(user));
-                cogoToast.success(`Congratulations registered successfully`);
-                router.push("/dashboard");
-                window.location.reload();
+                cogoToast.success(`Registered successfully`);
+                setUser(user);
+                if (!result.user.isActive) {
+                    router.push("/dashboard/projectCreate");
+                } else {
+                    router.push("/dashboard/projects/myProjects");
+                }
             }
         } catch (error: any) {
             const { message } = error.response.data;
@@ -100,6 +102,21 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     const logout = () => {
         localStorage.setItem("user", JSON.stringify({}));
         setUser({});
+    };
+
+    const updateLocalStorageOnUserDataChanged = (updatedUserData: any) => {
+        const localStorageSting = localStorage.getItem("user");
+        let storageData;
+        if (typeof localStorageSting === "string") {
+            storageData = JSON.parse(localStorageSting);
+        }
+        const updatedData = {
+            ...storageData,
+            user: {
+                ...updatedUserData,
+            },
+        };
+        localStorage.setItem("user", JSON.stringify(updatedData));
     };
 
     // track user
@@ -138,6 +155,8 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         verifyOtp,
         logout,
         token,
+        setUser,
+        updateLocalStorageOnUserDataChanged,
     };
 
     return (
