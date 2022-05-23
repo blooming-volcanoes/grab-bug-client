@@ -70,9 +70,6 @@ function SideBar() {
                 {/* <p className="font-semibold uppercase text-[#b3b8d4]">Issue Tracker</p> */}
             </div>
             <div className="border-t border-b pt-4 pb-10">
-                <Link href="google.com">
-                    <a>isActive: {`${user?.user?.isActive}`}</a>
-                </Link>
                 {dashboardRoutes.map((route, i) => (
                     <div className="w-full" key={i}>
                         <Link href={`${route.path}`}>

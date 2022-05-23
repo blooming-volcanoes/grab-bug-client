@@ -13,8 +13,8 @@ function Message() {
         <AuthenticatedLayout>
             <DashboardLayout>
                 {/* <div> */}
-
                 {/* </div> */}
+
                 {/* <SocketClient /> */}
                 <div className="message flex">
                     <div className="w-full border-4 px-0 md:w-1/4">
