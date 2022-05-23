@@ -3,17 +3,25 @@
 /* eslint-disable no-console */
 /* eslint-disable react/jsx-props-no-spreading */
 import cogoToast from "cogo-toast";
+import useAuth from "hooks/useAuth";
+import { useRouter } from "next/router";
 import React from "react";
 import { useForm } from "react-hook-form";
 import ProjectHttpReq from "services/Project.service";
 
 function ProjectCreate() {
+    const router = useRouter();
+    const { updateLocalStorageOnUserDataChanged, setUser } = useAuth();
     const { register, handleSubmit, reset } = useForm();
     const onSubmit = async (data) => {
         try {
             const res = await ProjectHttpReq.createProject(data);
             if (res.success) {
-                cogoToast.success("done");
+                console.log(res);
+                cogoToast.success("Project created");
+                updateLocalStorageOnUserDataChanged(res.user);
+                setUser((prev) => ({ ...prev, user: res.user }));
+                router.push("/dashboard/projects/myProjects");
             }
         } catch (err) {
             console.log(err.response.data);

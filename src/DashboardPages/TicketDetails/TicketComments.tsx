@@ -1,3 +1,4 @@
+/* eslint-disable object-shorthand */
 /* eslint-disable no-underscore-dangle */
 /*
  *** Title : Ticket view Dashboard
@@ -8,9 +9,12 @@
 import cogoToast from "cogo-toast";
 import React, { useEffect, useState } from "react";
 import IssueHttpReq from "services/Issue.service";
+import useAuth from "../../hooks/useAuth";
 import TicketCommentSingle from "./TicketCommentSingle";
 
 function TicketComments({ issue }: any) {
+    const { user } = useAuth();
+    const commenter = user.user.name;
     const { _id } = issue;
     const [commentText, setCommentText] = useState("");
     const [comments, setComments] = useState(issue.comments);
@@ -18,7 +22,10 @@ function TicketComments({ issue }: any) {
     const handleComment = async () => {
         setLoading(true);
         try {
-            const res = await IssueHttpReq.addComment(_id, commentText);
+            const res = await IssueHttpReq.addComment(_id, {
+                commentText,
+                commenter,
+            });
             if (res.data.success) {
                 setCommentText("");
                 cogoToast.success("Comment posted!");
