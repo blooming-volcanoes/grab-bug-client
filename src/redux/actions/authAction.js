@@ -54,11 +54,15 @@ export const loadUser = (data) => async (dispatch) => {
         // }
 
         dispatch({ type: GLOBALTYPES.ALERT, payload: { loading: true } });
-        const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/me`, {
-            headers: {
-                Authorization: `${tokene}`,
-            },
-        });
+        const res = await axios
+            .get(`${process.env.NEXT_PUBLIC_BASE_URL}/me`, {
+                headers: {
+                    Authorization: `${tokene}`,
+                },
+            })
+            .catch((err) => {
+                dispatch({ type: GLOBALTYPES.ALERT, payload: { loading: false } });
+            });
         console.log(res, "token");
 
         dispatch({
