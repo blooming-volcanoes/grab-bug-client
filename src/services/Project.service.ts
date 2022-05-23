@@ -18,7 +18,7 @@ class ProjectReq {
         return data;
     }
 
-    // this will be deleted later
+    // this might be be deleted later // not needed
     async getUsersAllProjects(userId: any) {
         const { data } = await httpReq.get(`/user-projects/${userId}`).then((data) => data);
         console.log(userId, "service");
