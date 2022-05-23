@@ -71,7 +71,7 @@ function SideBar() {
             </div>
             <div className="border-t border-b pt-4 pb-10">
                 <Link href="google.com">
-                    <a>{`${user?.user?.isActive}`}</a>
+                    <a>isActive: {`${user?.user?.isActive}`}</a>
                 </Link>
                 {dashboardRoutes.map((route, i) => (
                     <div className="w-full" key={i}>
