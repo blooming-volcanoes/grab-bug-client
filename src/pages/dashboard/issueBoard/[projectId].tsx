@@ -1,3 +1,4 @@
+import Graph from "DashboardPages/IssueBoard/Graph";
 import IssueBoardMain from "DashboardPages/IssueBoard/IssueBoardMain";
 import { GetServerSideProps } from "next";
 import React from "react";
@@ -5,16 +6,13 @@ import ProjectHttpReq from "services/Project.service";
 import DashboardLayout from "../../../Layouts/DashboardLayout";
 
 function issueBoard({ project }: any) {
+    console.log(project);
     return (
         <DashboardLayout>
             <IssueBoardMain project={project} />
             {/* Graphs and Charts */}
-            <div
-                style={{
-                    fontSize: "50px",
-                }}
-            >
-                graph and charts
+            <div>
+                <Graph project={project} />
             </div>
         </DashboardLayout>
     );
