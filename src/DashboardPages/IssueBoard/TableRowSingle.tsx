@@ -91,6 +91,7 @@ function TableRowSingle({ issue, project, index }: any) {
                     files.slice(0, 1).map((file) => (
                         <select
                             onClick={(e) => {
+                                e.stopPropagation();
                                 handelDownload(e);
                                 setShowDropdown(e.target.value);
                             }}
@@ -98,7 +99,7 @@ function TableRowSingle({ issue, project, index }: any) {
                         >
                             <option value="">Select</option>
                             {file.attachments.map((f) => (
-                                <option value={file.path}>{f.fileName}</option>
+                                <option value={f.path}>{f.fileName}</option>
                             ))}
                         </select>
                     ))}
