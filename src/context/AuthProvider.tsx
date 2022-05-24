@@ -42,6 +42,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
                 } else {
                     router.push("/dashboard/projects/myProjects");
                 }
+                window.location.reload();
             }
         } catch (error: any) {
             setAuthLoading(false);
@@ -49,6 +50,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
             setError(message);
             cogoToast.error(`${message} !!!`);
         }
+        setAuthLoading(false);
     };
 
     // register
@@ -66,6 +68,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
             cogoToast.error(`${message} !!!`);
             setAuthLoading(false);
         }
+        setAuthLoading(false);
     };
 
     // verify otp
@@ -89,6 +92,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
                 } else {
                     router.push("/dashboard/projects/myProjects");
                 }
+                window.location.reload();
             }
         } catch (error: any) {
             const { message } = error.response.data;
@@ -96,12 +100,14 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
             cogoToast.error(`${message} !!!`);
             setAuthLoading(false);
         }
+        setAuthLoading(false);
     };
 
     // logout
     const logout = () => {
         localStorage.setItem("user", JSON.stringify({}));
         setUser({});
+        window.location.reload();
     };
 
     const updateLocalStorageOnUserDataChanged = (updatedUserData: any) => {
@@ -126,13 +132,6 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         if (!user) {
             const user = localStorage.setItem("user", JSON.stringify({}));
             setUser(user);
-        } else if (!user?.user?.isActive) {
-            // if the user is not attached to any project, he is taken to the project creation page
-            // user is always taken taken to the project creation page, whichever page he/she is on and refreshes it
-            setUser(user);
-            setLoading(false);
-            setToken(user?.token);
-            router.push("/dashboard/projectCreate");
         } else {
             setUser(user);
             setLoading(false);
@@ -141,7 +140,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
         setLoading(false);
         setToken(user?.token);
         console.log(user);
-    }, []);
+    }, [authLoading]);
 
     const returnObj: IAuthContext = {
         user,
