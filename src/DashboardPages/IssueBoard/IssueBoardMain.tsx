@@ -12,7 +12,7 @@ function IssueBoardMain({ project }: any) {
                 <div className="">
                     <HeadingText project={project} />
                     <div className="flex flex-col justify-between px-4 py-2 md:flex-row">
-                        <Entries issues={project.issues} />
+                        <Entries issues={project?.issues} />
                         <Search />
                     </div>
                 </div>
