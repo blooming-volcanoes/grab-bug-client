@@ -6,8 +6,8 @@ function TableHeader() {
             <tr className="text-center">
                 <th className="text-[18px] text-[#FAFFAF]">Issue Name</th>
                 <th className="text-[18px] text-[#FAFFAF]">Status</th>
-                <th className="text-[18px] text-[#FAFFAF]">Person</th>
-                <th className="text-[18px] text-[#FAFFAF]">Time Tracking</th>
+                <th className="text-[18px] text-[#FAFFAF]">Reporter</th>
+                <th className="text-[18px] text-[#FAFFAF]">Deadline</th>
                 <th className="text-[18px] text-[#FAFFAF]">Timeline</th>
                 <th className="text-[18px] text-[#FAFFAF]">Countdown</th>
                 <th className="text-[18px] text-[#FAFFAF]">Files</th>

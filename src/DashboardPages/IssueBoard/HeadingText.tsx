@@ -4,8 +4,10 @@ function HeadingText({ project }: any) {
     return (
         <div className="flex justify-between rounded-[3px] bg-gradient-to-r from-[#22577E] via-[#5584AC] to-[#22577E] p-4">
             <div>
-                <h1 className="text-2xl font-bold uppercase text-[#FAFFAF]">Project Name</h1>
-                <p className="text-[#95D1CC]">Project Details</p>
+                <h1 className="text-3xl font-bold uppercase text-[#FAFFAF]">
+                    Project Name: {project.name}
+                </h1>
+                <p className="text-[#95D1CC]">{project.description}</p>
             </div>
             <div>
                 <img
