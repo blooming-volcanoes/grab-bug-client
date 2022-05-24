@@ -9,9 +9,9 @@ import React from "react";
 function UnAuthenticatedLayout({ children, title }: { children: React.ReactNode; title?: string }) {
     const { user } = useAuth();
     const router = useRouter();
-    // if (user?.user?.email) {
-    //     router.replace("/dashboard/tickets");
-    // }
+    if (user?.user?.email) {
+        router.replace("/dashboard");
+    }
     return (
         <section>
             <Head>
