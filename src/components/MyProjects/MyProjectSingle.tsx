@@ -21,7 +21,7 @@ function MyProjectSingle({ projectId }: any) {
                     Project Name: {project.name}
                 </h2>
                 <p className="text-base">Deadline: {new Date(project.deadline).toLocaleString()}</p>
-                <p>Description: {project.description}</p>
+                <p className="text-gray-900">Description: {project.description}</p>
                 <button
                     onClick={() => router.push(`/dashboard/issueBoard/${project._id}`)}
                     className="primary-btn"
