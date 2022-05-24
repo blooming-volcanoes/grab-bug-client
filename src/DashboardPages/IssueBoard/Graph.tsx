@@ -53,7 +53,7 @@ function Graph({ project }: { project: any }) {
             setStatus([reported.length, pending.length, done.length]);
 
             // bug category
-            const filteredCate = Array.from(
+            const filteredCate: any = Array.from(
                 new Set(project.issues.map((pro: any) => pro.bugCategory))
             );
 
@@ -62,7 +62,11 @@ function Graph({ project }: { project: any }) {
             for (let i = 0; i < filteredCate.length; i++) {
                 cate = [
                     ...cate,
-                    project?.issues.filter((pro: any) => pro.bugCategory === filteredCate[i]),
+                    project?.issues.filter(
+                        (pro: any) =>
+                            pro.bugCategory.trim().toLowerCase() ===
+                            filteredCate[i].trim().toLowerCase()
+                    ),
                 ];
             }
             setBugCategory(cate);
@@ -72,8 +76,8 @@ function Graph({ project }: { project: any }) {
     return (
         <section className="mt-20">
             {project?.issues.length > 0 && (
-                <div className="flex flex-col flex-wrap justify-between space-y-4 px-4 md:flex-row md:px-16 lg:flex-row lg:px-20">
-                    <div className="w-full md:w-[50%] lg:w-[45%]">
+                <div className="flex flex-col flex-wrap justify-between space-y-4 px-4 md:flex-row md:px-16 lg:flex-row lg:px-20 2xl:px-28">
+                    <div className="w-full md:w-[50%] lg:w-[45%] 2xl:w-[40%]">
                         {/* severity */}
 
                         <div>
@@ -85,6 +89,7 @@ function Graph({ project }: { project: any }) {
                                     <Chart
                                         type="pie"
                                         height="auto"
+                                        style={{ fontSize: "20px" }}
                                         options={{
                                             labels: [
                                                 "Moderate",
@@ -94,6 +99,11 @@ function Graph({ project }: { project: any }) {
                                                 "Critical",
                                             ],
                                             dataLabels: {
+                                                style: {
+                                                    fontSize: "20px",
+                                                    fontFamily: "Poppins', sans-serif",
+                                                    fontWeight: "bold",
+                                                },
                                                 formatter(val, opts) {
                                                     return opts.w.config.series[opts.seriesIndex];
                                                 },
@@ -107,7 +117,7 @@ function Graph({ project }: { project: any }) {
                             )}
                         </div>
                     </div>
-                    <div className="w-full md:w-[50%] lg:w-[45%]">
+                    <div className="w-full md:w-[50%]  lg:w-[45%]  2xl:w-[40%]">
                         <div>
                             {project && project?.issues?.length ? (
                                 <>
@@ -120,6 +130,11 @@ function Graph({ project }: { project: any }) {
                                         options={{
                                             labels: allCateGories,
                                             dataLabels: {
+                                                style: {
+                                                    fontSize: "20px",
+                                                    fontFamily: "Poppins', sans-serif",
+                                                    fontWeight: "bold",
+                                                },
                                                 formatter(val, opts) {
                                                     return opts.w.config.series[opts.seriesIndex];
                                                 },
@@ -133,7 +148,7 @@ function Graph({ project }: { project: any }) {
                             )}
                         </div>
                     </div>
-                    <div className="w-full md:w-[50%] lg:w-[45%]">
+                    <div className="w-full md:w-[50%] lg:w-[45%]  2xl:w-[40%]">
                         {project && project?.issues?.length ? (
                             <>
                                 <h1 className="ml-4 text-xl font-semibold text-gray-600 drop-shadow">
@@ -145,6 +160,11 @@ function Graph({ project }: { project: any }) {
                                     options={{
                                         labels: ["Reported", "Pending", "Done"],
                                         dataLabels: {
+                                            style: {
+                                                fontSize: "20px",
+                                                fontFamily: "Poppins', sans-serif",
+                                                fontWeight: "bold",
+                                            },
                                             formatter(val, opts) {
                                                 return opts.w.config.series[opts.seriesIndex];
                                             },
