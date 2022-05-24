@@ -9,14 +9,13 @@ function TableRowSingle({ issue }: any) {
     console.log(issue);
     return (
         <tr className="border-b border-gray-400">
-            <td className={`${styles.td} w-[200px]`}>{issue.title}</td>
-            {issue.status === "working" ? (
-                <td className={`${styles.td} w-[500px] bg-yellow-500`}>{issue.title}</td>
-            ) : issue.status === "pending" ? (
-                <td className={`${styles.td} w-[500px] bg-gray-500`}>{issue.status}</td>
-            ) : (
-                <td className={`${styles.td} w-[500px]`}>{issue.status}</td>
-            )}
+            <td className={`${styles.td} w-[400px]`}>{issue.title}</td>
+            <select name="sfa" id="dsf">
+                <option className="h-fit w-full" value="gs">
+                    hifdsf
+                </option>
+                <option value="gs">hidfsf</option>
+            </select>
             <td className={`${styles.td} md:w-[300px]`}>{issue.reporterName}</td>
             <td className={`${styles.td} md:w-[300px]`}>
                 {new Date(issue.createdAt).toLocaleString()}
