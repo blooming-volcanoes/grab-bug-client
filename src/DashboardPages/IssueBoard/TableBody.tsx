@@ -7,8 +7,8 @@ function TableBody({ project }: any) {
     const { issues } = project;
     return (
         <tbody className="text-center">
-            {issues.map((issue: any) => (
-                <TableRowSingle issue={issue} key={issue._id} />
+            {issues.map((issue: any, index: any) => (
+                <TableRowSingle issue={issue} key={issue._id} project={project} index={index} />
             ))}
         </tbody>
     );

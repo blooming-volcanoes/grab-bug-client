@@ -68,7 +68,7 @@ function Login() {
                     />
 
                     <button className="primary-btn" type="submit">
-                        Sign up
+                        Sign in
                     </button>
 
                     {/* already registered */}
