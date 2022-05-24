@@ -15,7 +15,7 @@ function MyProjectSingle({ projectId }: any) {
     }, []);
     console.log(project);
     return (
-        <div className="m-0 w-full md:m-3">
+        <div className="m-0  md:m-3">
             <div className="rounded-[3px] bg-gradient-to-r from-[#a7d1f0] via-[#5584AC] to-[#22577E] p-4">
                 <h2 className="text-2xl font-bold uppercase text-[#FAFFAF]">
                     Project Name: {project.name}
