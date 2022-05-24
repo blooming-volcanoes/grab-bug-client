@@ -77,7 +77,7 @@ function TicketAttachment() {
     };
 
     return (
-        <div>
+        <div className="container mx-auto h-max rounded-[3px] shadow-[0_0_10px_#5584AC] md:p-3">
             <h1 className="text-xl">Add an attachment ?</h1>
 
             {/* input for comment */}
@@ -102,10 +102,11 @@ function TicketAttachment() {
 
             {/* ticket comments */}
             <div className="mt-4 rounded-lg border border-r bg-white p-4 shadow">
-                <div className="space-y-2  rounded-lg bg-indigo-500 p-4 capitalize text-white shadow-2xl">
-                    {/* ticket header */}
-                    <h1 className="text-lg">Ticket Attachments</h1>
-                    <p className="text-sm font-light">All files attached to the Ticket</p>
+                <div className="rounded-[3px] bg-gradient-to-r from-[#22577E] via-[#5584AC] to-[#22577E] p-4">
+                    <h1 className="text-2xl font-bold uppercase text-[#FAFFAF]">
+                        Ticket Attachment
+                    </h1>
+                    <p className="text-[#95D1CC]">Add file to tickets</p>
                 </div>
 
                 {/* commenter details */}
