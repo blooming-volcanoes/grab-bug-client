@@ -93,20 +93,19 @@ function TicketComments({ issue }: any) {
                         </div>
                     </div>
                 </div>
-            </div>
-
-            {/* input for comment */}
-            <h1 className="mt-5 text-xl">Write a comment here</h1>
-            <div className="my-5 flex flex-col space-x-0 space-y-4 lg:flex-row lg:space-y-0 lg:space-x-4">
-                <textarea
-                    onChange={(e) => setCommentText(e.target.value)}
-                    rows={3}
-                    className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-[#22577E] focus:ring-[#22577E] sm:text-sm"
-                    value={commentText}
-                />
-                <button className="primary-btn" type="button" onClick={handleComment}>
-                    ADD COMMENT
-                </button>
+                {/* input for comment */}
+                <h1 className="mt-5 text-xl">Write a comment here</h1>
+                <div className="my-5 flex flex-col space-x-0 space-y-4 lg:flex-row lg:space-y-0 lg:space-x-4">
+                    <textarea
+                        onChange={(e) => setCommentText(e.target.value)}
+                        rows={3}
+                        className="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-[#22577E] focus:ring-[#22577E] sm:text-sm"
+                        value={commentText}
+                    />
+                    <button className="primary-btn" type="button" onClick={handleComment}>
+                        ADD COMMENT
+                    </button>
+                </div>
             </div>
         </div>
     );
