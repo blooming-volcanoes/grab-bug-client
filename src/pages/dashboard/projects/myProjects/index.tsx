@@ -10,7 +10,7 @@ const index = () => {
     const { projects } = auth?.user?.user;
     return (
         <DashboardLayout>
-            <div className="grid grid-cols-2 gap-8">
+            <div className="flex flex-col space-y-3 md:flex-row">
                 {projects.map((project: any) => (
                     <MyProjectSingle projectId={project.projectId} />
                 ))}
