@@ -3,10 +3,11 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from "react";
+import Countdown from "react-countdown";
 import IssueHttpReq from "services/Issue.service";
 import styles from "../../styles/projectDescriptionTable.module.css";
 
-function TableRowSingle({ issue }: any) {
+function TableRowSingle({ issue, project, index }: any) {
     const [loading, setLoading] = useState(false);
     const [files, setFiles] = useState<any[]>([]);
     const [showDropdown, setShowDropdown] = useState(false);
@@ -30,29 +31,60 @@ function TableRowSingle({ issue }: any) {
     useEffect(() => {
         fetchFiles();
     }, []);
-    const handelDownload = (e) => {
+    const handelDownload = (e: any) => {
         if (e.target.value === "" || e.target.value === showDropdown) return;
         window.open(e.target.value);
     };
-    console.log(files);
 
+    const [datesData] = useState<any>([
+        "450000678",
+        "980567456",
+        "230785987",
+        "980087656",
+        "340087964",
+        "760000000",
+        "870000000",
+        "980000000",
+        "670000000",
+        "610000000",
+        "450000678",
+        "980567456",
+        "230785987",
+        "980087656",
+        "340087964",
+        "760000000",
+        "870000000",
+        "980000000",
+        "670000000",
+        "610000000",
+    ]);
+    const [issueStatus] = useState<any>([
+        "reported",
+        "working",
+        "stuck",
+        "on progress",
+        "finished",
+    ]);
+    console.log(project, "project");
     return (
         <tr className="border-b border-gray-400">
-            <td className={`${styles.td} w-[200px]`}>{issue.title}</td>
-            {issue.status === "working" ? (
-                <td className={`${styles.td} w-[500px] bg-yellow-500`}>{issue.title}</td>
-            ) : issue.status === "pending" ? (
-                <td className={`${styles.td} w-[500px] bg-gray-500`}>{issue.status}</td>
-            ) : (
-                <td className={`${styles.td} w-[500px]`}>{issue.status}</td>
-            )}
+            <td className={`${styles.td} w-[400px]`}>{issue.title}</td>
+            <select name="sfa" id="dsf" className="h-[68px] w-[200px] outline-none">
+                {issueStatus.map((status: any) => (
+                    <option value={status}>{status}</option>
+                ))}
+            </select>
             <td className={`${styles.td} md:w-[300px]`}>{issue.reporterName}</td>
             <td className={`${styles.td} md:w-[300px]`}>
                 {new Date(issue.createdAt).toLocaleString()}
             </td>
-            <td className={`${styles.td} md:w-[300px]`}>{issue.status}</td>
-            <td className={`${styles.td} md:w-[300px]`}>{issue.status}</td>
-            <td className={`${styles.td} flex flex-col space-y-3 md:w-[300px]`}>
+            <td className={`${styles.td} md:w-[300px]`}>
+                {new Date(issue.createdAt).toLocaleTimeString()}
+            </td>
+            <td className={`${styles.td} md:w-[300px]`}>
+                <Countdown date={Date.now() + Number(datesData[index])} />
+            </td>
+            <td className={`${styles.td} flex flex-col  md:w-[300px]`}>
                 {files.length <= 0 && " Upload files"}
 
                 {files.length > 0 &&
@@ -62,7 +94,7 @@ function TableRowSingle({ issue }: any) {
                                 handelDownload(e);
                                 setShowDropdown(e.target.value);
                             }}
-                            className="w-full rounded border-none bg-gray-100 ring-2 focus:ring-2"
+                            className="mx-auto w-2/3 rounded border-none bg-gray-100 ring-2 focus:ring-2"
                         >
                             <option value="">Select</option>
                             {file.attachments.map((f) => (
