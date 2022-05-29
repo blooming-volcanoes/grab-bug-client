@@ -63,7 +63,6 @@ export const loadUser = (data) => async (dispatch) => {
             .catch((err) => {
                 dispatch({ type: GLOBALTYPES.ALERT, payload: { loading: false } });
             });
-        console.log(res, "token");
 
         dispatch({
             type: GLOBALTYPES.AUTH,
@@ -79,6 +78,9 @@ export const loadUser = (data) => async (dispatch) => {
         // dispatch({type: GLOBALTYPES.ALERT, payload:{
         //     error: err.response.data.message
         // }})
+        if (err && typeof window !== "undefined") {
+            localStorage.setItem("user", JSON.stringify({}));
+        }
     }
 };
 
