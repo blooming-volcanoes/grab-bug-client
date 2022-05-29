@@ -1,6 +1,7 @@
 /* eslint-disable consistent-return */
 /* eslint-disable no-unused-vars */
 import axios from "axios";
+import { stringify } from "querystring";
 import { postDataAPI } from "../../utils/fetchData";
 import valid from "../../utils/valid";
 import { GLOBALTYPES } from "./globalTypes";
@@ -43,43 +44,29 @@ export const login = (data) => async (dispatch) => {
 };
 
 export const loadUser = (data) => async (dispatch) => {
-    console.log(tokene, "tkon");
-    try {
-        // if(!token){
-        //     dispatch({type:GLOBALTYPES.ALERT, payload:{
-        //         error: 'Please, Log in to access the resource'
-        //     }})
-        // }else{
-
-        // }
-
-        dispatch({ type: GLOBALTYPES.ALERT, payload: { loading: true } });
-        const res = await axios
-            .get(`${process.env.NEXT_PUBLIC_BASE_URL}/me`, {
+    if (tokene) {
+        try {
+            dispatch({ type: GLOBALTYPES.ALERT, payload: { loading: true } });
+            const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/me`, {
                 headers: {
                     Authorization: `${tokene}`,
                 },
-            })
-            .catch((err) => {
-                dispatch({ type: GLOBALTYPES.ALERT, payload: { loading: false } });
             });
 
-        dispatch({
-            type: GLOBALTYPES.AUTH,
-            payload: {
-                token: tokene,
-                user: res.data.user,
-            },
-        });
+            dispatch({
+                type: GLOBALTYPES.AUTH,
+                payload: {
+                    token: tokene,
+                    user: res.data.user,
+                },
+            });
 
-        dispatch({ type: GLOBALTYPES.ALERT, payload: {} });
-    } catch (err) {
-        // console.log(err);
-        // dispatch({type: GLOBALTYPES.ALERT, payload:{
-        //     error: err.response.data.message
-        // }})
-        if (err && typeof window !== "undefined") {
-            localStorage.setItem("user", JSON.stringify({}));
+            dispatch({ type: GLOBALTYPES.ALERT, payload: {} });
+        } catch (err) {
+            dispatch({ type: GLOBALTYPES.ALERT, payload: { loading: false } });
+            if (err) {
+                localStorage.setItem("user", JSON, stringify({}));
+            }
         }
     }
 };
