@@ -1,3 +1,4 @@
+/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable no-alert */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -8,7 +9,6 @@
 /* eslint-disable react/function-component-definition */
 /* eslint-disable no-underscore-dangle */
 
-import React from "react";
 import { BsFillCameraVideoOffFill } from "react-icons/bs";
 import { MdCallEnd, MdPhoneCallback } from "react-icons/md";
 import { useDispatch, useSelector } from "react-redux";
@@ -52,13 +52,14 @@ const MsgDisplay = ({ user, msg, theme, data }) => {
                             {msg.text}
                         </div>
                     )}
-                    {msg.media.map((item, index) => (
-                        <div key={index}>
-                            {item.url.match(/video/i)
-                                ? videoShow(item.url, theme)
-                                : imageShow(item.url, theme)}
-                        </div>
-                    ))}
+                    {msg.length > 0 &&
+                        msg.media.map((item, index) => (
+                            <div key={index}>
+                                {item.url.match(/video/i)
+                                    ? videoShow(item.url, theme)
+                                    : imageShow(item.url, theme)}
+                            </div>
+                        ))}
                 </div>
 
                 {msg.call && (

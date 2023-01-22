@@ -1,3 +1,4 @@
+/* eslint-disable no-unsafe-optional-chaining */
 /* eslint-disable no-use-before-define */
 /* eslint-disable react/jsx-no-constructed-context-values */
 /* eslint-disable no-console */
@@ -46,7 +47,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
             }
         } catch (error: any) {
             setAuthLoading(false);
-            const { message } = error.response.data;
+            const { message } = error?.response.data;
             setError(message);
             cogoToast.error(`${message} !!!`);
         }

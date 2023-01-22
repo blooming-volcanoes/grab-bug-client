@@ -49,7 +49,6 @@ export const getConversations =
                                 media: item.media,
                                 call: item.call,
                             });
-                            
                         }
                     });
                 });
@@ -69,12 +68,12 @@ export const getMessages =
         try {
             // console.log(getDataAPI);
             const res = await getDataAPI(`message/${id}?limit=${page * 9}`, auth.token);
-            
+
             const newData = { ...res.data, messages: res.data.messages.reverse() };
 
             dispatch({ type: MESS_TYPES.GET_MESSAGES, payload: { ...newData, _id: id, page } });
         } catch (err) {
-            dispatch({ type: GLOBALTYPES.ALERT, payload: { error: err.response.data.msg } });
+            dispatch({ type: GLOBALTYPES.ALERT, payload: { error: err?.response.data.msg } });
         }
     };
 
