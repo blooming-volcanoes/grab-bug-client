@@ -4,10 +4,10 @@ A software development tool that be used to log and monitor bugs or errors durin
 - [Server Code](https://github.com/blooming-volcanoes/GrabBug-Server)
 
 
-##Feature 
-*User role management
-*Graphs and Charts
-*Real-time chatting
+###Feature 
+User role management
+Graphs and Charts
+Real-time chatting
 Audio and video calling, live screenshare in video call
 File upload and download
 Dynamic data update with drag and drop
