@@ -5,8 +5,8 @@ A software development tool that be used to log and monitor bugs or errors durin
 
 
 #### Feature 
-*User role management
-*Graphs and Charts
+* User role management
+* Graphs and Charts
 Real-time chatting
 Audio and video calling, live screenshare in video call
 File upload and download
