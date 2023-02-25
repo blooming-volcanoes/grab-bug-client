@@ -4,7 +4,7 @@ A software development tool that can be used to log and monitor bugs or errors d
 ### Features
 The BugTracker app includes the following features:
 
-**User role management**: Users can have different levels of access based on their roles.
+- **User role management**: Users can have different levels of access based on their roles.
 - **Graphs and Charts:** Visualize data using ApexCharts.
 - **Real-time chatting:** Communicate with team members in real-time.
 Audio and video calling, live screenshare in video call: Conduct audio and video calls with team members and share screens during the calls.
