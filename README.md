@@ -1,6 +1,9 @@
 # BugTracker App
 A software development tool that can be used to log and monitor bugs or errors during software development and testing. This application helps to make software development easier, maintainable, organized, and robust.
 
+![image](https://user-images.githubusercontent.com/80216813/221352289-8cccb3bd-67d1-4110-99ce-bc9bd8054998.png)
+
+
 ### Features
 The BugTracker app includes the following features:
 
