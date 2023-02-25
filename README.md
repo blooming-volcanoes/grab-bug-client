@@ -19,6 +19,10 @@ Audio and video calling, live screenshare in video call: Conduct audio and video
 - **SMS to mobile when a critical issue arises:** Send SMS notifications to team members when a critical issue arises.
 **- Responsive:** The BugTracker app is optimized for use on all screen sizes.
 
+
+![image](https://user-images.githubusercontent.com/80216813/221352476-d8f39c7f-29a2-4cd2-b190-81865d4ca493.png)
+ Audio and video calling
+
 ### Technology
 The BugTracker app is built using the following technologies:
 
