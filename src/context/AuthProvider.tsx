@@ -130,7 +130,7 @@ function AuthProvider({ children }: { children: React.ReactNode }) {
     useEffect(() => {
         const getUser: any = localStorage.getItem("user");
         const user = JSON.parse(getUser);
-        console.log(user);
+        console.log(process.env.NEXT_PUBLIC_BASE_URL, "this is the api url");
         if (!user?.token) {
             const user = localStorage.setItem("user", JSON.stringify({}));
             setUser(user);

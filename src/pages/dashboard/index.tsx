@@ -1,6 +1,4 @@
-import Cards from "Chart/Cards/Cards";
 import DashboardLayout from "Layouts/DashboardLayout";
-import React from "react";
 
 function Dashboard() {
     return (
@@ -9,7 +7,7 @@ function Dashboard() {
                 <div className="AppGlass">
                     <div className="MainDash">
                         <h1 className="mb-4 text-2xl font-semibold">Dashboard</h1>
-                        <Cards />
+                        {/* <Cards /> */}
                     </div>
                 </div>
             </div>

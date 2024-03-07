@@ -4,13 +4,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/label-has-associated-control */
+import UnAuthenticatedLayout from "Layouts/UnAuthenticatedLayout";
 import cogoToast from "cogo-toast";
 import CircleLoader from "components/custom/CircleLoader";
 import useAuth from "hooks/useAuth";
-import UnAuthenticatedLayout from "Layouts/UnAuthenticatedLayout";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { useForm } from "react-hook-form";
 import { IUser } from "types/Auth";
 import logo from "../../assets/images/grabbug-logo.png";
@@ -20,6 +19,7 @@ function Login() {
     const { login, authLoading } = useAuth();
 
     const handelLogin = async (data: IUser): Promise<void> => {
+        console.log(process.env.NEXT_PUBLIC_BASE_URL, "this is the api url");
         if (data.password!.length < 6) {
             return cogoToast.error("Password must be at least 6 characters !!!");
         }

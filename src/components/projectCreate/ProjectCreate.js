@@ -5,7 +5,6 @@
 import cogoToast from "cogo-toast";
 import useAuth from "hooks/useAuth";
 import { useRouter } from "next/router";
-import React from "react";
 import { useForm } from "react-hook-form";
 import ProjectHttpReq from "services/Project.service";
 
@@ -24,7 +23,8 @@ function ProjectCreate() {
                 router.push("/dashboard/projects/myProjects");
             }
         } catch (err) {
-            console.log(err.response.data);
+            console.log(err);
+            console.log(err?.response?.data);
         }
 
         reset();

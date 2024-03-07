@@ -1,6 +1,4 @@
-import React from "react";
-
-function about() {
+function About() {
     return (
         <div className="container mx-auto">
             <div className="mt-5 text-center">
@@ -81,4 +79,4 @@ function about() {
     );
 }
 
-export default about;
+export default About;

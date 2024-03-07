@@ -30,7 +30,8 @@
             {
                 "namedComponents": "function-declaration"
             }
-        ]
+        ],
+        "react/react-in-jsx-scope": "off"
     },
     "settings": {
         "import/resolver": {
