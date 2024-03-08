@@ -205,118 +205,116 @@ function RightSide() {
         callUser({ video: true });
     };
 
-    return (
-        <>
-            <div className="message_header" style={{ cursor: "pointer" }}>
-                {user.length !== 0 && (
-                    <UserCard user={user}>
-                        <div>
-                            <FcCallback
-                                onClick={handleAudioCall}
-                                className="mx-4 inline-block text-2xl"
-                            />
+    return <>
+        <div className="message_header" style={{ cursor: "pointer" }}>
+            {user.length !== 0 && (
+                <UserCard user={user}>
+                    <div>
+                        <FcCallback
+                            onClick={handleAudioCall}
+                            className="mx-4 inline-block text-2xl"
+                        />
 
-                            <FcVideoCall
-                                onClick={handleVideoCall}
-                                className="mx-4 inline-block text-2xl"
-                            />
+                        <FcVideoCall
+                            onClick={handleVideoCall}
+                            className="mx-4 inline-block text-2xl"
+                        />
 
-                            <i
-                                className="fas fa-trash text-danger"
-                                onClick={handleDeleteConversation}
-                            />
-                        </div>
-                    </UserCard>
-                )}
-            </div>
+                        <i
+                            className="fas fa-trash text-danger"
+                            onClick={handleDeleteConversation}
+                        />
+                    </div>
+                </UserCard>
+            )}
+        </div>
 
-            <div
-                className="chat_container"
-                style={{ height: media.length > 0 ? "calc(100% - 180px)" : "" }}
-            >
-                <div className="chat_display" ref={refDisplay}>
-                    <button style={{ marginTop: "-25px", opacity: 0 }} ref={pageEnd}>
-                        Load more
-                    </button>
+        <div
+            className="chat_container"
+            style={{ height: media.length > 0 ? "calc(100% - 180px)" : "" }}
+        >
+            <div className="chat_display" ref={refDisplay}>
+                <button style={{ marginTop: "-25px", opacity: 0 }} ref={pageEnd}>
+                    Load more
+                </button>
 
-                    {data.map((msg, index) => (
-                        <div key={index}>
-                            {msg.sender !== auth.user._id && (
-                                <div className="chat_row other_message">
-                                    <MsgDisplay user={user} msg={msg} theme={theme} />
-                                </div>
-                            )}
+                {data.map((msg, index) => (
+                    <div key={index}>
+                        {msg.sender !== auth.user._id && (
+                            <div className="chat_row other_message">
+                                <MsgDisplay user={user} msg={msg} theme={theme} />
+                            </div>
+                        )}
 
-                            {msg.sender === auth.user._id && (
-                                <div className="chat_row you_message">
-                                    <MsgDisplay
-                                        user={auth.user}
-                                        msg={msg}
-                                        theme={theme}
-                                        data={data}
-                                    />
-                                </div>
-                            )}
-                        </div>
-                    ))}
-
-                    {loadMedia && (
-                        <div className="chat_row you_message">
-                            <img src={LoadIcon} alt="loading" />
-                        </div>
-                    )}
-                </div>
-            </div>
-
-            <div className="show_media" style={{ display: media.length > 0 ? "grid" : "none" }}>
-                {media.map((item, index) => (
-                    <div key={index} id="file_media">
-                        {item.type.match(/video/i)
-                            ? videoShow(URL.createObjectURL(item), theme)
-                            : imageShow(URL.createObjectURL(item), theme)}
-                        <span onClick={() => handleDeleteMedia(index)}>&times;</span>
+                        {msg.sender === auth.user._id && (
+                            <div className="chat_row you_message">
+                                <MsgDisplay
+                                    user={auth.user}
+                                    msg={msg}
+                                    theme={theme}
+                                    data={data}
+                                />
+                            </div>
+                        )}
                     </div>
                 ))}
+
+                {loadMedia && (
+                    <div className="chat_row you_message">
+                        <img src={LoadIcon} alt="loading" />
+                    </div>
+                )}
+            </div>
+        </div>
+
+        <div className="show_media" style={{ display: media.length > 0 ? "grid" : "none" }}>
+            {media.map((item, index) => (
+                <div key={index} id="file_media">
+                    {item.type.match(/video/i)
+                        ? videoShow(URL.createObjectURL(item), theme)
+                        : imageShow(URL.createObjectURL(item), theme)}
+                    <span onClick={() => handleDeleteMedia(index)}>&times;</span>
+                </div>
+            ))}
+        </div>
+
+        <form className="chat_input" onSubmit={handleSubmit}>
+            <input
+                type="text"
+                placeholder="Enter you message..."
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+                style={{
+                    filter: theme ? "invert(1)" : "invert(0)",
+                    background: theme ? "#040404" : "",
+                    color: theme ? "white" : "",
+                }}
+            />
+
+            {/* <Icons setContent={setText} content={text} theme={theme} /> */}
+
+            <div className="file_upload">
+                <AiFillPicture className="text-red-600" />
+
+                <input
+                    type="file"
+                    name="file"
+                    id="file"
+                    multiple
+                    accept="image/*,video/*"
+                    onChange={handleChangeMedia}
+                />
             </div>
 
-            <form className="chat_input" onSubmit={handleSubmit}>
-                <input
-                    type="text"
-                    placeholder="Enter you message..."
-                    value={text}
-                    onChange={(e) => setText(e.target.value)}
-                    style={{
-                        filter: theme ? "invert(1)" : "invert(0)",
-                        background: theme ? "#040404" : "",
-                        color: theme ? "white" : "",
-                    }}
-                />
-
-                {/* <Icons setContent={setText} content={text} theme={theme} /> */}
-
-                <div className="file_upload">
-                    <AiFillPicture className="text-red-600" />
-
-                    <input
-                        type="file"
-                        name="file"
-                        id="file"
-                        multiple
-                        accept="image/*,video/*"
-                        onChange={handleChangeMedia}
-                    />
-                </div>
-
-                <button
-                    type="submit"
-                    className="material-icons"
-                    disabled={!(text || media.length > 0)}
-                >
-                    <AiOutlineSend className="text-2xl" />
-                </button>
-            </form>
-        </>
-    );
+            <button
+                type="submit"
+                className="material-icons"
+                disabled={!(text || media.length > 0)}
+            >
+                <AiOutlineSend className="text-2xl" />
+            </button>
+        </form>
+    </>;
 }
 
 export default RightSide;

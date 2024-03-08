@@ -74,8 +74,8 @@ function Login() {
                     {/* already registered */}
                     <p className="text-center text-sm font-semibold">
                         Don't have an account ?{" "}
-                        <Link href="/register">
-                            <a className="text-blue-500">Register</a>
+                        <Link href="/register" className="text-blue-500">
+                            Register
                         </Link>
                     </p>
                 </form>

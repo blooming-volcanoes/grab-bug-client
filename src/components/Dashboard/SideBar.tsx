@@ -72,38 +72,38 @@ function SideBar() {
             <div className="border-t border-b pt-4 pb-10">
                 {dashboardRoutes.map((route, i) => (
                     <div className="w-full" key={i}>
-                        <Link href={`${route.path}`}>
-                            <a
-                                style={{
-                                    // if the user is not attached to any project, he/she will not be able to click links other than 'create project'
-                                    pointerEvents: `${
-                                        !user?.user?.isActive &&
-                                        route.path !== "/dashboard/projectCreate"
-                                            ? "none"
-                                            : "auto"
-                                    }`,
-                                    filter: `${
-                                        // working for 'isActive === false' but not working for 'isActive === true' | need to make it work
-                                        !user.user.isActive &&
-                                        route.path === "/dashboard/projectCreate"
-                                            ? ""
-                                            : !user.user.isActive &&
-                                              route.path !== "/dashboard/projectCreate"
-                                            ? "blur(2px)"
-                                            : ""
-                                    }`,
-                                }}
-                                className={
-                                    router.pathname === route.path
-                                        ? "sidebar-routes active my-2"
-                                        : "sidebar-routes"
-                                }
-                            >
-                                <span>
-                                    <route.icons className="mr-2 inline" />
-                                </span>
-                                {route.name}
-                            </a>
+                        <Link
+                            href={`${route.path}`}
+                            style={{
+                                // if the user is not attached to any project, he/she will not be able to click links other than 'create project'
+                                pointerEvents: `${
+                                    !user?.user?.isActive &&
+                                    route.path !== "/dashboard/projectCreate"
+                                        ? "none"
+                                        : "auto"
+                                }`,
+                                filter: `${
+                                    // working for 'isActive === false' but not working for 'isActive === true' | need to make it work
+                                    !user.user.isActive &&
+                                    route.path === "/dashboard/projectCreate"
+                                        ? ""
+                                        : !user.user.isActive &&
+                                          route.path !== "/dashboard/projectCreate"
+                                        ? "blur(2px)"
+                                        : ""
+                                }`,
+                            }}
+                            className={
+                                router.pathname === route.path
+                                    ? "sidebar-routes active my-2"
+                                    : "sidebar-routes"
+                            }>
+
+                            <span>
+                                <route.icons className="mr-2 inline" />
+                            </span>
+                            {route.name}
+
                         </Link>
                     </div>
                 ))}

@@ -12,11 +12,13 @@ function TableRowSingle({ project }: any) {
             <td className={`${styles.td} w-[500px]`}>{project.description}</td>
             <td className={`${styles.td} md:w-[300px]`}>
                 <div className="flex justify-center">
-                    <Link href={`/dashboard/projects/${project._id}`}>
-                        <a className="table-btn ">Project Details</a>
+                    <Link href={`/dashboard/projects/${project._id}`} className="table-btn ">
+                        Project Details
                     </Link>
-                    <Link href={`/dashboard/projects/manageUserRoles/${project._id}`}>
-                        <a className="table-btn mx-2">Manage Users</a>
+                    <Link
+                        href={`/dashboard/projects/manageUserRoles/${project._id}`}
+                        className="table-btn mx-2">
+                        Manage Users
                     </Link>
                 </div>
             </td>

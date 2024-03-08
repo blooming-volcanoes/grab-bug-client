@@ -65,8 +65,8 @@ function Overview() {
                 </div>
             </div>
             <div className="flex w-full justify-center rounded-b-[55px] bg-violet-300 py-3">
-                <Link href="/register">
-                    <a className="btn-white">Get Started</a>
+                <Link href="/register" className="btn-white">
+                    Get Started
                 </Link>
             </div>
         </div>

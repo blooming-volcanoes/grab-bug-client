@@ -71,7 +71,7 @@ const NotifyModal = () => {
                             herf={`${msg.url}`}
                             className="d-flex text-dark align-items-center"
                             onClick={() => handleIsRead(msg)}
-                        >
+                            legacyBehavior>
                             <Avatar src={msg.user.avatar} size="big-avatar" />
 
                             <div className="flex-fill mx-1">

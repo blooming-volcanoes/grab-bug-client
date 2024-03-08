@@ -135,8 +135,8 @@ function Register() {
                     {!verify.success && (
                         <p className="text-center text-sm font-semibold">
                             Already have an account ?{" "}
-                            <Link href="/login">
-                                <a className="text-blue-500">Login</a>
+                            <Link href="/login" className="text-blue-500">
+                                Login
                             </Link>
                         </p>
                     )}

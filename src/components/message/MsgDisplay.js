@@ -31,80 +31,78 @@ const MsgDisplay = ({ user, msg, theme, data }) => {
 
     // console.log(msg, "dispala");
 
-    return (
-        <>
-            <div className="chat_title">
-                <Avatar src={user.pic} size="small-avatar" />
-                <span>{user.name}</span>
+    return <>
+        <div className="chat_title">
+            <Avatar src={user.pic} size="small-avatar" />
+            <span>{user.name}</span>
+        </div>
+
+        <div className="you_content">
+            {user._id === auth.user._id && (
+                <i className="fas fa-trash text-danger" onClick={handleDeleteMessages} />
+            )}
+
+            <div>
+                {msg.text && (
+                    <div
+                        className="chat_text"
+                        style={{ filter: theme ? "invert(1)" : "invert(0)" }}
+                    >
+                        {msg.text}
+                    </div>
+                )}
+                {msg.length > 0 &&
+                    msg.media.map((item, index) => (
+                        <div key={index}>
+                            {item.url.match(/video/i)
+                                ? videoShow(item.url, theme)
+                                : imageShow(item.url, theme)}
+                        </div>
+                    ))}
             </div>
 
-            <div className="you_content">
-                {user._id === auth.user._id && (
-                    <i className="fas fa-trash text-danger" onClick={handleDeleteMessages} />
-                )}
-
-                <div>
-                    {msg.text && (
-                        <div
-                            className="chat_text"
-                            style={{ filter: theme ? "invert(1)" : "invert(0)" }}
-                        >
-                            {msg.text}
-                        </div>
-                    )}
-                    {msg.length > 0 &&
-                        msg.media.map((item, index) => (
-                            <div key={index}>
-                                {item.url.match(/video/i)
-                                    ? videoShow(item.url, theme)
-                                    : imageShow(item.url, theme)}
-                            </div>
-                        ))}
-                </div>
-
-                {msg.call && (
-                    <button
-                        className="d-flex align-items-center btn py-3"
-                        style={{ background: "#eee", borderRadius: "10px" }}
+            {msg.call && (
+                <button
+                    className="d-flex align-items-center btn py-3"
+                    style={{ background: "#eee", borderRadius: "10px" }}
+                >
+                    <span
+                        className="material-icons font-weight-bold mr-1"
+                        style={{
+                            fontSize: "2.5rem",
+                            color: msg.call.times === 0 ? "crimson" : "green",
+                            filter: theme ? "invert(1)" : "invert(0)",
+                        }}
                     >
-                        <span
-                            className="material-icons font-weight-bold mr-1"
-                            style={{
-                                fontSize: "2.5rem",
-                                color: msg.call.times === 0 ? "crimson" : "green",
-                                filter: theme ? "invert(1)" : "invert(0)",
-                            }}
-                        >
-                            {msg.call.times === 0 ? (
-                                msg.call.video ? (
-                                    <BsFillCameraVideoOffFill />
-                                ) : (
-                                    <MdCallEnd />
-                                )
-                            ) : msg.call.video ? (
+                        {msg.call.times === 0 ? (
+                            msg.call.video ? (
                                 <BsFillCameraVideoOffFill />
                             ) : (
-                                <MdPhoneCallback />
+                                <MdCallEnd />
+                            )
+                        ) : msg.call.video ? (
+                            <BsFillCameraVideoOffFill />
+                        ) : (
+                            <MdPhoneCallback />
+                        )}
+                    </span>
+
+                    <div className="text-left">
+                        <h6>{msg.call.video ? "Video Call" : "Audio Call"}</h6>
+                        <small>
+                            {msg.call.times > 0 ? (
+                                <Times total={msg.call.times} />
+                            ) : (
+                                new Date(msg.createdAt).toLocaleTimeString()
                             )}
-                        </span>
+                        </small>
+                    </div>
+                </button>
+            )}
+        </div>
 
-                        <div className="text-left">
-                            <h6>{msg.call.video ? "Video Call" : "Audio Call"}</h6>
-                            <small>
-                                {msg.call.times > 0 ? (
-                                    <Times total={msg.call.times} />
-                                ) : (
-                                    new Date(msg.createdAt).toLocaleTimeString()
-                                )}
-                            </small>
-                        </div>
-                    </button>
-                )}
-            </div>
-
-            <div className="chat_time">{new Date(msg.createdAt).toLocaleString()}</div>
-        </>
-    );
+        <div className="chat_time">{new Date(msg.createdAt).toLocaleString()}</div>
+    </>;
 };
 
 export default MsgDisplay;

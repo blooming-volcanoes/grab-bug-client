@@ -38,8 +38,8 @@ function Banner() {
                             type="email"
                         />
                         <div className="flex-warp mx-auto flex items-center justify-center space-x-4 lg:justify-start">
-                            <Link href="/register">
-                                <a className="primary-btn">Get Started</a>
+                            <Link href="/register" className="primary-btn">
+                                Get Started
                             </Link>
                             <p className="text-sm font-semibold uppercase text-gray-300">
                                 Free forever <br /> no credit card
