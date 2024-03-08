@@ -11,10 +11,9 @@
 /* eslint-disable react/self-closing-comp */
 import moment from "moment";
 import Link from "next/link";
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import NoNotice from "../images/notice.png";
-import { deleteAllNotifies, isReadNotify, NOTIFY_TYPES } from "../redux/actions/notifyAction";
+import { NOTIFY_TYPES, deleteAllNotifies, isReadNotify } from "../redux/actions/notifyAction";
 import Avatar from "./Avatar";
 
 const NotifyModal = () => {
@@ -71,7 +70,7 @@ const NotifyModal = () => {
                             herf={`${msg.url}`}
                             className="d-flex text-dark align-items-center"
                             onClick={() => handleIsRead(msg)}
-                            legacyBehavior>
+                        >
                             <Avatar src={msg.user.avatar} size="big-avatar" />
 
                             <div className="flex-fill mx-1">
