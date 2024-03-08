@@ -70,10 +70,10 @@ function Header() {
                         ) : (
                             <>
                                 <div className="hidden space-x-4 lg:inline-flex">
-                                    <Link href="/login" legacyBehavior>
+                                    <Link href="/login">
                                         <button className=" primary-btn">Login</button>
                                     </Link>
-                                    <Link href="/register" legacyBehavior>
+                                    <Link href="/register">
                                         <button className="btn-white">Register</button>
                                     </Link>
                                 </div>
@@ -124,10 +124,10 @@ function Header() {
                                 </Link>
                             ))}
                             <li className="mx-auto flex w-2/6 flex-col space-y-3">
-                                <Link href="/login" legacyBehavior>
+                                <Link href="/login">
                                     <button className=" primary-btn">Login</button>
                                 </Link>
-                                <Link href="/register" legacyBehavior>
+                                <Link href="/register">
                                     <button className="btn-white">Register</button>
                                 </Link>
                             </li>
