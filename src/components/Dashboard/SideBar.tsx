@@ -96,6 +96,7 @@ function SideBar() {
                                     ? "sidebar-routes active my-2"
                                     : "sidebar-routes"
                             }
+                            legacyBehavior
                         >
                             <span>
                                 <route.icons className="mr-2 inline" />
