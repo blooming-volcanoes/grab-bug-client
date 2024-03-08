@@ -8,7 +8,6 @@ import useAuth from "hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
 import { BsChatLeftDotsFill } from "react-icons/bs";
 import { FaPlusCircle, FaPlusSquare, FaProjectDiagram, FaTicketAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
@@ -84,8 +83,7 @@ function SideBar() {
                                 }`,
                                 filter: `${
                                     // working for 'isActive === false' but not working for 'isActive === true' | need to make it work
-                                    !user.user.isActive &&
-                                    route.path === "/dashboard/projectCreate"
+                                    !user.user.isActive && route.path === "/dashboard/projectCreate"
                                         ? ""
                                         : !user.user.isActive &&
                                           route.path !== "/dashboard/projectCreate"
@@ -97,13 +95,12 @@ function SideBar() {
                                 router.pathname === route.path
                                     ? "sidebar-routes active my-2"
                                     : "sidebar-routes"
-                            }>
-
+                            }
+                        >
                             <span>
                                 <route.icons className="mr-2 inline" />
                             </span>
                             {route.name}
-
                         </Link>
                     </div>
                 ))}
