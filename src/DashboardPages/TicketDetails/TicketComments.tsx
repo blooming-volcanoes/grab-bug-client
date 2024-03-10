@@ -7,14 +7,14 @@
  *** Author : Raiyan
  */
 import cogoToast from "cogo-toast";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import IssueHttpReq from "services/Issue.service";
 import useAuth from "../../hooks/useAuth";
 import TicketCommentSingle from "./TicketCommentSingle";
 
 function TicketComments({ issue }: any) {
     const { user } = useAuth();
-    const commenter = user.user.name;
+    const commenter = user.name;
     const { _id } = issue;
     const [commentText, setCommentText] = useState("");
     const [comments, setComments] = useState(issue.comments);

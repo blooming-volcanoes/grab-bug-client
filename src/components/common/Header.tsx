@@ -45,7 +45,9 @@ function Header() {
                         {/* logo */}
                         <div className="w-36 flex-shrink-0">
                             <Link href="/">
-                                <Image src={logo} />
+                                <>
+                                    <Image src={logo} />
+                                </>
                             </Link>
                         </div>
 
@@ -117,8 +119,8 @@ function Header() {
                                 <Link
                                     key={i}
                                     href={`${menu.path}`}
-                                    onClick={() => setMenuOpen(!menuOpen)}
                                     className="block hover:text-[#FD71AF]"
+                                    legacyBehavior
                                 >
                                     {menu.name}
                                 </Link>

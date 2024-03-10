@@ -10,42 +10,39 @@ import CircleLoader from "components/custom/CircleLoader";
 import useAuth from "hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { IUser } from "types/Auth";
 import logo from "../../assets/images/grabbug-logo.png";
 
 function Register() {
     const { register, handleSubmit } = useForm<IUser>();
-    const { register: signUp, verify, authLoading, verifyOtp } = useAuth();
+    const { register: signUp, verify, authLoading } = useAuth();
     const [counter, setCounter] = useState(59);
     const [tempData, setTempData] = useState<any>({});
 
     // set otp minutes
     let timer: any;
 
-    useEffect(() => {
-        if (verify.success) {
-            timer = setInterval(() => {
-                if (counter === 0) {
-                    return setCounter(0);
-                }
-                setCounter(counter - 1);
-            }, 1000);
-        }
+    // useEffect(() => {
+    //     if (verify.success) {
+    //         timer = setInterval(() => {
+    //             if (counter === 0) {
+    //                 return setCounter(0);
+    //             }
+    //             setCounter(counter - 1);
+    //         }, 1000);
+    //     }
 
-        return () => clearInterval(timer);
-    }, [counter, verify.success]);
+    //     return () => clearInterval(timer);
+    // }, [counter, verify.success]);
 
     const handelRegister = async (data: IUser): Promise<void> => {
         if (data.password!.length < 6) {
             return cogoToast.error("Password must be at least 6 characters !!!");
         }
-        if (verify.success) {
-            await verifyOtp(data);
-        } else {
-            await signUp(data);
-        }
+
+        await signUp(data);
         setTempData(data);
     };
 
@@ -72,7 +69,7 @@ function Register() {
                         </div>
                     )}
 
-                    {verify.success ? (
+                    {/* {verify.success ? (
                         <>
                             <h1 className="text-center text-lg text-gray-500">
                                 Please give your{" "}
@@ -101,45 +98,43 @@ function Register() {
                                 )}
                             </p>
                         </>
-                    ) : (
-                        <>
-                            <input
-                                className="rounded-lg border-gray-300  py-4 text-sm shadow transition hover:shadow-lg"
-                                type="text"
-                                required
-                                placeholder="Name"
-                                {...register("name")}
-                            />
-                            <input
-                                className="rounded-lg border-gray-300  py-4 text-sm shadow transition hover:shadow-lg"
-                                type="email"
-                                required
-                                placeholder="Email"
-                                {...register("email")}
-                            />
-                            <input
-                                className="rounded-lg border-gray-300 py-4  text-sm shadow transition hover:shadow-lg"
-                                type="password"
-                                required
-                                placeholder="Password"
-                                {...register("password")}
-                            />
+                    ) : ( */}
 
-                            <button className="primary-btn" type="submit">
-                                Sign up
-                            </button>
-                        </>
-                    )}
+                    <input
+                        className="rounded-lg border-gray-300  py-4 text-sm shadow transition hover:shadow-lg"
+                        type="text"
+                        required
+                        placeholder="Name"
+                        {...register("name")}
+                    />
+                    <input
+                        className="rounded-lg border-gray-300  py-4 text-sm shadow transition hover:shadow-lg"
+                        type="email"
+                        required
+                        placeholder="Email"
+                        {...register("email")}
+                    />
+                    <input
+                        className="rounded-lg border-gray-300 py-4  text-sm shadow transition hover:shadow-lg"
+                        type="password"
+                        required
+                        placeholder="Password"
+                        {...register("password")}
+                    />
+
+                    <button className="primary-btn" type="submit">
+                        Sign up
+                    </button>
 
                     {/* already registered */}
-                    {!verify.success && (
-                        <p className="text-center text-sm font-semibold">
-                            Already have an account ?{" "}
-                            <Link href="/login" className="text-blue-500">
-                                Login
-                            </Link>
-                        </p>
-                    )}
+                    {/* {!verify.success && ( */}
+                    <p className="text-center text-sm font-semibold">
+                        Already have an account ?{" "}
+                        <Link href="/login" className="text-blue-500">
+                            Login
+                        </Link>
+                    </p>
+                    {/* )} */}
                 </form>
             </div>
         </UnAuthenticatedLayout>

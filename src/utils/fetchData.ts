@@ -1,13 +1,9 @@
 /* eslint-disable no-unused-vars */
 import axios from "axios";
+import { getFromLocalStorage } from "./local-storage";
 
-let tokene;
-if (typeof window !== "undefined") {
-    const user = JSON.parse(localStorage.getItem("user"));
-    tokene = user?.token;
-}
-
-export const getDataAPI = async (url, token) => {
+const tokene = getFromLocalStorage("token") || "";
+export const getDataAPI = async (url: string, token: string) => {
     // const tokene = localStorage.getItem("token");
 
     const res = await axios.get(`${process.env.NEXT_PUBLIC_BASE_URL}/${url}`, {
@@ -16,7 +12,7 @@ export const getDataAPI = async (url, token) => {
     return res;
 };
 
-export const postDataAPI = async (url, post, token) => {
+export const postDataAPI = async (url: string, post: any, token: string) => {
     // const tokene = localStorage.getItem("token");
     // console.log(`http://localhost:5000/${url}`, post, "from messwage");
     const res = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/${url}`, post, {
@@ -26,7 +22,7 @@ export const postDataAPI = async (url, post, token) => {
     return res;
 };
 
-export const putDataAPI = async (url, post, token) => {
+export const putDataAPI = async (url: string, post: any, token: string) => {
     // const tokene = localStorage.getItem("token");
     const res = await axios.put(`${process.env.NEXT_PUBLIC_BASE_URL}/${url}`, post, {
         headers: { Authorization: tokene },
@@ -34,7 +30,7 @@ export const putDataAPI = async (url, post, token) => {
     return res;
 };
 
-export const patchDataAPI = async (url, post, token) => {
+export const patchDataAPI = async (url: string, post: any, token: string) => {
     // const tokene = localStorage.getItem("token");
     const res = await axios.patch(`${process.env.NEXT_PUBLIC_BASE_URL}/${url}`, post, {
         headers: { Authorization: tokene },
@@ -42,7 +38,7 @@ export const patchDataAPI = async (url, post, token) => {
     return res;
 };
 
-export const deleteDataAPI = async (url, token) => {
+export const deleteDataAPI = async (url: string, post: any, token: string) => {
     // const tokene = localStorage.getItem("token");
     const res = await axios.delete(`${process.env.NEXT_PUBLIC_BASE_URL}/${url}`, {
         headers: { Authorization: tokene },

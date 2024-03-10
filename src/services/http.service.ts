@@ -1,11 +1,8 @@
 /* eslint-disable class-methods-use-this */
 import axios, { AxiosInstance, AxiosResponse } from "axios";
+import { getFromLocalStorage } from "utils/local-storage";
 
-let token: any | undefined;
-if (typeof window !== "undefined") {
-    const userString: any = window.localStorage.getItem("user");
-    token = JSON.parse(userString)?.token;
-}
+const token = getFromLocalStorage("token");
 
 const axiosConfig = {
     baseURL: process.env.NEXT_PUBLIC_BASE_URL,
