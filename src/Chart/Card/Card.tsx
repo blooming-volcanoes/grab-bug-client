@@ -1,14 +1,15 @@
+"use client";
+
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-use-before-define */
 import { AnimateSharedLayout, motion } from "framer-motion";
-import dynamic from "next/dynamic";
 import React, { useState } from "react";
 import { CircularProgressbar } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { ImCross } from "react-icons/im";
 
-const ReactApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
+// const ReactApexChart = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 function Card({ card }: { card: any }) {
     const [expanded, setExpanded] = useState(false);
@@ -71,7 +72,7 @@ function ExpandedCard({
             </div>
             <span>{card.title}</span>
             <div className="chartContainer">
-                <ReactApexChart options={card.options} series={card.series} type="area" />
+                {/* <ReactApexChart options={card.options} series={card.series} type="area" /> */}
             </div>
             <span>Last 24 hours</span>
         </motion.div>

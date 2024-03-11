@@ -4,13 +4,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/label-has-associated-control */
+import UnAuthenticatedLayout from "Layouts/UnAuthenticatedLayout";
 import cogoToast from "cogo-toast";
 import CircleLoader from "components/custom/CircleLoader";
 import useAuth from "hooks/useAuth";
-import UnAuthenticatedLayout from "Layouts/UnAuthenticatedLayout";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { useForm } from "react-hook-form";
 import { IUser } from "types/Auth";
 import logo from "../../assets/images/grabbug-logo.png";
@@ -74,8 +73,8 @@ function Login() {
                     {/* already registered */}
                     <p className="text-center text-sm font-semibold">
                         Don't have an account ?{" "}
-                        <Link href="/register">
-                            <a className="text-blue-500">Register</a>
+                        <Link href="/register" className="text-blue-500">
+                            Register
                         </Link>
                     </p>
                 </form>

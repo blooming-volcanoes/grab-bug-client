@@ -11,7 +11,7 @@ import logo from "assets/images/grabbug-logo.png";
 import useAuth from "hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import { useState } from "react";
 
 // our menus
 interface IMenu {
@@ -45,19 +45,21 @@ function Header() {
                         {/* logo */}
                         <div className="w-36 flex-shrink-0">
                             <Link href="/">
-                                <a>
+                                <>
                                     <Image src={logo} />
-                                </a>
+                                </>
                             </Link>
                         </div>
 
                         {/* nav menus */}
                         <ul className="hidden space-x-8 text-sm font-semibold lg:inline-flex">
                             {menus.map((menu, i) => (
-                                <Link key={i} href={`${menu.path}`}>
-                                    <a className=" text-[18px] text-[#22577E] transition-all duration-[0.3s] ease-in hover:text-[20px]">
-                                        {menu.name}
-                                    </a>
+                                <Link
+                                    key={i}
+                                    href={`${menu.path}`}
+                                    className=" text-[18px] text-[#22577E] transition-all duration-[0.3s] ease-in hover:text-[20px]"
+                                >
+                                    {menu.name}
                                 </Link>
                             ))}
                         </ul>
@@ -108,19 +110,19 @@ function Header() {
 
                         <ul
                             className={`
-                               fixed
-                                 shadow-2xl transition-all lg:hidden ${
-                                     menuOpen ? "right-0" : "-right-full"
-                                 } top-0 z-20 flex h-full w-full  flex-col items-center  justify-center space-y-16 bg-white px-4   text-2xl font-semibold  md:w-[450px] md:text-4xl`}
+                           fixed
+                             shadow-2xl transition-all lg:hidden ${
+                                 menuOpen ? "right-0" : "-right-full"
+                             } top-0 z-20 flex h-full w-full  flex-col items-center  justify-center space-y-16 bg-white px-4   text-2xl font-semibold  md:w-[450px] md:text-4xl`}
                         >
                             {menus.map((menu, i) => (
-                                <Link key={i} href={`${menu.path}`}>
-                                    <a
-                                        onClick={() => setMenuOpen(!menuOpen)}
-                                        className="block hover:text-[#FD71AF]"
-                                    >
-                                        {menu.name}
-                                    </a>
+                                <Link
+                                    key={i}
+                                    href={`${menu.path}`}
+                                    className="block hover:text-[#FD71AF]"
+                                    legacyBehavior
+                                >
+                                    {menu.name}
                                 </Link>
                             ))}
                             <li className="mx-auto flex w-2/6 flex-col space-y-3">

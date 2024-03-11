@@ -11,8 +11,8 @@ function UserSingle({ user }: any) {
             <td className={`${styles.td} w-[300px]`}>{user.role}</td>
             <td className={`${styles.td} w-[300px]`}>
                 <div className="flex justify-center">
-                    <Link href="/dashboard/projectDetails">
-                        <a className="table-btn ">about {user.assignedUser.name}</a>
+                    <Link href="/dashboard/projectDetails" className="table-btn ">
+                        about{user.assignedUser.name}
                     </Link>
                     <a className="table-btn mx-2" href="#">
                         change role

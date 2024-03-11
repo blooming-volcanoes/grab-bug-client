@@ -22,8 +22,8 @@ function TicketTableRowSingle({ ticket }: any) {
             </td>
             <td className={`${styles.td} md:w-[300px]`}>
                 <div className="flex justify-center">
-                    <Link href={`/dashboard/tickets/details/${ticket._id}`}>
-                        <a className="table-btn ">Details</a>
+                    <Link href={`/dashboard/tickets/details/${ticket._id}`} className="table-btn ">
+                        Details
                     </Link>
                 </div>
             </td>

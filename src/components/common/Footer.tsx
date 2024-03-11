@@ -2,7 +2,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 import { FaGithub } from "react-icons/fa";
 import logo from "../../assets/images/grabbug-logo.png";
 
@@ -13,27 +12,28 @@ function Footer() {
                 <div className="flex flex-col items-center space-y-4 md:flex-row md:justify-between">
                     <div className="w-full md:w-[200px]">
                         <Link href="/">
-                            <a>
-                                <Image src={logo} />
-                            </a>
+                            <Image src={logo} />
                         </Link>
                         <p className="text-center text-[#22577E]">
                             Grab your bug and end it's life cycle
                         </p>
                     </div>
                     <div className="flex items-center px-5">
-                        <Link href="/documentation">
-                            <a className="text-[20px] font-bold text-[#22577E]">Documentation</a>
+                        <Link
+                            href="/documentation"
+                            className="text-[20px] font-bold text-[#22577E]"
+                        >
+                            Documentation
                         </Link>
                     </div>
                     <div className="flex items-center px-5">
-                        <Link href="/contact">
-                            <a className="text-[20px] font-bold text-[#22577E]">Contact Us</a>
+                        <Link href="/contact" className="text-[20px] font-bold text-[#22577E]">
+                            Contact Us
                         </Link>
                     </div>
                     <div className="flex items-center px-5">
-                        <Link href="/about">
-                            <a className="text-[20px] font-bold text-[#22577E]">About Us</a>
+                        <Link href="/about" className="text-[20px] font-bold text-[#22577E]">
+                            About Us
                         </Link>
                     </div>
                     <div className="flex items-center">

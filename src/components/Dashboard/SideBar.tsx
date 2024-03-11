@@ -8,7 +8,6 @@ import useAuth from "hooks/useAuth";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React from "react";
 import { BsChatLeftDotsFill } from "react-icons/bs";
 import { FaPlusCircle, FaPlusSquare, FaProjectDiagram, FaTicketAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
@@ -75,19 +74,15 @@ function SideBar() {
                         <Link href={`${route.path}`}>
                             <a
                                 style={{
-                                    // if the user is not attached to any project, he/she will not be able to click links other than 'create project'
                                     pointerEvents: `${
-                                        !user?.user?.isActive &&
-                                        route.path !== "/dashboard/projectCreate"
+                                        !user?.isActive && route.path !== "/dashboard/projectCreate"
                                             ? "none"
                                             : "auto"
                                     }`,
                                     filter: `${
-                                        // working for 'isActive === false' but not working for 'isActive === true' | need to make it work
-                                        !user.user.isActive &&
-                                        route.path === "/dashboard/projectCreate"
+                                        !user.isActive && route.path === "/dashboard/projectCreate"
                                             ? ""
-                                            : !user.user.isActive &&
+                                            : !user.isActive &&
                                               route.path !== "/dashboard/projectCreate"
                                             ? "blur(2px)"
                                             : ""

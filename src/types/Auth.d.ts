@@ -13,15 +13,15 @@ export interface IAuthContext {
     loading: boolean;
     authLoading: boolean;
     error: null;
-    verify: any;
+    verify?: any;
     token?: string;
     setError: React.Dispatch<React.SetStateAction<null>>;
     setUser: React.Dispatch<React.SetStateAction<{}>>;
     login: (data: IUser) => Promise<void>;
     register: (data: IUser) => Promise<void>;
-    verifyOtp: (data: IUser) => Promise<void>;
+    // verifyOtp: (data: IUser) => Promise<void>;
     logout: () => void;
-    updateLocalStorageOnUserDataChanged: (updatedUserData) => void;
+    updateLocalStorageOnUserDataChanged?: (updatedUserData) => void;
 }
 
 export interface UserChatContext {
